@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabContainerBlogController">
+            <connections>
+                <outlet property="blogDescriptionViewController_" destination="R57-OZ-YO6" id="5pt-RZ-doR"/>
+                <outlet property="blogsContainer_" destination="Lsw-Tz-Q4x" id="Ni0-zG-qn3"/>
+                <outlet property="descriptionContainer_" destination="8cf-JT-NB7" id="MuH-Or-23n"/>
+                <outlet property="pageViewController_" destination="dYe-m6-LcS" id="i7h-2y-miy"/>
+                <outlet property="view" destination="1" id="ihA-oK-zXG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="1" customClass="TabContainerBlogView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lsw-Tz-Q4x" userLabel="headline">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="219" id="8qw-Bg-f0B"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cf-JT-NB7" userLabel="description">
+                    <rect key="frame" x="0.0" y="219" width="320" height="349"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Lsw-Tz-Q4x" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ZSu-70-Ede"/>
+                <constraint firstAttribute="bottom" secondItem="8cf-JT-NB7" secondAttribute="bottom" id="aAp-rI-6Vd"/>
+                <constraint firstItem="8cf-JT-NB7" firstAttribute="leading" secondItem="Lsw-Tz-Q4x" secondAttribute="leading" id="dfd-fo-wuc"/>
+                <constraint firstItem="8cf-JT-NB7" firstAttribute="top" secondItem="Lsw-Tz-Q4x" secondAttribute="bottom" id="eMu-Hb-B5i"/>
+                <constraint firstItem="8cf-JT-NB7" firstAttribute="trailing" secondItem="Lsw-Tz-Q4x" secondAttribute="trailing" id="iLS-MB-ip1"/>
+                <constraint firstAttribute="trailing" secondItem="Lsw-Tz-Q4x" secondAttribute="trailing" id="m7c-S2-l0U"/>
+                <constraint firstItem="Lsw-Tz-Q4x" firstAttribute="top" secondItem="1" secondAttribute="top" id="nud-ga-8H5"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+        <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="dYe-m6-LcS">
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="dataSource" destination="-1" id="1hV-QN-P71"/>
+                <outlet property="delegate" destination="-1" id="mfx-1F-NM2"/>
+            </connections>
+        </pageViewController>
+        <viewController id="R57-OZ-YO6" customClass="BlogDescriptionViewController">
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="datasource" destination="-1" id="TK1-vE-3ad"/>
+            </connections>
+        </viewController>
+    </objects>
+</document>

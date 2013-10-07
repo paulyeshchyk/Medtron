@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="BlogEntity" representedClassName="BlogEntity" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="headline" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="SensorConfigurationEntity" representedClassName="SensorConfigurationEntity" syncable="YES">
+        <relationship name="configurationSensor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SensorEntity" inverseName="configuration" inverseEntity="SensorEntity" syncable="YES"/>
+        <relationship name="configurationSensorType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SensorTypeEntity" inverseName="configuration" inverseEntity="SensorTypeEntity" syncable="YES"/>
+    </entity>
+    <entity name="SensorEntity" representedClassName="SensorEntity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="configuration" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SensorConfigurationEntity" inverseName="configurationSensor" inverseEntity="SensorConfigurationEntity" syncable="YES"/>
+        <relationship name="sensortypes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SensorTypeEntity" inverseName="sensors" inverseEntity="SensorTypeEntity" syncable="YES"/>
+    </entity>
+    <entity name="SensorTypeEntity" representedClassName="SensorTypeEntity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="configuration" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SensorConfigurationEntity" inverseName="configurationSensorType" inverseEntity="SensorConfigurationEntity" syncable="YES"/>
+        <relationship name="sensors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SensorEntity" inverseName="sensortypes" inverseEntity="SensorEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BlogEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SensorConfigurationEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SensorEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SensorTypeEntity" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
