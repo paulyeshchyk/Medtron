@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MedtronicCellProtocols.h"
 
-@interface CheckboxCell : UITableViewCell
-@property (nonatomic, assign)BOOL checked;
-@property (nonatomic, strong)NSString* name;
-@property (nonatomic, strong)UITableView* tableView;
+@interface CheckboxCell : UITableViewCell <CheckboxCellProtocol>
 @end

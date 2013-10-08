@@ -113,8 +113,12 @@
 
 #pragma mark -
 - (IBAction)onTapGesture:(UIGestureRecognizer*)recognizer {
+    NSDictionary* args = nil;
     id blog = [self blogAtIndex:self.pageIndex];
-    NSDictionary* args = @{kCommandArgmentNameBlogID: [blog objectID]};
+    id blogID = [blog objectID];
+    if (blogID){
+        args = @{kCommandArgmentNameBlogID: blogID};
+    }
     [[ApplicationCommandsManager sharedInstance] openBlog:args];
 }
 

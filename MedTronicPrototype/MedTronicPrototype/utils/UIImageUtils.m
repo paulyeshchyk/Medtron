@@ -23,53 +23,18 @@
     return layer;
 }
 
-+ (UIImage *)image:(UIImage*)image tintedWithLinearGradientColors:(NSArray *)colorsArr scale:(CGFloat)scale size:(CGSize)size{
-    UIGraphicsBeginImageContext(CGSizeMake(size.width * scale, size.height * scale));
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextTranslateCTM(context, 0, size.height);
-    CGContextScaleCTM(context, 1.0, -1.0);
+/**
+ *
+ usage: set this shape as a views layer mask
+ */
++ (CALayer*)clipLayerForBounds:(CGRect)bounds withCornerRadius:(CGFloat)cornerRadius {
+    UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:bounds
+                                                  byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight|UIRectCornerBottomLeft|UIRectCornerBottomRight
+                                                        cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
     
-    CGContextSetBlendMode(context, kCGBlendModeNormal);
-    CGRect rect = CGRectMake(0, 0, size.width * scale, size.height * scale);
-    CGContextDrawImage(context, rect, image.CGImage);
-    
-    // Create gradient
-    
-    UIColor *colorOne = [colorsArr objectAtIndex:1]; // top color
-    UIColor *colorTwo = [colorsArr objectAtIndex:0]; // bottom color
-    
-    
-    NSArray *colors = [NSArray arrayWithObjects:(id)colorOne.CGColor, (id)colorTwo.CGColor, nil];
-    CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
-    CGGradientRef gradient = CGGradientCreateWithColors(space, (__bridge CFArrayRef)colors, NULL);
-    
-    // Apply gradient
-    
-    CGContextClipToMask(context, rect, image.CGImage);
-    CGContextDrawLinearGradient(context, gradient, CGPointMake(0,0), CGPointMake(0,size.height * scale), 0);
-    UIImage *gradientImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return gradientImage;
-}
-
-
-+ (UIImage *)image:(UIImage*)image clearRect:(CGRect)rect{
-    
-    if (UIGraphicsBeginImageContextWithOptions != NULL)
-        UIGraphicsBeginImageContextWithOptions([image size], NO, 0.0);
-    else
-        UIGraphicsBeginImageContext([image size]);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    [image drawInRect:CGRectMake(0.0, 0.0, [image size].width, [image size].height)];
-    CGContextClearRect(context, rect);
-    
-    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    return result;
+    CAShapeLayer* shape = [[CAShapeLayer alloc] init];
+    [shape setPath:rounded.CGPath];
+    return shape;
 }
 
 + (UIImage*)image:(UIImage*)image clipWithRadius:(CGFloat)r {

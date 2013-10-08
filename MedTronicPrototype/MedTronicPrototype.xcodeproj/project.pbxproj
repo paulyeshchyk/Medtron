@@ -13,6 +13,12 @@
 		1D4E9C561802ACB900C59E53 /* NSBundle+Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4E9C551802ACB900C59E53 /* NSBundle+Localization.m */; };
 		1D4E9C591802CA3C00C59E53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D4E9C5B1802CA3C00C59E53 /* Localizable.strings */; };
 		1D6540C61802CEC6007F118B /* UITableViewCell+CustomLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6540C51802CEC6007F118B /* UITableViewCell+CustomLocalization.m */; };
+		1D6540E81803F000007F118B /* InitialPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6540E61803F000007F118B /* InitialPathViewController.m */; };
+		1D6540E91803F000007F118B /* InitialPathViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6540E71803F000007F118B /* InitialPathViewController.xib */; };
+		1D6540EE1804124C007F118B /* SensorsSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6540EC1804124C007F118B /* SensorsSelectorViewController.m */; };
+		1D6540EF1804124C007F118B /* SensorsSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6540ED1804124C007F118B /* SensorsSelectorViewController.xib */; };
+		1D6540F6180423B0007F118B /* InfusionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6540F4180423B0007F118B /* InfusionViewController.m */; };
+		1D6540F7180423B0007F118B /* InfusionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6540F5180423B0007F118B /* InfusionViewController.xib */; };
 		1D6DF91917F1BEBB003174C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6DF91817F1BEBB003174C8 /* Foundation.framework */; };
 		1D6DF91B17F1BEBB003174C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6DF91A17F1BEBB003174C8 /* CoreGraphics.framework */; };
 		1D6DF91D17F1BEBB003174C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6DF91C17F1BEBB003174C8 /* UIKit.framework */; };
@@ -204,6 +210,16 @@
 		1D6540BE1802CCFD007F118B /* jpn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = jpn; path = jpn.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D6540C41802CEC6007F118B /* UITableViewCell+CustomLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+CustomLocalization.h"; sourceTree = "<group>"; };
 		1D6540C51802CEC6007F118B /* UITableViewCell+CustomLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+CustomLocalization.m"; sourceTree = "<group>"; };
+		1D6540E51803F000007F118B /* InitialPathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialPathViewController.h; sourceTree = "<group>"; };
+		1D6540E61803F000007F118B /* InitialPathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialPathViewController.m; sourceTree = "<group>"; };
+		1D6540E71803F000007F118B /* InitialPathViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InitialPathViewController.xib; sourceTree = "<group>"; };
+		1D6540EB1804124C007F118B /* SensorsSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorsSelectorViewController.h; sourceTree = "<group>"; };
+		1D6540EC1804124C007F118B /* SensorsSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorsSelectorViewController.m; sourceTree = "<group>"; };
+		1D6540ED1804124C007F118B /* SensorsSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SensorsSelectorViewController.xib; sourceTree = "<group>"; };
+		1D6540F11804146E007F118B /* MedtronicCellProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MedtronicCellProtocols.h; sourceTree = "<group>"; };
+		1D6540F3180423B0007F118B /* InfusionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfusionViewController.h; sourceTree = "<group>"; };
+		1D6540F4180423B0007F118B /* InfusionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfusionViewController.m; sourceTree = "<group>"; };
+		1D6540F5180423B0007F118B /* InfusionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfusionViewController.xib; sourceTree = "<group>"; };
 		1D6DF91517F1BEBB003174C8 /* MedTronicPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedTronicPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6DF91817F1BEBB003174C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6DF91A17F1BEBB003174C8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -430,6 +446,37 @@
 			path = UITableViewCell;
 			sourceTree = "<group>";
 		};
+		1D6540E41803EFF1007F118B /* initialPathViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1D6540E51803F000007F118B /* InitialPathViewController.h */,
+				1D6540E61803F000007F118B /* InitialPathViewController.m */,
+				1D6540E71803F000007F118B /* InitialPathViewController.xib */,
+			);
+			path = initialPathViewController;
+			sourceTree = "<group>";
+		};
+		1D6540EA1804123A007F118B /* sensorsSelectorController */ = {
+			isa = PBXGroup;
+			children = (
+				1D6540EB1804124C007F118B /* SensorsSelectorViewController.h */,
+				1D6540EC1804124C007F118B /* SensorsSelectorViewController.m */,
+				1D6540ED1804124C007F118B /* SensorsSelectorViewController.xib */,
+			);
+			name = sensorsSelectorController;
+			path = MedTronicPrototype/appControllers/sensorsSelectorController;
+			sourceTree = SOURCE_ROOT;
+		};
+		1D6540F21804239A007F118B /* infusionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1D6540F3180423B0007F118B /* InfusionViewController.h */,
+				1D6540F4180423B0007F118B /* InfusionViewController.m */,
+				1D6540F5180423B0007F118B /* InfusionViewController.xib */,
+			);
+			path = infusionViewController;
+			sourceTree = "<group>";
+		};
 		1D6DF90C17F1BEBB003174C8 = {
 			isa = PBXGroup;
 			children = (
@@ -601,7 +648,9 @@
 		E940B2EF18003630007645F3 /* appControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E940B41E18035BEB007645F3 /* initialPathController */,
+				1D6540EA1804123A007F118B /* sensorsSelectorController */,
+				1D6540F21804239A007F118B /* infusionViewController */,
+				1D6540E41803EFF1007F118B /* initialPathViewController */,
 				E940B39A1801DD00007645F3 /* settingsController */,
 				E940B35118016CB7007645F3 /* shareController */,
 				E940B33518008166007645F3 /* nodataAvailableController */,
@@ -877,6 +926,7 @@
 				E940B3A81801DF20007645F3 /* VideoTutorialCell */,
 				E940B41B180348EB007645F3 /* CellAccessorsFabric.h */,
 				E940B41C180348EB007645F3 /* CellAccessorsFabric.m */,
+				1D6540F11804146E007F118B /* MedtronicCellProtocols.h */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -988,13 +1038,6 @@
 				E940B3F91801EEB0007645F3 /* SensorTypeDependenceDataProvider.m */,
 			);
 			path = SensorTypeDependenceDataProvider;
-			sourceTree = "<group>";
-		};
-		E940B41E18035BEB007645F3 /* initialPathController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = initialPathController;
 			sourceTree = "<group>";
 		};
 		E9D7CE5817F20D12006FB178 /* resources */ = {
@@ -1143,6 +1186,7 @@
 				E940B3CE1801E016007645F3 /* TextCell.xib in Resources */,
 				E940B36318016F89007645F3 /* stub02.jpg in Resources */,
 				E940B3461800AF32007645F3 /* myOrderButton.png in Resources */,
+				1D6540EF1804124C007F118B /* SensorsSelectorViewController.xib in Resources */,
 				E940B3481800AF32007645F3 /* SetingsButton.png in Resources */,
 				E940B31718003762007645F3 /* TermsAndConditionsViewController.xib in Resources */,
 				E940B3841801AE90007645F3 /* ActionsViewController.xib in Resources */,
@@ -1171,6 +1215,7 @@
 				E940B34F18015D53007645F3 /* BarButtonBack.png in Resources */,
 				E940B3DF1801EB9B007645F3 /* Plus.png in Resources */,
 				E9D7CE6717F20D5E006FB178 /* Home.png in Resources */,
+				1D6540E91803F000007F118B /* InitialPathViewController.xib in Resources */,
 				E940B3CB1801E001007645F3 /* SwitchCell.xib in Resources */,
 				E940B2F51800371A007645F3 /* TabContainerBlogController.xib in Resources */,
 				E9D7CE6017F20D12006FB178 /* Order.png in Resources */,
@@ -1186,6 +1231,7 @@
 				E940B31C18003814007645F3 /* BlogDescriptionViewController.xib in Resources */,
 				E940B36518016F89007645F3 /* stub03.jpg in Resources */,
 				E940B34C18015CE7007645F3 /* BarButtonShare.png in Resources */,
+				1D6540F7180423B0007F118B /* InfusionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1254,8 +1300,10 @@
 				E940B2E11800344A007645F3 /* TabContainerHelpController.m in Sources */,
 				E940B2F41800371A007645F3 /* TabContainerBlogController.m in Sources */,
 				E940B3BB1801DF8A007645F3 /* TextCell.m in Sources */,
+				1D6540F6180423B0007F118B /* InfusionViewController.m in Sources */,
 				E940B3FE1801EEC0007645F3 /* SensorTypeDataProvider.m in Sources */,
 				E940B33918008187007645F3 /* NodataAvailableController.m in Sources */,
+				1D6540EE1804124C007F118B /* SensorsSelectorViewController.m in Sources */,
 				E9D7CE8217F21CE8006FB178 /* ApplicationCommandOpenHelpTab.m in Sources */,
 				E940B32A18005D5E007645F3 /* UIViewControllerWithContext.m in Sources */,
 				1D4E9C561802ACB900C59E53 /* NSBundle+Localization.m in Sources */,
@@ -1283,6 +1331,7 @@
 				E940B3BF1801DF9B007645F3 /* VideoTutorialCell.m in Sources */,
 				E940B370180175B6007645F3 /* UIAppearanceManager.m in Sources */,
 				1D6DF95417F1C048003174C8 /* HomeViewController.m in Sources */,
+				1D6540E81803F000007F118B /* InitialPathViewController.m in Sources */,
 				1D4E9C521802ABE200C59E53 /* NSObject+IMP.m in Sources */,
 				E9D7CE7E17F21CDE006FB178 /* ApplicationCommandOpenMyOrderTab.m in Sources */,
 				E940B2DB18003401007645F3 /* TabContainerAlertsController.m in Sources */,

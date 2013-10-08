@@ -18,6 +18,9 @@
 @end
 
 @implementation CheckboxCell
+@synthesize tableView;
+@synthesize name;
+@synthesize checked;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -50,16 +53,15 @@
     // Configure the view for the selected state
 }
 
-- (void)setChecked:(BOOL)checked {
-    _checked = checked;
-    UIView* accessor = _checked?accessorOn_:accessorOff_;
+- (void)setChecked:(BOOL)achecked {
+    checked = achecked;
+    UIView* accessor = checked?accessorOn_:accessorOff_;
     [accessor setFrame:CGRectMake(0,0,28,28)];
     self.accessoryView = accessor;
-
 }
 
-- (void)setName:(NSString *)name {
-    _name = name;
+- (void)setName:(NSString *)aname {
+    name = aname;
     labelName.text = name;
 }
 
@@ -71,10 +73,10 @@
     
     NSSet *touches = [event allTouches];
     UITouch *touch = [touches anyObject];
-    CGPoint currentTouchPosition = [touch locationInView:_tableView];
-    NSIndexPath *indexPath = [_tableView indexPathForRowAtPoint: currentTouchPosition];
+    CGPoint currentTouchPosition = [touch locationInView:tableView];
+    NSIndexPath *indexPath = [tableView indexPathForRowAtPoint: currentTouchPosition];
     
-    [_tableView.delegate tableView:_tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
+    [tableView.delegate tableView:tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
 }
 
 
@@ -83,10 +85,10 @@
     
     NSSet *touches = [event allTouches];
     UITouch *touch = [touches anyObject];
-    CGPoint currentTouchPosition = [touch locationInView:_tableView];
-    NSIndexPath *indexPath = [_tableView indexPathForRowAtPoint: currentTouchPosition];
+    CGPoint currentTouchPosition = [touch locationInView:tableView];
+    NSIndexPath *indexPath = [tableView indexPathForRowAtPoint: currentTouchPosition];
     
-    [_tableView.delegate tableView:_tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
+    [tableView.delegate tableView:tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
 }
 
 @end

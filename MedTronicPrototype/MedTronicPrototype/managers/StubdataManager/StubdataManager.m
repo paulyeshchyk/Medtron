@@ -21,10 +21,10 @@
 
     [self sensorExecution];
 
-    [self sensorConfigurationExecution];
 }
 
 + (void)sensorExecution {
+    
     NSManagedObjectID* sensorType1ID = [[SensorTypeDataProvider sharedInstance] addSensorTypeName:@"My Pump"];
     NSManagedObjectID* sensorType2ID = [[SensorTypeDataProvider sharedInstance] addSensorTypeName:@"My Sensor"];
     NSManagedObjectID* sensorType3ID = [[SensorTypeDataProvider sharedInstance] addSensorTypeName:@"My Infusion Set"];
@@ -42,10 +42,6 @@
     [[SensorConfigurationDataProvider sharedInstance] addConfigurationWithSensorID:sensor2ID andSensorTypeID:sensorType2ID];
     [[SensorConfigurationDataProvider sharedInstance] addConfigurationWithSensorID:sensor3ID andSensorTypeID:sensorType3ID];
 
-
-}
-
-+ (void)sensorConfigurationExecution {
 
 }
 

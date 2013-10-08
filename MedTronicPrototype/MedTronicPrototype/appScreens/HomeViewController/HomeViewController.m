@@ -10,6 +10,7 @@
 #import "TermsAndConditionsViewController.h"
 #import "UserStandardDefaultsManager.h"
 #import "StubdataManager.h"
+#import "InitialPathViewController.h"
 
 @interface HomeViewController () <UITabBarControllerDelegate>{
     NSDictionary* args_;
@@ -33,6 +34,8 @@
     args_ = nil;
     [self.tabBarController.tabBar setHidden:YES];
     [self.navigationController setNavigationBarHidden:YES];
+    [InitialPathViewController newInstanceInsideNavigationController:self.navigationController pushWithCloseBlock:^(id sender) {
+        
     
     [TermsAndConditionsViewController navigationController:self.navigationController askUserToAcceptText:^(id sender, BOOL accepted, BOOL wasFirstTime) {
 
@@ -42,9 +45,16 @@
             [viewToOpen setFrame:self.view.bounds];
 
             if (wasFirstTime){
+                
                 [StubdataManager performExecution];
+
+                
             }
         }
+    }];
+
+    
+    
     }];
     
 }

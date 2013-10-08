@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface UIImageUtils : NSObject
-+ (UIImage*)image:(UIImage*)image tintedWithLinearGradientColors:(NSArray *)colorsArr scale:(CGFloat)scale size:(CGSize)size;
-+ (UIImage*)image:(UIImage*)image clearRect:(CGRect)rect;
 + (UIImage*)image:(UIImage*)image clipWithRadius:(CGFloat)r;
 + (UIImage*)image:(UIImage*)image clipWithTransparentRect:(CGRect)rect;
 + (CALayer*)gradientLayerWithColors:(UIColor *)color;
 + (CALayer*)lightningBottomLayerForBounds:(CGRect)bounds;
++ (CALayer*)clipLayerForBounds:(CGRect)bounds withCornerRadius:(CGFloat)cornerRadius;
 @end
