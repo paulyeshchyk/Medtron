@@ -13,5 +13,6 @@
 @property (nonatomic, assign)BOOL checked;
 @property (nonatomic, strong)NSString* name;
 @property (nonatomic, strong)UITableView* tableView;
+@property (nonatomic, assign)BOOL isMultiSelectAllowed;
 
 @end

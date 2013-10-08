@@ -39,7 +39,7 @@ static InfusionConfigurationDataProvider *sharedInstance_ = nil;
     [delegate provider:self didFinishExecuteFetchWithResult:result andError:error userInfo:userInfo];
 }
 
-- (id)addConfigurationWithInfusionID:(NSManagedObjectID*)infusionID{
+- (id)switchConfigurationStateForInfusionID:(NSManagedObjectID*)infusionID{
     InfusionConfigurationEntity* result = nil;
     
     NSError* error = nil;
@@ -50,7 +50,7 @@ static InfusionConfigurationDataProvider *sharedInstance_ = nil;
     
     if ([resultArray count] != 0){
         result = [resultArray lastObject];
-        result.infusion = [self anyObjectByObjectId:infusionID];
+        [self removeObject:result];
     } else {
         
         result = [self newEntity];

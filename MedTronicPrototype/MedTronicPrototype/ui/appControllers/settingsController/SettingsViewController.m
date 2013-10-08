@@ -8,9 +8,12 @@
 
 #import "SettingsViewController.h"
 #import "SensorsSelectorViewController.h"
+#import "InfusionSelectorViewController.h"
 
 @interface SettingsViewController () {
     IBOutlet SensorsSelectorViewController* sensorSelectorViewController_;
+    IBOutlet InfusionSelectorViewController* infusionSelectorViewController_;
+    IBOutlet UIScrollView* scrollView_;
 }
 
 @end
@@ -29,9 +32,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view addSubview:sensorSelectorViewController_.view];
-    [sensorSelectorViewController_.view setFrame:self.view.bounds];
-    [sensorSelectorViewController_.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
+    CGSize sensorViewSize = [sensorSelectorViewController_.view sizeThatFits:CGSizeMake(CGRectGetWidth(scrollView_.bounds),20000)];
+    CGSize infusionViewSize = [infusionSelectorViewController_.view sizeThatFits:CGSizeMake(CGRectGetWidth(scrollView_.bounds),20000)];
+    [scrollView_ addSubview:sensorSelectorViewController_.view];
+    [sensorSelectorViewController_.view setFrame:CGRectMake(0,0,sensorViewSize.width,sensorViewSize.height)];
+    [scrollView_ addSubview:infusionSelectorViewController_.view];
+    [infusionSelectorViewController_.view setFrame:CGRectMake(0,sensorViewSize.height,infusionViewSize.width,infusionViewSize.height)];
+    [scrollView_ setContentSize:CGSizeMake(CGRectGetWidth(scrollView_.bounds),CGRectGetMaxY(infusionSelectorViewController_.view.frame))];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

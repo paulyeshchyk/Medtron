@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InfusionSelectorViewController : UIViewController
+@interface InfusionSelectorViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

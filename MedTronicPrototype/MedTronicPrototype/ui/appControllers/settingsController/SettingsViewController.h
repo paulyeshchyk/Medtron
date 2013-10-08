@@ -8,6 +8,6 @@
 
 #import "UIViewControllerWithContext.h"
 
-@interface SettingsViewController : UIViewControllerWithContext 
+@interface SettingsViewController : UIViewControllerWithContext <UIScrollViewDelegate>
 
 @end

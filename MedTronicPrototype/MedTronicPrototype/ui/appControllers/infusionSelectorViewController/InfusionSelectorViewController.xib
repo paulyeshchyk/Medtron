@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfusionSelectorViewController">
             <connections>
+                <outlet property="tableView_" destination="hUb-91-22i" id="HnU-ge-9qu"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -14,7 +15,24 @@
         <view contentMode="scaleToFill" id="1">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hUb-91-22i">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Quz-eY-AfM"/>
+                        <outlet property="delegate" destination="-1" id="IrD-za-Lwd"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hUb-91-22i" secondAttribute="trailing" id="4Qm-jx-6Xc"/>
+                <constraint firstItem="hUb-91-22i" firstAttribute="top" secondItem="1" secondAttribute="top" id="K1a-A7-NSO"/>
+                <constraint firstAttribute="bottom" secondItem="hUb-91-22i" secondAttribute="bottom" id="iaM-tK-s3W"/>
+                <constraint firstItem="hUb-91-22i" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="wgw-dU-oyz"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

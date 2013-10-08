@@ -21,6 +21,7 @@
 @synthesize tableView;
 @synthesize name;
 @synthesize checked;
+@synthesize isMultiSelectAllowed;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -35,13 +36,14 @@
     [super awakeFromNib];
     
     //assume, that cell with checkState==YES can't change its checkState;
-    accessorOn_ = [CellAccessorsFabric accessorSolidCheckmarkOnWithTarget:nil action:nil];
+    accessorOn_ = [CellAccessorsFabric accessorSolidCheckmarkOnWithTarget:self action:@selector(accessorOnTapped:withEvent:)];
     accessorOff_ = [CellAccessorsFabric accessorSolidCheckmarkOffWithTarget:self action:@selector(accessorOffTapped:withEvent:)];
 
     self.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 
     self.name = @"";
     self.checked = NO;
+    self.isMultiSelectAllowed = NO;
 }
 
 
@@ -69,14 +71,17 @@
 
 - (void)accessorOnTapped:(UIControl*)button withEvent:(UIEvent*)event {
     
-    self.checked = !self.checked;
+    if (isMultiSelectAllowed){
     
-    NSSet *touches = [event allTouches];
-    UITouch *touch = [touches anyObject];
-    CGPoint currentTouchPosition = [touch locationInView:tableView];
-    NSIndexPath *indexPath = [tableView indexPathForRowAtPoint: currentTouchPosition];
-    
-    [tableView.delegate tableView:tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
+        self.checked = !self.checked;
+        
+        NSSet *touches = [event allTouches];
+        UITouch *touch = [touches anyObject];
+        CGPoint currentTouchPosition = [touch locationInView:tableView];
+        NSIndexPath *indexPath = [tableView indexPathForRowAtPoint: currentTouchPosition];
+        
+        [tableView.delegate tableView:tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
+    }
 }
 
 
