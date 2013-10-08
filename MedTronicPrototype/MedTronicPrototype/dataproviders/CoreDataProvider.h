@@ -19,6 +19,8 @@
 - (NSArray*)itemsForPredicate:(NSPredicate*)predicate userInfo:(id)userInfo  properties:(NSArray*)properties error:(NSError**)error;
 - (id)objectByObjectId:(NSManagedObjectID*)objectId;
 - (id)anyObjectByObjectId:(NSManagedObjectID*)objectId;
+- (void)removeObjectByID:(NSManagedObjectID*)objectId;
+- (void)removeObject:(NSManagedObject*)object;
 @end
 
 @interface NSFetchRequest(UserInfo)

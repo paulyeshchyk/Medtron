@@ -9,7 +9,7 @@
 #import "InitialPathViewController.h"
 #import "UIImageUtils.h"
 #import "SensorsSelectorViewController.h"
-#import "InfusionViewController.h"
+#import "InfusionSelectorViewController.h"
 
 @interface InitialPathViewController () <UIScrollViewDelegate>{
     IBOutlet UIView* container_;
@@ -19,7 +19,7 @@
     IBOutlet UIView* infusionDescriptionView_;
     IBOutlet UIView* infusionView_;
     IBOutlet SensorsSelectorViewController* sensorsSelectorViewController_;
-    IBOutlet InfusionViewController* infusionViewController_;
+    IBOutlet InfusionSelectorViewController* infusionViewController_;
 }
 @end
 

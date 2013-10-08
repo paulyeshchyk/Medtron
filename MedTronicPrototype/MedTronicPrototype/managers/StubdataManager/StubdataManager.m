@@ -12,15 +12,20 @@
 #import "SensorDataProvider.h"
 #import "SensorTypeDataProvider.h"
 #import "SensorTypeDependenceDataProvider.h"
+#import "InfusionDataProvider.h"
+#import "InfusionConfigurationDataProvider.h"
 
 
 @implementation StubdataManager
 
 + (void)performExecution {
+
     [self blogStubExecution];
 
     [self sensorExecution];
-
+    
+    [self infusionExecution];
+    
 }
 
 + (void)sensorExecution {
@@ -66,6 +71,25 @@
     [[BlogDataProvider sharedInstance] addBlogWithHeadline:@"Lorem113" body:@"ipsum113" author:@"dolores113" image:UIImageJPEGRepresentation ([UIImage imageNamed:@"stub03.jpg"],1.0f)];
     [[BlogDataProvider sharedInstance] addBlogWithHeadline:@"Lorem114" body:@"ipsum114" author:@"dolores114" image:UIImageJPEGRepresentation ([UIImage imageNamed:@"stub04.jpg"],1.0f)];
     [[BlogDataProvider sharedInstance] addBlogWithHeadline:@"Lorem115" body:@"ipsum115" author:@"dolores115" image:UIImageJPEGRepresentation ([UIImage imageNamed:@"stub05.jpg"],1.0f)];
+}
+
++ (void)infusionExecution {
+    NSManagedObjectID* infusionID = nil;
+    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"my Infusion Set"];
+    [[InfusionConfigurationDataProvider sharedInstance] switchConfigurationStateForInfusionID:infusionID];
+
+    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Using the Bolus Wizard® Feature"];
+    [[InfusionConfigurationDataProvider sharedInstance] switchConfigurationStateForInfusionID:infusionID];
+
+    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Inserting The Sensor"];
+
+    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Programming a Single Basal Rate"];
+    
+    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Setting Temporary Basal Rates"];
+    [[InfusionConfigurationDataProvider sharedInstance] switchConfigurationStateForInfusionID:infusionID];
+    
+    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Square Wave®"];
+    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Dual Wave®"];
 }
 
 @end

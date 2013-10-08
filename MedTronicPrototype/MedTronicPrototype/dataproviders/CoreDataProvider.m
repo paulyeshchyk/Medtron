@@ -81,6 +81,13 @@
 - (id)anyObjectByObjectId:(NSManagedObjectID*)objectId {
     return [self.context objectWithID:objectId];
 }
+- (void)removeObject:(NSManagedObject*)object {
+    [[self context] deleteObject:object];
+}
+
+- (void)removeObjectByID:(NSManagedObjectID*)objectId {
+    [self removeObject:[self anyObjectByObjectId:objectId]];
+}
 
 - (id)objectByObjectId:(NSManagedObjectID*)objectId {
     NSEntityDescription* entity = [NSEntityDescription entityForName:self.entityName inManagedObjectContext:[self context]];

@@ -4,34 +4,44 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MedTronicPrototype/appControllers/initialPathViewController/InitialPathViewController.m"
-            timestampString = "402923924.450618"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MedTronicPrototype/ui/cells/CheckboxCell/CheckboxCell.m"
+            timestampString = "402936097.418954"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-accessorOffTapped:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MedTronicPrototype/cells/CheckboxCell/CheckboxCell.m"
-            timestampString = "402921768.486065"
+            filePath = "MedTronicPrototype/dataproviders/CoreDataProvider.m"
+            timestampString = "402936666.05901"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-setChecked:"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-removeObjectByID:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

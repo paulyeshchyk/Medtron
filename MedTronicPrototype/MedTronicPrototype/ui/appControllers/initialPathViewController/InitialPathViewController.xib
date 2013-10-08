@@ -115,7 +115,7 @@
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </viewController>
-        <viewController id="E49-SV-iL2" customClass="InfusionViewController">
+        <viewController id="E49-SV-iL2" customClass="InfusionSelectorViewController">
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

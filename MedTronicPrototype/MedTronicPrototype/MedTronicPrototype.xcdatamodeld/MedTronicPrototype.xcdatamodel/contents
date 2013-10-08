@@ -7,6 +7,14 @@
         <attribute name="headline" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
+    <entity name="InfusionConfigurationEntity" representedClassName="InfusionConfigurationEntity" syncable="YES">
+        <attribute name="checked" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="infusion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InfusionEntity" inverseName="configuraton" inverseEntity="InfusionEntity" syncable="YES"/>
+    </entity>
+    <entity name="InfusionEntity" representedClassName="InfusionEntity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="configuraton" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InfusionConfigurationEntity" inverseName="infusion" inverseEntity="InfusionConfigurationEntity" syncable="YES"/>
+    </entity>
     <entity name="SensorConfigurationEntity" representedClassName="SensorConfigurationEntity" syncable="YES">
         <relationship name="configurationSensor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SensorEntity" inverseName="configuration" inverseEntity="SensorEntity" syncable="YES"/>
         <relationship name="configurationSensorType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SensorTypeEntity" inverseName="configuration" inverseEntity="SensorTypeEntity" syncable="YES"/>
@@ -23,8 +31,10 @@
     </entity>
     <elements>
         <element name="BlogEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="InfusionEntity" positionX="0" positionY="0" width="0" height="0"/>
         <element name="SensorConfigurationEntity" positionX="0" positionY="0" width="0" height="0"/>
         <element name="SensorEntity" positionX="0" positionY="0" width="0" height="0"/>
         <element name="SensorTypeEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="InfusionConfigurationEntity" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

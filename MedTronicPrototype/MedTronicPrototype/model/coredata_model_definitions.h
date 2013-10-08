@@ -13,3 +13,5 @@ static NSString* const kEntitySensor = @"SensorEntity";
 static NSString* const kEntitySensorType = @"SensorTypeEntity";
 static NSString* const kEntitySensorTypeDependence = @"SensonTypeDependenceEntity";
 static NSString* const kEntitySensorConfiguration = @"SensorConfigurationEntity";
+static NSString* const kEntityInfusion = @"InfusionEntity";
+static NSString* const kEntityInfusionConfiguration = @"InfusionConfigurationEntity";
