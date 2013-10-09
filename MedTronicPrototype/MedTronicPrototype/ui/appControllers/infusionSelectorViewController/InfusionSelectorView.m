@@ -33,6 +33,10 @@ static NSString* const kCellIdentifier = @"CheckboxCellId";
     
 }
 
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+}
+
 - (CGSize)sizeThatFits:(CGSize)size {
     CGSize tableViewSize = [self.tableView sizeThatFits:size];
     self.frame = CGRectMake(0,0,tableViewSize.width, tableViewSize.height);
@@ -48,7 +52,7 @@ static NSString* const kCellIdentifier = @"CheckboxCellId";
 - (void)tableView:(UITableView*)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath*)indexPath {
     // assume, that cell with checkState==YES can't change its checkState;
     
-    [self.datasource makeConfigurationForInfusionAtIndexPath:indexPath];
+    [self.datasource switchStateForInfusionAtIndexPath:indexPath];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
 }
 

@@ -16,8 +16,7 @@
 - (BOOL)isInfusionConfigured:(id)infusionID;
 - (BOOL)isInfusionConfiguredAtIndexPath:(NSIndexPath*)indexPath;
 - (id)datasetInfusionConfiguration;
-- (void)makeConfigurationForInfusion:(id)infusion;
-- (void)makeConfigurationForInfusionAtIndexPath:(NSIndexPath*)indexPath;
+- (void)switchStateForInfusionAtIndexPath:(NSIndexPath*)indexPath;
 @end
 
 @protocol InfusionSelectorViewProtocol <NSObject>

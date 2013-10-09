@@ -69,13 +69,13 @@
 
     [scrollView_ addSubview:pumpDescriptionView_];
     [pumpDescriptionView_ setFrame:scrollViewFrame];
-    [pumpDescriptionView_ setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
+//    [pumpDescriptionView_ setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
 
     CGSize pumpViewSize = [sensorsSelectorViewController_.view sizeThatFits:CGSizeMake(contentWidth,contentHeight)];
     [pumpView_ setFrame:CGRectMake(pumpView_.frame.origin.x, pumpView_.frame.origin.y,pumpViewSize.width, pumpViewSize.height)];
     [pumpView_ addSubview:sensorsSelectorViewController_.view];
     [sensorsSelectorViewController_.view setFrame:pumpView_.bounds];
-    [sensorsSelectorViewController_.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
+//    [sensorsSelectorViewController_.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
 
     scrollViewFrame = CGRectMake(0,CGRectGetMaxY(scrollViewFrame),pumpView_.bounds.size.width,pumpView_.bounds.size.height);
 

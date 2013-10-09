@@ -33,7 +33,7 @@
     [super viewDidLoad];
     [settingsViewControllerContainer_ addSubview:settingsViewController_.view];
     [settingsViewController_.view setFrame:settingsViewControllerContainer_.bounds];
-    [settingsViewController_.view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
+//    [settingsViewController_.view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
     // Do any additional setup after loading the view from its nib.
 }
 

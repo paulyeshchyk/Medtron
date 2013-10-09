@@ -12,5 +12,5 @@
 @interface InfusionConfigurationDataProvider : CoreDataProvider <DataProviderProtocol>
 + (InfusionConfigurationDataProvider*)sharedInstance;
 - (void)performLoadConfigurationWithFilter:(NSPredicate*)filter delegate:(id<DataProviderDelegate>)delegate userInfo:(id)userInfo;
-- (id)switchConfigurationStateForInfusionID:(NSManagedObjectID*)infusionID;
+- (id)switchStateForInfusionID:(NSManagedObjectID*)infusionID;
 @end

@@ -39,7 +39,7 @@ static InfusionConfigurationDataProvider *sharedInstance_ = nil;
     [delegate provider:self didFinishExecuteFetchWithResult:result andError:error userInfo:userInfo];
 }
 
-- (id)switchConfigurationStateForInfusionID:(NSManagedObjectID*)infusionID{
+- (id)switchStateForInfusionID:(NSManagedObjectID*)infusionID{
     InfusionConfigurationEntity* result = nil;
     
     NSError* error = nil;

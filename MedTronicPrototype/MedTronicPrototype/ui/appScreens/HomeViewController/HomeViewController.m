@@ -34,8 +34,7 @@
     args_ = nil;
     [self.tabBarController.tabBar setHidden:YES];
     [self.navigationController setNavigationBarHidden:YES];
-    [InitialPathViewController newInstanceInsideNavigationController:self.navigationController pushWithCloseBlock:^(id sender) {
-        
+    
     
     [TermsAndConditionsViewController navigationController:self.navigationController askUserToAcceptText:^(id sender, BOOL accepted, BOOL wasFirstTime) {
 
@@ -48,13 +47,10 @@
                 
                 [StubdataManager performExecution];
 
-                
+                [InitialPathViewController newInstanceInsideNavigationController:self.navigationController pushWithCloseBlock:^(id sender) {
+                }];
             }
         }
-    }];
-
-    
-    
     }];
     
 }

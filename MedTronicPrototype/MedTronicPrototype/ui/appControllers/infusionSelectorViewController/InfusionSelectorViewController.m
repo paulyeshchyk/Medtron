@@ -66,7 +66,7 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
 
 #pragma mark - DataProviderDelegate
 - (void)provider:(id)dataprovider didFinishExecuteFetchWithResult:(NSArray*)resultArray andError:(NSError*)error userInfo:(id)userInfo {
-    [resultset_ setObject:resultArray forKey:userInfo];
+    [resultset_ setObject:[NSMutableArray arrayWithArray:resultArray] forKey:userInfo];
     
     providersExecutionCount_++;
     if (providersExecutionCount_ == 2) {
@@ -75,6 +75,12 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
 }
 
 #pragma mark - InfusionSelectorViewDatasource
+- (void)replaceConfigurationAtIndexPath:(NSIndexPath*)indexPath withConfigurationID:(NSManagedObjectID*)infusionID {
+    InfusionConfigurationEntity* infusionConfiguration = [[InfusionConfigurationDataProvider sharedInstance] anyObjectByObjectId:infusionID];
+    NSMutableArray* dataset = [self datasetInfusionConfiguration];
+    [dataset replaceObjectAtIndex:indexPath.row withObject:infusionConfiguration];
+}
+
 - (id)datasetInfusion {
     return [resultset_ objectForKey:kDatasetNameInfusion];
 }
@@ -104,12 +110,9 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
 }
 
 
-- (void)makeConfigurationForInfusion:(id)infusion{
-    [[InfusionConfigurationDataProvider sharedInstance] switchConfigurationStateForInfusionID:[infusion objectID]];
-}
-
-- (void)makeConfigurationForInfusionAtIndexPath:(NSIndexPath*)indexPath {
+- (void)switchStateForInfusionAtIndexPath:(NSIndexPath*)indexPath {
     InfusionEntity* infusion = [self infusionAtIndexPath:indexPath];
-    [self makeConfigurationForInfusion:infusion];
+    NSManagedObjectID* infusionConfigurationID = [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:[infusion objectID]];
+    [self replaceConfigurationAtIndexPath:indexPath withConfigurationID:infusionConfigurationID];
 }
 @end

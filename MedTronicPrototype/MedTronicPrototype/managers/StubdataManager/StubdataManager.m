@@ -76,17 +76,17 @@
 + (void)infusionExecution {
     NSManagedObjectID* infusionID = nil;
     infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"my Infusion Set"];
-    [[InfusionConfigurationDataProvider sharedInstance] switchConfigurationStateForInfusionID:infusionID];
+    [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:infusionID];
 
     infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Using the Bolus Wizard® Feature"];
-    [[InfusionConfigurationDataProvider sharedInstance] switchConfigurationStateForInfusionID:infusionID];
+    [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:infusionID];
 
     infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Inserting The Sensor"];
 
     infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Programming a Single Basal Rate"];
     
     infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Setting Temporary Basal Rates"];
-    [[InfusionConfigurationDataProvider sharedInstance] switchConfigurationStateForInfusionID:infusionID];
+    [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:infusionID];
     
     infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Square Wave®"];
     infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Dual Wave®"];
