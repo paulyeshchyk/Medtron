@@ -11,9 +11,12 @@
 @required
 - (id)sensorTypeAtIndex:(NSInteger)index;
 - (id)sensorAtIndexPath:(NSIndexPath*)indexPath;
-- (id)datasetSensorType;
-- (BOOL)isSensorConfigured:(id)sensorID;
-- (void)makeConfigurationForSensor:(id)sensor andSensorType:(id)sensorType;
+- (NSString*)sensorNameAtSection:(NSInteger)section andRow:(NSInteger)row;
+- (BOOL)isSensorConfiguredAtSection:(NSInteger)section andRow:(NSInteger)row;
+- (NSInteger)sensorTypeCount;
+- (NSString*)sensorTypeNameAtIndex:(NSInteger)index;
+- (void)addConfigurationForSection:(NSInteger)section andRow:(NSInteger)row;
+- (NSInteger)sensorsCountAtSection:(NSInteger)section;
 @end
 
 @protocol SensorSelectorViewProtocol <NSObject>

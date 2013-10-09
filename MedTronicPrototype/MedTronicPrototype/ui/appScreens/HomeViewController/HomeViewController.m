@@ -39,6 +39,9 @@
     [TermsAndConditionsViewController navigationController:self.navigationController askUserToAcceptText:^(id sender, BOOL accepted, BOOL wasFirstTime) {
 
         if (accepted) {
+
+            [InitialPathViewController newInstanceInsideNavigationController:self.navigationController pushWithCloseBlock:NULL];
+
             UIView* viewToOpen = self.tabBarController.view;
             [self.view addSubview:viewToOpen];
             [viewToOpen setFrame:self.view.bounds];
@@ -47,8 +50,6 @@
                 
                 [StubdataManager performExecution];
 
-                [InitialPathViewController newInstanceInsideNavigationController:self.navigationController pushWithCloseBlock:^(id sender) {
-                }];
             }
         }
     }];

@@ -49,8 +49,8 @@ static InfusionConfigurationDataProvider *sharedInstance_ = nil;
     NSCAssert(([resultArray count] <= 1), @"The only one configuration should be stored for pair of sensor and sensor type");
     
     if ([resultArray count] != 0){
-        result = [resultArray lastObject];
-        [self removeObject:result];
+        InfusionConfigurationEntity* removedObj = [resultArray lastObject];
+        [self removeObject:removedObj];
     } else {
         
         result = [self newEntity];

@@ -13,15 +13,17 @@
 #import "InfusionConfigurationDataProvider.h"
 #import "InfusionDataProvider.h"
 #import "InfusionSelectorViewProtocol.h"
+#import "MYMInfusionDataset.h"
+#import "MYMDatasetProtocol.h"
 
-static NSString* const kDatasetNameInfusion = @"kDatasetNameInfusion";
-static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusionConfiguration";
 
-@interface InfusionSelectorViewController () <DataProviderDelegate, InfusionSelectorViewDatasource>{
+@interface InfusionSelectorViewController () <MYMDatasetDelegate,InfusionSelectorViewDatasource>{
     NSArray* sensorTypes_;
     NSUInteger providersExecutionCount_;
     NSMutableDictionary* resultset_;
     UIView<InfusionSelectorViewProtocol>* infusionView_;
+    MYMInfusionDataset* dataset_;
+    
 }
 
 @end
@@ -40,10 +42,14 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     infusionView_ = (UIView<InfusionSelectorViewProtocol>*)self.view;
     infusionView_.datasource = self;
+
+    dataset_ = [MYMInfusionDataset new];
+    dataset_.delegate = self;
+    [dataset_ reloadData];
     
-    [self reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,67 +58,30 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark -
-- (void)reloadData {
-    resultset_ = [NSMutableDictionary new];
-    
-    providersExecutionCount_ = 0;
-    [[InfusionDataProvider sharedInstance] performLoadConfigurationWithFilter:nil delegate:self userInfo:kDatasetNameInfusion];
-    [[InfusionConfigurationDataProvider sharedInstance] performLoadConfigurationWithFilter:nil delegate:self userInfo:kDatasetNameInfusionConfiguration];
-    
+- (BOOL)isInfusionConfiguredAtSection:(NSInteger)section andRow:(NSInteger)row {
+    return [dataset_ isInfusionConfiguredAtSection:section andRow:row];
+}
+
+- (NSString*)infusionNameAtSection:(NSInteger)section andRow:(NSInteger)row {
+    return  [dataset_ infusionNameAtSection:section andRow:row];
+}
+
+
+- (NSInteger)numberOfRowsInSection:(NSInteger)section {
+    return [dataset_ numberOfRowsInSection:section];
+}
+
+- (void)switchStateForInfusionAtSection:(NSInteger)section andRow:(NSInteger)row {
+    [dataset_ switchStateForInfusionAtSection:section andRow:row];
+}
+
+- (void)willStartLoadDataset:(id<MYMDatasetProtocol>)dataset {
+
+}
+
+- (void)didEndLoadDataset:(id<MYMDatasetProtocol>)dataset {
     [infusionView_ reloadView];
 }
 
 
-#pragma mark - DataProviderDelegate
-- (void)provider:(id)dataprovider didFinishExecuteFetchWithResult:(NSArray*)resultArray andError:(NSError*)error userInfo:(id)userInfo {
-    [resultset_ setObject:[NSMutableArray arrayWithArray:resultArray] forKey:userInfo];
-    
-    providersExecutionCount_++;
-    if (providersExecutionCount_ == 2) {
-        [infusionView_ reloadView];
-    }
-}
-
-#pragma mark - InfusionSelectorViewDatasource
-- (void)replaceConfigurationAtIndexPath:(NSIndexPath*)indexPath withConfigurationID:(NSManagedObjectID*)infusionID {
-    InfusionConfigurationEntity* infusionConfiguration = [[InfusionConfigurationDataProvider sharedInstance] anyObjectByObjectId:infusionID];
-    NSMutableArray* dataset = [self datasetInfusionConfiguration];
-    [dataset replaceObjectAtIndex:indexPath.row withObject:infusionConfiguration];
-}
-
-- (id)datasetInfusion {
-    return [resultset_ objectForKey:kDatasetNameInfusion];
-}
-
-- (id)infusionAtIndexPath:(NSIndexPath*)indexPath {
-    return [self infusionAtIndex:indexPath.row];
-}
-
-- (id)infusionAtIndex:(NSInteger)index {
-    return [[self datasetInfusion] objectAtIndex:index];
-}
-
-- (BOOL)isInfusionConfigured:(id)infusionID {
-    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"infusion == %@",infusionID];
-    NSArray* configurations = [self datasetInfusionConfiguration];
-    NSArray* array = [configurations filteredArrayUsingPredicate:predicate];
-    return ([array count] != 0);
-}
-
-- (BOOL)isInfusionConfiguredAtIndexPath:(NSIndexPath*)indexPath {
-    InfusionEntity* infusion = [self infusionAtIndexPath:indexPath];
-    return [self isInfusionConfigured:infusion];
-}
-
-- (id)datasetInfusionConfiguration {
-    return [resultset_ objectForKey:kDatasetNameInfusionConfiguration];
-}
-
-
-- (void)switchStateForInfusionAtIndexPath:(NSIndexPath*)indexPath {
-    InfusionEntity* infusion = [self infusionAtIndexPath:indexPath];
-    NSManagedObjectID* infusionConfigurationID = [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:[infusion objectID]];
-    [self replaceConfigurationAtIndexPath:indexPath withConfigurationID:infusionConfigurationID];
-}
 @end

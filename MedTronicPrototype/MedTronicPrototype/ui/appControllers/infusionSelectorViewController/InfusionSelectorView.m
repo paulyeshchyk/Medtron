@@ -8,7 +8,7 @@
 
 #import "InfusionSelectorView.h"
 #import "MedtronicCellProtocols.h"
-#import "InfusionEntity.h"
+
 
 static NSString* const kCellIdentifier = @"CheckboxCellId";
 @interface InfusionSelectorView(){
@@ -50,9 +50,7 @@ static NSString* const kCellIdentifier = @"CheckboxCellId";
 }
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView*)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath*)indexPath {
-    // assume, that cell with checkState==YES can't change its checkState;
-    
-    [self.datasource switchStateForInfusionAtIndexPath:indexPath];
+    [self.datasource switchStateForInfusionAtSection:indexPath.section andRow:indexPath.row];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
 }
 
@@ -63,17 +61,18 @@ static NSString* const kCellIdentifier = @"CheckboxCellId";
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self.datasource datasetInfusion] count];
+    return [self.datasource numberOfRowsInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    InfusionEntity* infusion = [self.datasource infusionAtIndexPath:indexPath];
-    BOOL isConfigured = [self.datasource isInfusionConfigured:infusion];
+    
+    BOOL isConfigured = [self.datasource isInfusionConfiguredAtSection:indexPath.section andRow:indexPath.row];
+    NSString* infusionName = [self.datasource infusionNameAtSection:indexPath.section andRow:indexPath.row];
     
     UITableViewCell<CheckboxCellProtocol>* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     [cell setTableView:tableView];
     [cell setChecked:isConfigured];
-    [cell setName:infusion.name];
+    [cell setName:infusionName];
     [cell setIsMultiSelectAllowed:YES];
     return cell;
 }

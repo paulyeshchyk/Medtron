@@ -15,16 +15,15 @@
 #import "MedtronicCellProtocols.h"
 #import "SensorConfigurationComplexDataProvider.h"
 #import "SensorSelectorViewProtocol.h"
+#import "MYMSensorDataset.h"
 
-static NSString* const kDatasetNameSensorType = @"sensorType";
-static NSString* const kDatasetNameSensorConfiguration = @"sensorConfiguration";
-static NSString* const kDatasetNameSensor = @"sensor";
 
-@interface SensorsSelectorViewController ()  <DataProviderDelegate, SensorSelectorViewDatasource> {
+@interface SensorsSelectorViewController ()  <MYMDatasetDelegate, SensorSelectorViewDatasource> {
     NSArray* sensorTypes_;
     NSUInteger providersExecutionCount_;
     NSMutableDictionary* resultset_;
     UIView<SensorSelectorViewProtocol>* sensorSelectorView_;
+    MYMSensorDataset* dataset_;
 }
 
 @end
@@ -56,55 +55,51 @@ static NSString* const kDatasetNameSensor = @"sensor";
 - (void)reloadData {
     resultset_ = [NSMutableDictionary new];
     
-    providersExecutionCount_ = 0;
-    [[SensorTypeDataProvider sharedInstance] performLoadSensorTypesWithFilter:nil delegate:self userInfo:kDatasetNameSensorType];
-    [[SensorConfigurationDataProvider sharedInstance] performLoadConfigurationWithFilter:nil delegate:self userInfo:kDatasetNameSensorConfiguration];
+    dataset_ = [MYMSensorDataset new];
+    dataset_.delegate = self;
+    [dataset_ reloadData];
+    
+    
+}
 
+- (void)willStartLoadDataset:(MYMDataset*)dataset {
+    
+}
+
+- (void)didEndLoadDataset:(MYMDataset*)dataset {
     [sensorSelectorView_ reloadView];
 }
 
 
-
-
-#pragma mark - DataProviderDelegate
-- (void)provider:(id)dataprovider didFinishExecuteFetchWithResult:(NSArray*)resultArray andError:(NSError*)error userInfo:(id)userInfo {
-    [resultset_ setObject:resultArray forKey:userInfo];
-    
-    providersExecutionCount_++;
-    if (providersExecutionCount_ == 2) {
-         [sensorSelectorView_ reloadView];
-    }
+- (NSString*)sensorNameAtSection:(NSInteger)section andRow:(NSInteger)row {
+    return [dataset_ sensorNameAtSection:section andRow:row];
 }
 
-#pragma mark - datasets
-- (id)datasetSensorConfiguration {
-    return [resultset_ objectForKey:kDatasetNameSensorConfiguration];
+- (BOOL)isSensorConfiguredAtSection:(NSInteger)section andRow:(NSInteger)row {
+    return [dataset_ isSensorConfiguredAtSection:section andRow:row];
 }
 
-#pragma mark - SensorSelectorViewDatasource
-- (void)makeConfigurationForSensor:(id)sensor andSensorType:(id)sensorType {
-    [[SensorConfigurationDataProvider sharedInstance] addConfigurationWithSensorID:[sensor objectID] andSensorTypeID:[sensorType objectID]];
-}
-
-
-- (BOOL)isSensorConfigured:(id)sensorID {
-    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"configurationSensor == %@",sensorID];
-    NSArray* configurations = [self datasetSensorConfiguration];
-    NSArray* array = [configurations filteredArrayUsingPredicate:predicate];
-    return ([array count] != 0);
-}
-
-- (id)datasetSensorType {
-    return [resultset_ objectForKey:kDatasetNameSensorType];
-}
 
 - (id)sensorTypeAtIndex:(NSInteger)index {
-    return [[self datasetSensorType] objectAtIndex:index];
+    return [dataset_ sectionAtIndex:index];
 }
 
 - (id)sensorAtIndexPath:(NSIndexPath*)indexPath {
-    SensorTypeEntity* sensorType = [self sensorTypeAtIndex:indexPath.section];
-    return [[[sensorType sensors] allObjects] objectAtIndex:indexPath.row];
+    return [dataset_ sensorNameAtSection:indexPath.section andRow:indexPath.row];
+}
+
+- (NSInteger)sensorTypeCount {
+    return [dataset_ sectionsCount];
+}
+- (NSString*)sensorTypeNameAtIndex:(NSInteger)index {
+    return [dataset_ sectionAtIndex:index];
+}
+
+- (void)addConfigurationForSection:(NSInteger)section andRow:(NSInteger)row {
+    [dataset_ addConfigurationForSection:section andRow:row];
+}
+- (NSInteger)sensorsCountAtSection:(NSInteger)section {
+    return [dataset_ numberOfRowsInSection:section];
 }
 
 

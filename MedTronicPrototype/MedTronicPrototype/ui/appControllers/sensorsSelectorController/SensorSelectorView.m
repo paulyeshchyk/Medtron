@@ -44,35 +44,31 @@ static NSString* const kCellIdentifier = @"CheckboxCellId";
 
 #pragma mark - UITableViewDataSource
 - (NSString*)tableView:(UITableView*)tableView titleForHeaderInSection:(NSInteger)section {
-    id sensorType = [datasource sensorTypeAtIndex:section];
-    return [sensorType name];
+    return [datasource sensorTypeNameAtIndex:section];
 }
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
-    SensorTypeEntity* sensortypeentity = [datasource sensorTypeAtIndex:section];
-    return [[sensortypeentity.sensors allObjects] count];
+    return [datasource sensorsCountAtSection:section];
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
-    SensorEntity* sensor = [datasource sensorAtIndexPath:indexPath];
-    BOOL isConfigured = [datasource isSensorConfigured:sensor];
+    BOOL isConfigured = [datasource isSensorConfiguredAtSection:indexPath.section andRow:indexPath.row];
+    NSString* sensorName = [datasource sensorNameAtSection:indexPath.section andRow:indexPath.row];
     
     UITableViewCell<CheckboxCellProtocol>* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     [cell setTableView:tableView];
     [cell setChecked:isConfigured];
-    [cell setName:sensor.name];
+    [cell setName:sensorName];
     return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
-    return [[datasource datasetSensorType] count];
+    return [datasource sensorTypeCount];
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView*)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath*)indexPath {
-    SensorEntity* sensor = [datasource sensorAtIndexPath:indexPath];
-    SensorTypeEntity* sensorType = [datasource sensorTypeAtIndex:indexPath.section];
-    [datasource makeConfigurationForSensor:sensor andSensorType:sensorType];
+    [datasource addConfigurationForSection:indexPath.section andRow:indexPath.row];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
 }
 

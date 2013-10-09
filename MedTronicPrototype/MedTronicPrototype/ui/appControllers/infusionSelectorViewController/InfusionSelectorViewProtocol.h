@@ -10,13 +10,10 @@
 
 @protocol InfusionSelectorViewDatasource
 @required
-- (id)datasetInfusion;
-- (id)infusionAtIndexPath:(NSIndexPath*)indexPath;
-- (id)infusionAtIndex:(NSInteger)index;
-- (BOOL)isInfusionConfigured:(id)infusionID;
-- (BOOL)isInfusionConfiguredAtIndexPath:(NSIndexPath*)indexPath;
-- (id)datasetInfusionConfiguration;
-- (void)switchStateForInfusionAtIndexPath:(NSIndexPath*)indexPath;
+- (void)switchStateForInfusionAtSection:(NSInteger)section andRow:(NSInteger)row;
+- (NSInteger)numberOfRowsInSection:(NSInteger)section;
+- (BOOL)isInfusionConfiguredAtSection:(NSInteger)section andRow:(NSInteger)row;
+- (NSString*)infusionNameAtSection:(NSInteger)section andRow:(NSInteger)row;
 @end
 
 @protocol InfusionSelectorViewProtocol <NSObject>

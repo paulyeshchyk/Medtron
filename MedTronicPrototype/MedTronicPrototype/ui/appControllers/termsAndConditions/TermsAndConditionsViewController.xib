@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <objects>
@@ -14,14 +15,40 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-ad-h4e">
-                    <rect key="frame" x="193" y="258" width="47" height="21"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frZ-iM-34X">
+                    <rect key="frame" x="0.0" y="20" width="320" height="490"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NC4-si-9bA">
-                    <rect key="frame" x="29" y="373" width="49" height="30"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27q-3D-771">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="490"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eulaTermsText.png" translatesAutoresizingMaskIntoConstraints="NO" id="ye1-UL-eCX">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="3576"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="3576" id="8Ua-pJ-NZz"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="ye1-UL-eCX" firstAttribute="leading" secondItem="27q-3D-771" secondAttribute="leading" id="AIh-Su-2ZQ"/>
+                                <constraint firstItem="ye1-UL-eCX" firstAttribute="top" secondItem="27q-3D-771" secondAttribute="top" id="W2E-9q-yam"/>
+                                <constraint firstAttribute="trailing" secondItem="ye1-UL-eCX" secondAttribute="trailing" id="cD2-Tu-SwV"/>
+                                <constraint firstAttribute="bottom" secondItem="ye1-UL-eCX" secondAttribute="bottom" id="yJx-e5-uIY"/>
+                            </constraints>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="27q-3D-771" secondAttribute="bottom" id="Ihe-i7-Gug"/>
+                        <constraint firstItem="27q-3D-771" firstAttribute="top" secondItem="frZ-iM-34X" secondAttribute="top" id="Jtn-JI-jqN"/>
+                        <constraint firstItem="27q-3D-771" firstAttribute="leading" secondItem="frZ-iM-34X" secondAttribute="leading" id="QSH-TW-nAd"/>
+                        <constraint firstAttribute="trailing" secondItem="27q-3D-771" secondAttribute="trailing" id="r6w-E4-jcW"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NC4-si-9bA">
+                    <rect key="frame" x="68" y="524" width="49" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Accept">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,17 +57,31 @@
                         <action selector="onAcceptButtonClicked:" destination="-1" eventType="touchUpInside" id="q7l-zc-95B"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDa-Qw-h2H">
-                    <rect key="frame" x="167" y="373" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDa-Qw-h2H">
+                    <rect key="frame" x="206" y="524" width="52" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button">
+                    <state key="normal" title="Decline">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="frZ-iM-34X" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="0Gj-mT-SVS"/>
+                <constraint firstAttribute="trailing" secondItem="tDa-Qw-h2H" secondAttribute="trailing" constant="62" id="BPB-hn-CYE"/>
+                <constraint firstItem="NC4-si-9bA" firstAttribute="top" secondItem="frZ-iM-34X" secondAttribute="bottom" constant="14" id="BTa-VJ-jbZ"/>
+                <constraint firstItem="frZ-iM-34X" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" symbolic="YES" id="M60-3b-LE0"/>
+                <constraint firstAttribute="bottom" secondItem="NC4-si-9bA" secondAttribute="bottom" constant="14" id="QD8-dW-aL0"/>
+                <constraint firstAttribute="bottom" secondItem="tDa-Qw-h2H" secondAttribute="bottom" constant="14" id="cER-fD-nk0"/>
+                <constraint firstAttribute="trailing" secondItem="frZ-iM-34X" secondAttribute="trailing" id="dct-IX-EQX"/>
+                <constraint firstItem="NC4-si-9bA" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="68" id="h1s-kF-yE1"/>
+                <constraint firstItem="tDa-Qw-h2H" firstAttribute="leading" secondItem="NC4-si-9bA" secondAttribute="trailing" constant="89" id="r7F-iW-ATJ"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="eulaTermsText.png" width="320" height="3576"/>
+    </resources>
 </document>
