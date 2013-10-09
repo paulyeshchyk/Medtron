@@ -14,17 +14,17 @@
 #import "SensorEntity.h"
 #import "MedtronicCellProtocols.h"
 #import "SensorConfigurationComplexDataProvider.h"
+#import "SensorSelectorViewProtocol.h"
 
-static NSString* const kCellIdentifier = @"CheckboxCellId";
 static NSString* const kDatasetNameSensorType = @"sensorType";
 static NSString* const kDatasetNameSensorConfiguration = @"sensorConfiguration";
 static NSString* const kDatasetNameSensor = @"sensor";
 
-@interface SensorsSelectorViewController ()  <DataProviderDelegate> {
-    IBOutlet UITableView* tableView_;
+@interface SensorsSelectorViewController ()  <DataProviderDelegate, SensorSelectorViewDatasource> {
     NSArray* sensorTypes_;
     NSUInteger providersExecutionCount_;
     NSMutableDictionary* resultset_;
+    UIView<SensorSelectorViewProtocol>* sensorSelectorView_;
 }
 
 @end
@@ -41,10 +41,9 @@ static NSString* const kDatasetNameSensor = @"sensor";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    sensorSelectorView_ = (UIView<SensorSelectorViewProtocol>*)self.view;
+    sensorSelectorView_.datasource = self;
 
-    [tableView_ registerNib:[UINib nibWithNibName:@"CheckboxCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kCellIdentifier];
-    [tableView_ setDataSource:self];
-    [tableView_ setDelegate:self];
     [self reloadData];
 }
 
@@ -61,48 +60,10 @@ static NSString* const kDatasetNameSensor = @"sensor";
     [[SensorTypeDataProvider sharedInstance] performLoadSensorTypesWithFilter:nil delegate:self userInfo:kDatasetNameSensorType];
     [[SensorConfigurationDataProvider sharedInstance] performLoadConfigurationWithFilter:nil delegate:self userInfo:kDatasetNameSensorConfiguration];
 
-
-    [tableView_ reloadData];
+    [sensorSelectorView_ reloadView];
 }
 
-#pragma mark - UITableViewDataSource
-- (NSString*)tableView:(UITableView*)tableView titleForHeaderInSection:(NSInteger)section {
-    return [[self sensorTypeAtIndex:section] name];
-}
 
-- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
-    SensorTypeEntity* sensortypeentity = [self sensorTypeAtIndex:section];
-    return [[sensortypeentity.sensors allObjects] count];
-}
-
-- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
-    SensorEntity* sensor = [self sensorAtIndexPath:indexPath];
-    BOOL isConfigured = [self isSensorConfigured:sensor];
-
-    UITableViewCell<CheckboxCellProtocol>* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-    [cell setTableView:tableView];
-    [cell setChecked:isConfigured];
-    [cell setName:sensor.name];
-    return cell;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
-    return [[self datasetSensorType] count];
-}
-
-#pragma mark - UITableViewDelegate
-- (void)tableView:(UITableView*)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath*)indexPath {
-    // assume, that cell with checkState==YES can't change its checkState;
-
-    SensorEntity* sensor = [self sensorAtIndexPath:indexPath];
-    SensorTypeEntity* sensorType = [self sensorTypeAtIndex:indexPath.section];
-    [self makeConfigurationForSensor:sensor andSensorType:sensorType];
-    [tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
-}
-
-- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-}
 
 
 #pragma mark - DataProviderDelegate
@@ -111,7 +72,7 @@ static NSString* const kDatasetNameSensor = @"sensor";
     
     providersExecutionCount_++;
     if (providersExecutionCount_ == 2) {
-        [tableView_ reloadData];
+         [sensorSelectorView_ reloadView];
     }
 }
 
@@ -119,6 +80,12 @@ static NSString* const kDatasetNameSensor = @"sensor";
 - (id)datasetSensorConfiguration {
     return [resultset_ objectForKey:kDatasetNameSensorConfiguration];
 }
+
+#pragma mark - SensorSelectorViewDatasource
+- (void)makeConfigurationForSensor:(id)sensor andSensorType:(id)sensorType {
+    [[SensorConfigurationDataProvider sharedInstance] addConfigurationWithSensorID:[sensor objectID] andSensorTypeID:[sensorType objectID]];
+}
+
 
 - (BOOL)isSensorConfigured:(id)sensorID {
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"configurationSensor == %@",sensorID];
@@ -140,8 +107,5 @@ static NSString* const kDatasetNameSensor = @"sensor";
     return [[[sensorType sensors] allObjects] objectAtIndex:indexPath.row];
 }
 
-- (void)makeConfigurationForSensor:(id)sensor andSensorType:(id)sensorType {
-    [[SensorConfigurationDataProvider sharedInstance] addConfigurationWithSensorID:[sensor objectID] andSensorTypeID:[sensorType objectID]];
-}
 
 @end

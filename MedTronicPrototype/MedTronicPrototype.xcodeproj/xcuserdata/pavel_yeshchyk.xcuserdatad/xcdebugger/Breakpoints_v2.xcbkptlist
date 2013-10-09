@@ -16,32 +16,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MedTronicPrototype/ui/cells/CheckboxCell/CheckboxCell.m"
-            timestampString = "402936097.418954"
+            filePath = "MedTronicPrototype/ui/appControllers/sensorsSelectorController/SensorSelectorView.m"
+            timestampString = "402996265.264216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "-accessorOffTapped:withEvent:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MedTronicPrototype/dataproviders/CoreDataProvider.m"
-            timestampString = "402936666.05901"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "-removeObjectByID:"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "-sizeThatFits:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

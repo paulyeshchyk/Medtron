@@ -8,6 +8,6 @@
 
 #import "UIViewControllerWithContext.h"
 
-@interface SensorsSelectorViewController : UIViewControllerWithContext <UITableViewDataSource, UITableViewDelegate>
+@interface SensorsSelectorViewController : UIViewControllerWithContext
 
 @end

@@ -12,16 +12,16 @@
 #import "DataProviderProtocol.h"
 #import "InfusionConfigurationDataProvider.h"
 #import "InfusionDataProvider.h"
+#import "InfusionSelectorViewProtocol.h"
 
-static NSString* const kCellIdentifier = @"CheckboxCellId";
 static NSString* const kDatasetNameInfusion = @"kDatasetNameInfusion";
 static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusionConfiguration";
 
-@interface InfusionSelectorViewController () <DataProviderDelegate>{
+@interface InfusionSelectorViewController () <DataProviderDelegate, InfusionSelectorViewDatasource>{
     NSArray* sensorTypes_;
     NSUInteger providersExecutionCount_;
     NSMutableDictionary* resultset_;
-    IBOutlet UITableView* tableView_;
+    UIView<InfusionSelectorViewProtocol>* infusionView_;
 }
 
 @end
@@ -40,7 +40,9 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [tableView_ registerNib:[UINib nibWithNibName:@"CheckboxCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kCellIdentifier];
+    infusionView_ = (UIView<InfusionSelectorViewProtocol>*)self.view;
+    infusionView_.datasource = self;
+    
     [self reloadData];
 }
 
@@ -58,42 +60,9 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
     [[InfusionDataProvider sharedInstance] performLoadConfigurationWithFilter:nil delegate:self userInfo:kDatasetNameInfusion];
     [[InfusionConfigurationDataProvider sharedInstance] performLoadConfigurationWithFilter:nil delegate:self userInfo:kDatasetNameInfusionConfiguration];
     
-    
-    [tableView_ reloadData];
+    [infusionView_ reloadView];
 }
 
-#pragma mark - UITableViewDelegate
-- (void)tableView:(UITableView*)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath*)indexPath {
-    // assume, that cell with checkState==YES can't change its checkState;
-    
-    InfusionEntity* infusion = [self infusionAtIndexPath:indexPath];
-    
-    [[InfusionConfigurationDataProvider sharedInstance] switchConfigurationStateForInfusionID:[infusion objectID]];
-    
-    [tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
-}
-
-- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-}
-
-
-#pragma mark - UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self datasetInfusion] count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    InfusionEntity* infusion = [self infusionAtIndexPath:indexPath];
-    BOOL isConfigured = [self isInfusionConfigured:infusion];
-    
-    UITableViewCell<CheckboxCellProtocol>* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-    [cell setTableView:tableView];
-    [cell setChecked:isConfigured];
-    [cell setName:infusion.name];
-    [cell setIsMultiSelectAllowed:YES];
-    return cell;
-}
 
 #pragma mark - DataProviderDelegate
 - (void)provider:(id)dataprovider didFinishExecuteFetchWithResult:(NSArray*)resultArray andError:(NSError*)error userInfo:(id)userInfo {
@@ -101,13 +70,21 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
     
     providersExecutionCount_++;
     if (providersExecutionCount_ == 2) {
-        [tableView_ reloadData];
+        [infusionView_ reloadView];
     }
 }
 
-#pragma mark - datasets
-- (id)datasetInfusionConfiguration {
-    return [resultset_ objectForKey:kDatasetNameInfusionConfiguration];
+#pragma mark - InfusionSelectorViewDatasource
+- (id)datasetInfusion {
+    return [resultset_ objectForKey:kDatasetNameInfusion];
+}
+
+- (id)infusionAtIndexPath:(NSIndexPath*)indexPath {
+    return [self infusionAtIndex:indexPath.row];
+}
+
+- (id)infusionAtIndex:(NSInteger)index {
+    return [[self datasetInfusion] objectAtIndex:index];
 }
 
 - (BOOL)isInfusionConfigured:(id)infusionID {
@@ -117,20 +94,22 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
     return ([array count] != 0);
 }
 
-- (id)datasetInfusion {
-    return [resultset_ objectForKey:kDatasetNameInfusion];
+- (BOOL)isInfusionConfiguredAtIndexPath:(NSIndexPath*)indexPath {
+    InfusionEntity* infusion = [self infusionAtIndexPath:indexPath];
+    return [self isInfusionConfigured:infusion];
 }
 
-- (id)infusionAtIndex:(NSInteger)index {
-    return [[self datasetInfusion] objectAtIndex:index];
+- (id)datasetInfusionConfiguration {
+    return [resultset_ objectForKey:kDatasetNameInfusionConfiguration];
 }
 
-- (id)infusionAtIndexPath:(NSIndexPath*)indexPath {
-    return [self infusionAtIndex:indexPath.row];
-}
 
 - (void)makeConfigurationForInfusion:(id)infusion{
+    [[InfusionConfigurationDataProvider sharedInstance] switchConfigurationStateForInfusionID:[infusion objectID]];
 }
 
-
+- (void)makeConfigurationForInfusionAtIndexPath:(NSIndexPath*)indexPath {
+    InfusionEntity* infusion = [self infusionAtIndexPath:indexPath];
+    [self makeConfigurationForInfusion:infusion];
+}
 @end

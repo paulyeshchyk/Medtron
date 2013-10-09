@@ -59,42 +59,44 @@
     [super viewDidLoad];
     container_.layer.mask = [UIImageUtils clipLayerForBounds:container_.bounds withCornerRadius:5.0f];
     
-    CGRect subviewFrame = CGRectZero;
+    CGRect scrollViewFrame = CGRectZero;
     CGSize contentSize = CGSizeZero;
-    
-    contentSize = [pumpDescriptionView_ sizeThatFits:CGSizeMake(scrollView_.bounds.size.width,20000)];
-    
-    
-    subviewFrame = CGRectMake(0,CGRectGetMaxY(subviewFrame),contentSize.width,contentSize.height);
-    [scrollView_ setContentSize:CGSizeMake(0,CGRectGetMaxY(subviewFrame))];
+    CGFloat contentWidth = scrollView_.bounds.size.width;
+    CGFloat contentHeight = 20000;
+
+    contentSize = [pumpDescriptionView_ sizeThatFits:CGSizeMake(contentWidth,contentHeight)];
+    [scrollView_ setContentSize:CGSizeMake(contentWidth,CGRectGetMaxY(scrollViewFrame))];
+
     [scrollView_ addSubview:pumpDescriptionView_];
-    [pumpDescriptionView_ setFrame:subviewFrame];
+    [pumpDescriptionView_ setFrame:scrollViewFrame];
+    [pumpDescriptionView_ setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
 
-
-    CGSize sensorViewSize = [sensorsSelectorViewController_.view sizeThatFits:CGSizeMake(scrollView_.bounds.size.width,20000)];
+    CGSize pumpViewSize = [sensorsSelectorViewController_.view sizeThatFits:CGSizeMake(contentWidth,contentHeight)];
+    [pumpView_ setFrame:CGRectMake(pumpView_.frame.origin.x, pumpView_.frame.origin.y,pumpViewSize.width, pumpViewSize.height)];
     [pumpView_ addSubview:sensorsSelectorViewController_.view];
-//    [sensorsSelectorViewController_.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
-//    [pumpView_ sizeToFit];
+    [sensorsSelectorViewController_.view setFrame:pumpView_.bounds];
+    [sensorsSelectorViewController_.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
 
-    subviewFrame = CGRectMake(0,CGRectGetMaxY(subviewFrame),sensorViewSize.width,sensorViewSize.height);
-    [scrollView_ setContentSize:CGSizeMake(0,CGRectGetMaxY(subviewFrame))];
+    scrollViewFrame = CGRectMake(0,CGRectGetMaxY(scrollViewFrame),pumpView_.bounds.size.width,pumpView_.bounds.size.height);
+
+    [scrollView_ setContentSize:CGSizeMake(contentWidth,CGRectGetMaxY(scrollViewFrame))];
     [scrollView_ addSubview:pumpView_];
-    [pumpView_ setFrame:subviewFrame];
+    [pumpView_ setFrame:scrollViewFrame];
 
     [infusionDescriptionView_ sizeToFit];
-    subviewFrame = CGRectMake(0,CGRectGetMaxY(subviewFrame),CGRectGetWidth([infusionDescriptionView_ bounds]),CGRectGetHeight([infusionDescriptionView_ bounds]));
-    [scrollView_ setContentSize:CGSizeMake(0,CGRectGetMaxY(subviewFrame))];
+    scrollViewFrame = CGRectMake(0,CGRectGetMaxY(scrollViewFrame),CGRectGetWidth([infusionDescriptionView_ bounds]),CGRectGetHeight([infusionDescriptionView_ bounds]));
+    [scrollView_ setContentSize:CGSizeMake(contentWidth,CGRectGetMaxY(scrollViewFrame))];
     [scrollView_ addSubview:infusionDescriptionView_];
-    [infusionDescriptionView_ setFrame:subviewFrame];
+    [infusionDescriptionView_ setFrame:scrollViewFrame];
 
+    contentSize = [infusionViewController_.view sizeThatFits:CGSizeMake(contentWidth,contentHeight)];
+    [infusionView_ setFrame:CGRectMake(0,CGRectGetMaxY(infusionDescriptionView_.frame),contentSize.width,contentSize.height)];
     [infusionView_ addSubview:infusionViewController_.view];
-    [infusionViewController_.view setFrame:infusionView_.bounds];
-    [infusionViewController_.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
-    [infusionView_ sizeToFit];
-    subviewFrame = CGRectMake(0,CGRectGetMaxY(subviewFrame),CGRectGetWidth([infusionView_ bounds]),CGRectGetHeight([infusionView_ bounds]));
-    [scrollView_ setContentSize:CGSizeMake(0,CGRectGetMaxY(subviewFrame))];
+
+    scrollViewFrame = CGRectMake(0,CGRectGetMaxY(scrollViewFrame),CGRectGetWidth([infusionView_ bounds]),CGRectGetHeight([infusionView_ bounds]));
+    [scrollView_ setContentSize:CGSizeMake(contentWidth,CGRectGetMaxY(scrollViewFrame))];
     [scrollView_ addSubview:infusionView_];
-    [infusionView_ setFrame:subviewFrame];
+    [infusionView_ setFrame:scrollViewFrame];
 
     
     

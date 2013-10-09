@@ -66,6 +66,8 @@
 		1D6541AC18043F18007F118B /* SensorConfigurationComplexDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6541AB18043F18007F118B /* SensorConfigurationComplexDataProvider.m */; };
 		1D6541B118044A38007F118B /* InfusionSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6541AF18044A38007F118B /* InfusionSelectorViewController.m */; };
 		1D6541B218044A38007F118B /* InfusionSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6541B018044A38007F118B /* InfusionSelectorViewController.xib */; };
+		1D6541B518053284007F118B /* SensorSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6541B418053284007F118B /* SensorSelectorView.m */; };
+		1D6541BA18054841007F118B /* InfusionSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6541B918054841007F118B /* InfusionSelectorView.m */; };
 		1D6DF91917F1BEBB003174C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6DF91817F1BEBB003174C8 /* Foundation.framework */; };
 		1D6DF91B17F1BEBB003174C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6DF91A17F1BEBB003174C8 /* CoreGraphics.framework */; };
 		1D6DF91D17F1BEBB003174C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6DF91C17F1BEBB003174C8 /* UIKit.framework */; };
@@ -284,6 +286,12 @@
 		1D6541AE18044A38007F118B /* InfusionSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfusionSelectorViewController.h; sourceTree = "<group>"; };
 		1D6541AF18044A38007F118B /* InfusionSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfusionSelectorViewController.m; sourceTree = "<group>"; };
 		1D6541B018044A38007F118B /* InfusionSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfusionSelectorViewController.xib; sourceTree = "<group>"; };
+		1D6541B318053284007F118B /* SensorSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorSelectorView.h; sourceTree = "<group>"; };
+		1D6541B418053284007F118B /* SensorSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorSelectorView.m; sourceTree = "<group>"; };
+		1D6541B61805330A007F118B /* SensorSelectorViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensorSelectorViewProtocol.h; sourceTree = "<group>"; };
+		1D6541B7180547EC007F118B /* InfusionSelectorViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfusionSelectorViewProtocol.h; sourceTree = "<group>"; };
+		1D6541B818054841007F118B /* InfusionSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfusionSelectorView.h; sourceTree = "<group>"; };
+		1D6541B918054841007F118B /* InfusionSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfusionSelectorView.m; sourceTree = "<group>"; };
 		1D6DF91517F1BEBB003174C8 /* MedTronicPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedTronicPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6DF91817F1BEBB003174C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6DF91A17F1BEBB003174C8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -556,6 +564,9 @@
 				1D65412D180437F3007F118B /* SensorsSelectorViewController.h */,
 				1D65412E180437F3007F118B /* SensorsSelectorViewController.m */,
 				1D65412F180437F3007F118B /* SensorsSelectorViewController.xib */,
+				1D6541B318053284007F118B /* SensorSelectorView.h */,
+				1D6541B418053284007F118B /* SensorSelectorView.m */,
+				1D6541B61805330A007F118B /* SensorSelectorViewProtocol.h */,
 			);
 			path = sensorsSelectorController;
 			sourceTree = "<group>";
@@ -768,6 +779,9 @@
 				1D6541AE18044A38007F118B /* InfusionSelectorViewController.h */,
 				1D6541AF18044A38007F118B /* InfusionSelectorViewController.m */,
 				1D6541B018044A38007F118B /* InfusionSelectorViewController.xib */,
+				1D6541B7180547EC007F118B /* InfusionSelectorViewProtocol.h */,
+				1D6541B818054841007F118B /* InfusionSelectorView.h */,
+				1D6541B918054841007F118B /* InfusionSelectorView.m */,
 			);
 			path = infusionSelectorViewController;
 			sourceTree = "<group>";
@@ -1304,6 +1318,7 @@
 				1D654178180437F3007F118B /* ActionsViewController.m in Sources */,
 				E940B37A180195B1007645F3 /* StubdataManager.m in Sources */,
 				1D6DF92B17F1BEBB003174C8 /* AppDelegate.m in Sources */,
+				1D6541B518053284007F118B /* SensorSelectorView.m in Sources */,
 				1D654181180437F3007F118B /* InitialPathViewController.m in Sources */,
 				1D6DF92717F1BEBB003174C8 /* main.m in Sources */,
 				1D6541A5180437F3007F118B /* TextCell.m in Sources */,
@@ -1359,6 +1374,7 @@
 				1D6541AC18043F18007F118B /* SensorConfigurationComplexDataProvider.m in Sources */,
 				1D6540C61802CEC6007F118B /* UITableViewCell+CustomLocalization.m in Sources */,
 				E940B370180175B6007645F3 /* UIAppearanceManager.m in Sources */,
+				1D6541BA18054841007F118B /* InfusionSelectorView.m in Sources */,
 				1D65417D180437F3007F118B /* BlogHeadlineViewController.m in Sources */,
 				1D4E9C521802ABE200C59E53 /* NSObject+IMP.m in Sources */,
 				E9D7CE7E17F21CDE006FB178 /* ApplicationCommandOpenMyOrderTab.m in Sources */,

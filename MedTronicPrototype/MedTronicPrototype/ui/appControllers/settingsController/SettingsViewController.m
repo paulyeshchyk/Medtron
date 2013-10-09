@@ -32,13 +32,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     CGSize sensorViewSize = [sensorSelectorViewController_.view sizeThatFits:CGSizeMake(CGRectGetWidth(scrollView_.bounds),20000)];
-    CGSize infusionViewSize = [infusionSelectorViewController_.view sizeThatFits:CGSizeMake(CGRectGetWidth(scrollView_.bounds),20000)];
+    [scrollView_ setContentSize:CGSizeMake(CGRectGetWidth(scrollView_.bounds),sensorViewSize.height)];
     [scrollView_ addSubview:sensorSelectorViewController_.view];
     [sensorSelectorViewController_.view setFrame:CGRectMake(0,0,sensorViewSize.width,sensorViewSize.height)];
+
+    CGSize infusionViewSize = [infusionSelectorViewController_.view sizeThatFits:CGSizeMake(CGRectGetWidth(scrollView_.bounds),20000)];
+    [scrollView_ setContentSize:CGSizeMake(CGRectGetWidth(scrollView_.bounds),sensorViewSize.height+infusionViewSize.height)];
     [scrollView_ addSubview:infusionSelectorViewController_.view];
-    [infusionSelectorViewController_.view setFrame:CGRectMake(0,sensorViewSize.height,infusionViewSize.width,infusionViewSize.height)];
-    [scrollView_ setContentSize:CGSizeMake(CGRectGetWidth(scrollView_.bounds),CGRectGetMaxY(infusionSelectorViewController_.view.frame))];
+    [infusionSelectorViewController_.view setFrame:CGRectMake(0,CGRectGetMaxY(sensorSelectorViewController_.view.frame),infusionViewSize.width,infusionViewSize.height)];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
