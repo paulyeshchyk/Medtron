@@ -2,7 +2,7 @@
 //  SensorEntity.h
 //  MedTronicPrototype
 //
-//  Created by Pavel Yeshchyk on 10/7/13.
+//  Created by Pavel on 10/10/13.
 //  Copyright (c) 2013 Pavel Yeshchyk. All rights reserved.
 //
 
@@ -14,7 +14,7 @@
 @interface SensorEntity : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) SensorTypeEntity *sensortypes;
 @property (nonatomic, retain) SensorConfigurationEntity *configuration;
+@property (nonatomic, retain) SensorTypeEntity *sensortypes;
 
 @end

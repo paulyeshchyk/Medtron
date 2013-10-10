@@ -8,8 +8,13 @@
 
 #import "MYMDataset.h"
 
+@interface MYMDataset(){
+}
+@end;
+
 @implementation MYMDataset
 @synthesize delegate;
+
 
 - (void)willStartLoad {
     if ([self.delegate respondsToSelector:@selector(willStartLoadDataset:)]) {

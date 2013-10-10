@@ -14,6 +14,8 @@
 #import "SensorTypeDependenceDataProvider.h"
 #import "InfusionDataProvider.h"
 #import "InfusionConfigurationDataProvider.h"
+#import "MYMAlarmDataProvider.h"
+#import "MYMAlarmTypeDataProvider.h"
 
 
 @implementation StubdataManager
@@ -26,6 +28,60 @@
     
     [self infusionExecution];
     
+    [self alarmsExecution];
+    
+}
+
++ (void)alarmsExecution {
+    NSManagedObjectID* alarmType1ID = [[MYMAlarmTypeDataProvider sharedInstance] addAlarmTypeWithName:@"Pump Alarms"];
+    NSManagedObjectID* alarmType2ID = [[MYMAlarmTypeDataProvider sharedInstance] addAlarmTypeWithName:@"Sensor Alarms"];
+
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Low Batery" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Low Reservoir" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"A (Alarm)" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Auto Off" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Batt Out Limit" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Bolus Stopped" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Button Error" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Check Settings" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"E (Error)" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Empty Reservoir" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Failed Batt Test" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Finish Loading" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Is Priming Complete" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Max Delivery" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Max Fill Reached" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Motor Error" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"No Delivery" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"No Reservoir" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Off No Power" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Reset" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Weak Battery" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType1ID];
+    
+
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Alert Silence" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Bad Sensor" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Bad Transmtr" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Cal Error" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Change Sensor" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Charge Transmtr" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Fall Rate" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"High Predicted" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"High XXX MG/DL" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Lost Sensor" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Low Predicted" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Low Transmtr" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Low XXX MG/DL" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Meter BG By XX:XX" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Meter BG Now" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Rise Rate" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Sensor End" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Sensor Error" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+    [[MYMAlarmDataProvider sharedInstance] addAlarmWithName:@"Weak Signal" andExplanation:@"no explanation yet" andAlarmTypeID:alarmType2ID];
+
+    [[MYMAlarmTypeDataProvider sharedInstance] saveContext];
+    [[MYMAlarmDataProvider sharedInstance] saveContext];
+
 }
 
 + (void)sensorExecution {
@@ -33,7 +89,6 @@
     NSManagedObjectID* sensorType1ID = [[SensorTypeDataProvider sharedInstance] addSensorTypeName:@"My Pump"];
     NSManagedObjectID* sensorType2ID = [[SensorTypeDataProvider sharedInstance] addSensorTypeName:@"My Sensor"];
     NSManagedObjectID* sensorType3ID = [[SensorTypeDataProvider sharedInstance] addSensorTypeName:@"My Infusion Set"];
-    [[SensorTypeDataProvider sharedInstance] saveContext];
 
     id sensor1ID = [[SensorDataProvider sharedInstance] addSensorName:@"MiniMed Paradigm® Revel™" sensorType:sensorType1ID];
     [[SensorDataProvider sharedInstance] addSensorName:@"MiniMed 530G" sensorType:sensorType1ID];
@@ -43,11 +98,14 @@
     id sensor3ID = [[SensorDataProvider sharedInstance] addSensorName:@"Quick-set®" sensorType:sensorType3ID];
     [[SensorDataProvider sharedInstance] addSensorName:@"mio®" sensorType:sensorType3ID];
     [[SensorDataProvider sharedInstance] addSensorName:@"Sure-T®" sensorType:sensorType3ID];
-    [[SensorDataProvider sharedInstance] saveContext];
 
     [[SensorConfigurationDataProvider sharedInstance] addConfigurationWithSensorID:sensor1ID andSensorTypeID:sensorType1ID];
     [[SensorConfigurationDataProvider sharedInstance] addConfigurationWithSensorID:sensor2ID andSensorTypeID:sensorType2ID];
     [[SensorConfigurationDataProvider sharedInstance] addConfigurationWithSensorID:sensor3ID andSensorTypeID:sensorType3ID];
+
+    
+    [[SensorTypeDataProvider sharedInstance] saveContext];
+    [[SensorDataProvider sharedInstance] saveContext];
     [[SensorConfigurationDataProvider sharedInstance] saveContext];
 }
 
@@ -83,11 +141,12 @@
     NSManagedObjectID* infusionID5 = [[InfusionDataProvider sharedInstance] addInfusionName:@"Setting Temporary Basal Rates"];
     [[InfusionDataProvider sharedInstance] addInfusionName:@"Square Wave®"];
     [[InfusionDataProvider sharedInstance] addInfusionName:@"Dual Wave®"];
-    [[InfusionDataProvider sharedInstance] saveContext];
 
     [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:infusionID1];
     [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:infusionID2];
     [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:infusionID5];
+
+    [[InfusionDataProvider sharedInstance] saveContext];
     [[InfusionConfigurationDataProvider sharedInstance] saveContext];
 }
 

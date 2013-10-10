@@ -21,25 +21,18 @@ static SensorDataProvider *sharedInstance_ = nil;
     return sharedInstance_;
 }
 
-- (id)initWithContext:(NSManagedObjectContext*)context {
-    self = [super init];
-    if (self){
-    }
-    return self;
-}
-
 - (NSString*)entityName {
-    return kEntitySensor;
+    return kSensorEntity;
 }
 
 - (id)addSensorName:(NSString*)sensorName sensorType:(NSManagedObjectID*)sensorTypeId{
-    SensorEntity* sensorEntity = [self newEntity];
-    sensorEntity.name = sensorName;
+    SensorEntity* entity = [self newEntity];
+    entity.name = sensorName;
 
     id object = [self anyObjectByObjectId:sensorTypeId];
-    sensorEntity.sensortypes = object;
+    entity.sensortypes = object;
     
-    return [sensorEntity objectID];
+    return [entity objectID];
     
 }
 

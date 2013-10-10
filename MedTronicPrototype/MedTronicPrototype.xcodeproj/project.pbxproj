@@ -12,10 +12,8 @@
 		1D4E9C561802ACB900C59E53 /* NSBundle+Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4E9C551802ACB900C59E53 /* NSBundle+Localization.m */; };
 		1D4E9C591802CA3C00C59E53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D4E9C5B1802CA3C00C59E53 /* Localizable.strings */; };
 		1D6540C61802CEC6007F118B /* UITableViewCell+CustomLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6540C51802CEC6007F118B /* UITableViewCell+CustomLocalization.m */; };
-		1D6540FD1804323B007F118B /* InfusionEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6540FC1804323B007F118B /* InfusionEntity.m */; };
 		1D6541021804329E007F118B /* InfusionDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6541011804329E007F118B /* InfusionDataProvider.m */; };
 		1D654105180432B2007F118B /* InfusionConfigurationDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D654104180432B2007F118B /* InfusionConfigurationDataProvider.m */; };
-		1D65410B18043449007F118B /* InfusionConfigurationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D65410A18043449007F118B /* InfusionConfigurationEntity.m */; };
 		1D654178180437F3007F118B /* ActionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D654111180437F3007F118B /* ActionsViewController.m */; };
 		1D654179180437F3007F118B /* ActionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D654112180437F3007F118B /* ActionsViewController.xib */; };
 		1D65417A180437F3007F118B /* BlogDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D654117180437F3007F118B /* BlogDescriptionViewController.m */; };
@@ -132,12 +130,6 @@
 		E940B3DD1801EB9B007645F3 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = E940B3D71801EB9B007645F3 /* Delete.png */; };
 		E940B3DE1801EB9B007645F3 /* Download.png in Resources */ = {isa = PBXBuildFile; fileRef = E940B3D81801EB9B007645F3 /* Download.png */; };
 		E940B3DF1801EB9B007645F3 /* Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = E940B3D91801EB9B007645F3 /* Plus.png */; };
-		E940B3E21801EDB4007645F3 /* SensorEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B3E11801EDB4007645F3 /* SensorEntity.m */; };
-		E940B3E31801EDB4007645F3 /* SensorEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B3E11801EDB4007645F3 /* SensorEntity.m */; };
-		E940B3EA1801EDB5007645F3 /* SensorTypeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B3E91801EDB5007645F3 /* SensorTypeEntity.m */; };
-		E940B3EB1801EDB5007645F3 /* SensorTypeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B3E91801EDB5007645F3 /* SensorTypeEntity.m */; };
-		E940B3EE1801EDB5007645F3 /* BlogEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B3ED1801EDB5007645F3 /* BlogEntity.m */; };
-		E940B3EF1801EDB5007645F3 /* BlogEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B3ED1801EDB5007645F3 /* BlogEntity.m */; };
 		E940B3FA1801EEB0007645F3 /* SensorTypeDependenceDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B3F91801EEB0007645F3 /* SensorTypeDependenceDataProvider.m */; };
 		E940B3FB1801EEB0007645F3 /* SensorTypeDependenceDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B3F91801EEB0007645F3 /* SensorTypeDependenceDataProvider.m */; };
 		E940B3FE1801EEC0007645F3 /* SensorTypeDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B3FD1801EEC0007645F3 /* SensorTypeDataProvider.m */; };
@@ -146,7 +138,6 @@
 		E940B4031801EECF007645F3 /* SensorDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B4011801EECF007645F3 /* SensorDataProvider.m */; };
 		E940B4061801EEE2007645F3 /* SensorConfigurationDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B4051801EEE2007645F3 /* SensorConfigurationDataProvider.m */; };
 		E940B4071801EEE2007645F3 /* SensorConfigurationDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B4051801EEE2007645F3 /* SensorConfigurationDataProvider.m */; };
-		E940B41A18033806007645F3 /* SensorConfigurationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B41918033806007645F3 /* SensorConfigurationEntity.m */; };
 		E940B4241805E158007645F3 /* eulaApplicationText.png in Resources */ = {isa = PBXBuildFile; fileRef = E940B4201805E158007645F3 /* eulaApplicationText.png */; };
 		E940B4251805E158007645F3 /* eulaImportantText.png in Resources */ = {isa = PBXBuildFile; fileRef = E940B4211805E158007645F3 /* eulaImportantText.png */; };
 		E940B4261805E158007645F3 /* eulaNoticeText.png in Resources */ = {isa = PBXBuildFile; fileRef = E940B4221805E158007645F3 /* eulaNoticeText.png */; };
@@ -183,6 +174,43 @@
 		E9F815F518060E3500464220 /* MYMSensorDataset.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F815F418060E3500464220 /* MYMSensorDataset.m */; };
 		E9F815F818060E4E00464220 /* MYMSensorObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F815F718060E4E00464220 /* MYMSensorObject.m */; };
 		E9F815FB1806188E00464220 /* MYMSensorTypeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F815FA1806188E00464220 /* MYMSensorTypeObject.m */; };
+		E9F8160218072DF200464220 /* MYMAlertsSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F8160018072DF200464220 /* MYMAlertsSettingsViewController.m */; };
+		E9F8160318072DF200464220 /* MYMAlertsSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F8160118072DF200464220 /* MYMAlertsSettingsViewController.xib */; };
+		E9F8160718072E0400464220 /* MYMPumpSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F8160518072E0400464220 /* MYMPumpSettingsViewController.m */; };
+		E9F8160818072E0400464220 /* MYMPumpSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F8160618072E0400464220 /* MYMPumpSettingsViewController.xib */; };
+		E9F8160C1807303200464220 /* MYMAlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F8160A1807303200464220 /* MYMAlertsViewController.m */; };
+		E9F8160D1807303200464220 /* MYMAlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F8160B1807303200464220 /* MYMAlertsViewController.xib */; };
+		E9F816631807464800464220 /* PumpSettingsCategoriesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816621807464800464220 /* PumpSettingsCategoriesDataProvider.m */; };
+		E9F816661807465600464220 /* PumpSettingsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816651807465600464220 /* PumpSettingsDataProvider.m */; };
+		E9F816691807466500464220 /* PumpSettingTypesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816681807466500464220 /* PumpSettingTypesDataProvider.m */; };
+		E9F8166D1807468B00464220 /* RemindersDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F8166C1807468B00464220 /* RemindersDataProvider.m */; };
+		E9F816701807469700464220 /* RemindersTypeDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F8166F1807469700464220 /* RemindersTypeDataProvider.m */; };
+		E9F81673180746A400464220 /* CheckListDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F81672180746A400464220 /* CheckListDataProvider.m */; };
+		E9F816761807483000464220 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816751807483000464220 /* Reminder.m */; };
+		E9F816791807483000464220 /* SensorEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816781807483000464220 /* SensorEntity.m */; };
+		E9F8167C1807483100464220 /* PumpSettingType.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F8167B1807483100464220 /* PumpSettingType.m */; };
+		E9F8167F1807483100464220 /* PumpSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F8167E1807483100464220 /* PumpSetting.m */; };
+		E9F816821807483100464220 /* SensorConfigurationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816811807483100464220 /* SensorConfigurationEntity.m */; };
+		E9F816851807483100464220 /* PumpSettingCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816841807483100464220 /* PumpSettingCategory.m */; };
+		E9F816881807483100464220 /* SensorTypeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816871807483100464220 /* SensorTypeEntity.m */; };
+		E9F8168B1807483100464220 /* BlogEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F8168A1807483100464220 /* BlogEntity.m */; };
+		E9F8168E1807483100464220 /* InfusionEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F8168D1807483100464220 /* InfusionEntity.m */; };
+		E9F816911807483200464220 /* InfusionConfigurationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816901807483200464220 /* InfusionConfigurationEntity.m */; };
+		E9F816941807483200464220 /* ReminderType.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816931807483200464220 /* ReminderType.m */; };
+		E9F8169D180748B600464220 /* CheckListEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F8169C180748B600464220 /* CheckListEntity.m */; };
+		E9F816A518074ABF00464220 /* MYMPumpAndAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816A318074ABF00464220 /* MYMPumpAndAlarmViewController.m */; };
+		E9F816A618074ABF00464220 /* MYMPumpAndAlarmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F816A418074ABF00464220 /* MYMPumpAndAlarmViewController.xib */; };
+		E9F816AA18074ACB00464220 /* MYMTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816A818074ACB00464220 /* MYMTravelViewController.m */; };
+		E9F816AB18074ACB00464220 /* MYMTravelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F816A918074ACB00464220 /* MYMTravelViewController.xib */; };
+		E9F816AF18074ADA00464220 /* MYMVideoTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816AD18074ADA00464220 /* MYMVideoTutorialViewController.m */; };
+		E9F816B018074ADA00464220 /* MYMVideoTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F816AE18074ADA00464220 /* MYMVideoTutorialViewController.xib */; };
+		E9F816B2180750C500464220 /* stubBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9F816B1180750C500464220 /* stubBackground.jpg */; };
+		E9F816B61807587200464220 /* MYMPumpAndSensorAlarmsDataset.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816B51807587200464220 /* MYMPumpAndSensorAlarmsDataset.m */; };
+		E9F816C118075F9000464220 /* MYMAlarmDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816C018075F9000464220 /* MYMAlarmDataProvider.m */; };
+		E9F816C418075FA500464220 /* MYMAlarmTypeDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816C318075FA500464220 /* MYMAlarmTypeDataProvider.m */; };
+		E9F816C71807602400464220 /* AlarmTypeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816C61807602400464220 /* AlarmTypeEntity.m */; };
+		E9F816CA1807602500464220 /* AlarmEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816C91807602500464220 /* AlarmEntity.m */; };
+		E9F816CD18076A4500464220 /* MYMPumpAndSensorAlarmTypesDataset.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F816CC18076A4500464220 /* MYMPumpAndSensorAlarmTypesDataset.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,14 +235,10 @@
 		1D6540BE1802CCFD007F118B /* jpn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = jpn; path = jpn.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D6540C41802CEC6007F118B /* UITableViewCell+CustomLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+CustomLocalization.h"; sourceTree = "<group>"; };
 		1D6540C51802CEC6007F118B /* UITableViewCell+CustomLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+CustomLocalization.m"; sourceTree = "<group>"; };
-		1D6540FB1804323B007F118B /* InfusionEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfusionEntity.h; sourceTree = "<group>"; };
-		1D6540FC1804323B007F118B /* InfusionEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfusionEntity.m; sourceTree = "<group>"; };
 		1D6541001804329E007F118B /* InfusionDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfusionDataProvider.h; sourceTree = "<group>"; };
 		1D6541011804329E007F118B /* InfusionDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfusionDataProvider.m; sourceTree = "<group>"; };
 		1D654103180432B2007F118B /* InfusionConfigurationDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfusionConfigurationDataProvider.h; sourceTree = "<group>"; };
 		1D654104180432B2007F118B /* InfusionConfigurationDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfusionConfigurationDataProvider.m; sourceTree = "<group>"; };
-		1D65410918043449007F118B /* InfusionConfigurationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfusionConfigurationEntity.h; sourceTree = "<group>"; };
-		1D65410A18043449007F118B /* InfusionConfigurationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfusionConfigurationEntity.m; sourceTree = "<group>"; };
 		1D65410F180437F3007F118B /* ActionsViewConrollerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionsViewConrollerProtocol.h; sourceTree = "<group>"; };
 		1D654110180437F3007F118B /* ActionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionsViewController.h; sourceTree = "<group>"; };
 		1D654111180437F3007F118B /* ActionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionsViewController.m; sourceTree = "<group>"; };
@@ -278,7 +302,7 @@
 		1D654164180437F3007F118B /* CheckboxOptionalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckboxOptionalCell.h; sourceTree = "<group>"; };
 		1D654165180437F3007F118B /* CheckboxOptionalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckboxOptionalCell.m; sourceTree = "<group>"; };
 		1D654166180437F3007F118B /* CheckboxOptionalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckboxOptionalCell.xib; sourceTree = "<group>"; };
-		1D654167180437F3007F118B /* MedtronicCellProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedtronicCellProtocols.h; sourceTree = "<group>"; };
+		1D654167180437F3007F118B /* MYMCellProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMCellProtocols.h; sourceTree = "<group>"; };
 		1D654169180437F3007F118B /* ReminderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderCell.h; sourceTree = "<group>"; };
 		1D65416A180437F3007F118B /* ReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderCell.m; sourceTree = "<group>"; };
 		1D65416B180437F3007F118B /* ReminderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReminderCell.xib; sourceTree = "<group>"; };
@@ -360,12 +384,6 @@
 		E940B3D71801EB9B007645F3 /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Delete.png; sourceTree = "<group>"; };
 		E940B3D81801EB9B007645F3 /* Download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Download.png; sourceTree = "<group>"; };
 		E940B3D91801EB9B007645F3 /* Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plus.png; sourceTree = "<group>"; };
-		E940B3E01801EDB4007645F3 /* SensorEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorEntity.h; sourceTree = "<group>"; };
-		E940B3E11801EDB4007645F3 /* SensorEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorEntity.m; sourceTree = "<group>"; };
-		E940B3E81801EDB5007645F3 /* SensorTypeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorTypeEntity.h; sourceTree = "<group>"; };
-		E940B3E91801EDB5007645F3 /* SensorTypeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorTypeEntity.m; sourceTree = "<group>"; };
-		E940B3EC1801EDB5007645F3 /* BlogEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogEntity.h; sourceTree = "<group>"; };
-		E940B3ED1801EDB5007645F3 /* BlogEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogEntity.m; sourceTree = "<group>"; };
 		E940B3F81801EEB0007645F3 /* SensorTypeDependenceDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorTypeDependenceDataProvider.h; sourceTree = "<group>"; };
 		E940B3F91801EEB0007645F3 /* SensorTypeDependenceDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorTypeDependenceDataProvider.m; sourceTree = "<group>"; };
 		E940B3FC1801EEC0007645F3 /* SensorTypeDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorTypeDataProvider.h; sourceTree = "<group>"; };
@@ -374,8 +392,6 @@
 		E940B4011801EECF007645F3 /* SensorDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorDataProvider.m; sourceTree = "<group>"; };
 		E940B4041801EEE2007645F3 /* SensorConfigurationDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorConfigurationDataProvider.h; sourceTree = "<group>"; };
 		E940B4051801EEE2007645F3 /* SensorConfigurationDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorConfigurationDataProvider.m; sourceTree = "<group>"; };
-		E940B41818033806007645F3 /* SensorConfigurationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorConfigurationEntity.h; sourceTree = "<group>"; };
-		E940B41918033806007645F3 /* SensorConfigurationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorConfigurationEntity.m; sourceTree = "<group>"; };
 		E940B4201805E158007645F3 /* eulaApplicationText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eulaApplicationText.png; sourceTree = "<group>"; };
 		E940B4211805E158007645F3 /* eulaImportantText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eulaImportantText.png; sourceTree = "<group>"; };
 		E940B4221805E158007645F3 /* eulaNoticeText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eulaNoticeText.png; sourceTree = "<group>"; };
@@ -414,6 +430,73 @@
 		E9F815F718060E4E00464220 /* MYMSensorObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMSensorObject.m; sourceTree = "<group>"; };
 		E9F815F91806188E00464220 /* MYMSensorTypeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMSensorTypeObject.h; sourceTree = "<group>"; };
 		E9F815FA1806188E00464220 /* MYMSensorTypeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMSensorTypeObject.m; sourceTree = "<group>"; };
+		E9F815FF18072DF100464220 /* MYMAlertsSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMAlertsSettingsViewController.h; sourceTree = "<group>"; };
+		E9F8160018072DF200464220 /* MYMAlertsSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMAlertsSettingsViewController.m; sourceTree = "<group>"; };
+		E9F8160118072DF200464220 /* MYMAlertsSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYMAlertsSettingsViewController.xib; sourceTree = "<group>"; };
+		E9F8160418072E0400464220 /* MYMPumpSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMPumpSettingsViewController.h; sourceTree = "<group>"; };
+		E9F8160518072E0400464220 /* MYMPumpSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMPumpSettingsViewController.m; sourceTree = "<group>"; };
+		E9F8160618072E0400464220 /* MYMPumpSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYMPumpSettingsViewController.xib; sourceTree = "<group>"; };
+		E9F816091807303200464220 /* MYMAlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMAlertsViewController.h; sourceTree = "<group>"; };
+		E9F8160A1807303200464220 /* MYMAlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMAlertsViewController.m; sourceTree = "<group>"; };
+		E9F8160B1807303200464220 /* MYMAlertsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYMAlertsViewController.xib; sourceTree = "<group>"; };
+		E9F816611807464800464220 /* PumpSettingsCategoriesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PumpSettingsCategoriesDataProvider.h; sourceTree = "<group>"; };
+		E9F816621807464800464220 /* PumpSettingsCategoriesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PumpSettingsCategoriesDataProvider.m; sourceTree = "<group>"; };
+		E9F816641807465600464220 /* PumpSettingsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PumpSettingsDataProvider.h; sourceTree = "<group>"; };
+		E9F816651807465600464220 /* PumpSettingsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PumpSettingsDataProvider.m; sourceTree = "<group>"; };
+		E9F816671807466500464220 /* PumpSettingTypesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PumpSettingTypesDataProvider.h; sourceTree = "<group>"; };
+		E9F816681807466500464220 /* PumpSettingTypesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PumpSettingTypesDataProvider.m; sourceTree = "<group>"; };
+		E9F8166B1807468B00464220 /* RemindersDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindersDataProvider.h; sourceTree = "<group>"; };
+		E9F8166C1807468B00464220 /* RemindersDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindersDataProvider.m; sourceTree = "<group>"; };
+		E9F8166E1807469700464220 /* RemindersTypeDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindersTypeDataProvider.h; sourceTree = "<group>"; };
+		E9F8166F1807469700464220 /* RemindersTypeDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindersTypeDataProvider.m; sourceTree = "<group>"; };
+		E9F81671180746A400464220 /* CheckListDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckListDataProvider.h; sourceTree = "<group>"; };
+		E9F81672180746A400464220 /* CheckListDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckListDataProvider.m; sourceTree = "<group>"; };
+		E9F816741807483000464220 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
+		E9F816751807483000464220 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
+		E9F816771807483000464220 /* SensorEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorEntity.h; sourceTree = "<group>"; };
+		E9F816781807483000464220 /* SensorEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorEntity.m; sourceTree = "<group>"; };
+		E9F8167A1807483100464220 /* PumpSettingType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PumpSettingType.h; sourceTree = "<group>"; };
+		E9F8167B1807483100464220 /* PumpSettingType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PumpSettingType.m; sourceTree = "<group>"; };
+		E9F8167D1807483100464220 /* PumpSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PumpSetting.h; sourceTree = "<group>"; };
+		E9F8167E1807483100464220 /* PumpSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PumpSetting.m; sourceTree = "<group>"; };
+		E9F816801807483100464220 /* SensorConfigurationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorConfigurationEntity.h; sourceTree = "<group>"; };
+		E9F816811807483100464220 /* SensorConfigurationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorConfigurationEntity.m; sourceTree = "<group>"; };
+		E9F816831807483100464220 /* PumpSettingCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PumpSettingCategory.h; sourceTree = "<group>"; };
+		E9F816841807483100464220 /* PumpSettingCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PumpSettingCategory.m; sourceTree = "<group>"; };
+		E9F816861807483100464220 /* SensorTypeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorTypeEntity.h; sourceTree = "<group>"; };
+		E9F816871807483100464220 /* SensorTypeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorTypeEntity.m; sourceTree = "<group>"; };
+		E9F816891807483100464220 /* BlogEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogEntity.h; sourceTree = "<group>"; };
+		E9F8168A1807483100464220 /* BlogEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogEntity.m; sourceTree = "<group>"; };
+		E9F8168C1807483100464220 /* InfusionEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfusionEntity.h; sourceTree = "<group>"; };
+		E9F8168D1807483100464220 /* InfusionEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfusionEntity.m; sourceTree = "<group>"; };
+		E9F8168F1807483200464220 /* InfusionConfigurationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfusionConfigurationEntity.h; sourceTree = "<group>"; };
+		E9F816901807483200464220 /* InfusionConfigurationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfusionConfigurationEntity.m; sourceTree = "<group>"; };
+		E9F816921807483200464220 /* ReminderType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderType.h; sourceTree = "<group>"; };
+		E9F816931807483200464220 /* ReminderType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderType.m; sourceTree = "<group>"; };
+		E9F8169B180748B600464220 /* CheckListEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckListEntity.h; sourceTree = "<group>"; };
+		E9F8169C180748B600464220 /* CheckListEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckListEntity.m; sourceTree = "<group>"; };
+		E9F816A218074ABF00464220 /* MYMPumpAndAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMPumpAndAlarmViewController.h; sourceTree = "<group>"; };
+		E9F816A318074ABF00464220 /* MYMPumpAndAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMPumpAndAlarmViewController.m; sourceTree = "<group>"; };
+		E9F816A418074ABF00464220 /* MYMPumpAndAlarmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYMPumpAndAlarmViewController.xib; sourceTree = "<group>"; };
+		E9F816A718074ACB00464220 /* MYMTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMTravelViewController.h; sourceTree = "<group>"; };
+		E9F816A818074ACB00464220 /* MYMTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMTravelViewController.m; sourceTree = "<group>"; };
+		E9F816A918074ACB00464220 /* MYMTravelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYMTravelViewController.xib; sourceTree = "<group>"; };
+		E9F816AC18074ADA00464220 /* MYMVideoTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMVideoTutorialViewController.h; sourceTree = "<group>"; };
+		E9F816AD18074ADA00464220 /* MYMVideoTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMVideoTutorialViewController.m; sourceTree = "<group>"; };
+		E9F816AE18074ADA00464220 /* MYMVideoTutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYMVideoTutorialViewController.xib; sourceTree = "<group>"; };
+		E9F816B1180750C500464220 /* stubBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stubBackground.jpg; sourceTree = "<group>"; };
+		E9F816B41807587200464220 /* MYMPumpAndSensorAlarmsDataset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMPumpAndSensorAlarmsDataset.h; sourceTree = "<group>"; };
+		E9F816B51807587200464220 /* MYMPumpAndSensorAlarmsDataset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMPumpAndSensorAlarmsDataset.m; sourceTree = "<group>"; };
+		E9F816BF18075F9000464220 /* MYMAlarmDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMAlarmDataProvider.h; sourceTree = "<group>"; };
+		E9F816C018075F9000464220 /* MYMAlarmDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMAlarmDataProvider.m; sourceTree = "<group>"; };
+		E9F816C218075FA500464220 /* MYMAlarmTypeDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMAlarmTypeDataProvider.h; sourceTree = "<group>"; };
+		E9F816C318075FA500464220 /* MYMAlarmTypeDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMAlarmTypeDataProvider.m; sourceTree = "<group>"; };
+		E9F816C51807602400464220 /* AlarmTypeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmTypeEntity.h; sourceTree = "<group>"; };
+		E9F816C61807602400464220 /* AlarmTypeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTypeEntity.m; sourceTree = "<group>"; };
+		E9F816C81807602500464220 /* AlarmEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmEntity.h; sourceTree = "<group>"; };
+		E9F816C91807602500464220 /* AlarmEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmEntity.m; sourceTree = "<group>"; };
+		E9F816CB18076A4500464220 /* MYMPumpAndSensorAlarmTypesDataset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMPumpAndSensorAlarmTypesDataset.h; sourceTree = "<group>"; };
+		E9F816CC18076A4500464220 /* MYMPumpAndSensorAlarmTypesDataset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMPumpAndSensorAlarmTypesDataset.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -509,6 +592,8 @@
 		1D65410D180437F3007F118B /* appControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E9F8169E18074AA200464220 /* help */,
+				E9F815FC18072DD600464220 /* alerts */,
 				1D6541AD18044A38007F118B /* infusionSelectorViewController */,
 				1D65410E180437F3007F118B /* actions */,
 				1D654114180437F3007F118B /* blogs */,
@@ -722,7 +807,7 @@
 				1D65415E180437F3007F118B /* CellAccessorsFabric.m */,
 				1D65415F180437F3007F118B /* CheckboxCell */,
 				1D654163180437F3007F118B /* CheckboxOptionalCell */,
-				1D654167180437F3007F118B /* MedtronicCellProtocols.h */,
+				1D654167180437F3007F118B /* MYMCellProtocols.h */,
 				1D654168180437F3007F118B /* ReminderCell */,
 				1D65416C180437F3007F118B /* SwitchCell */,
 				1D654170180437F3007F118B /* TextCell */,
@@ -919,6 +1004,14 @@
 		E940B31D18004971007645F3 /* dataproviders */ = {
 			isa = PBXGroup;
 			children = (
+				E9F816BD18075F6F00464220 /* AlarmDataProvider */,
+				E9F816BE18075F6F00464220 /* AlarmTypeDataProvider */,
+				E9F8166A1807467D00464220 /* CheckListDataProvider */,
+				E9F816381807419000464220 /* PumpSettingsCategoriesDataProvider */,
+				E9F816391807419000464220 /* PumpSettingsDataProvider */,
+				E9F8163A1807419000464220 /* PumpSettingTypesDataProvider */,
+				E9F8163B1807419000464220 /* RemindersDataProvider */,
+				E9F8163C1807419000464220 /* RemindersTypeDataProvider */,
 				1D6541A918043F08007F118B /* SensorConfigurationComplexDataProvider */,
 				1D6540FE18043280007F118B /* InfusionConfigurationDataProvider */,
 				1D6540FF18043280007F118B /* InfusionDataProvider */,
@@ -946,18 +1039,34 @@
 		E940B31F180054C3007645F3 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				1D65410918043449007F118B /* InfusionConfigurationEntity.h */,
-				1D65410A18043449007F118B /* InfusionConfigurationEntity.m */,
-				1D6540FB1804323B007F118B /* InfusionEntity.h */,
-				1D6540FC1804323B007F118B /* InfusionEntity.m */,
-				E940B41818033806007645F3 /* SensorConfigurationEntity.h */,
-				E940B41918033806007645F3 /* SensorConfigurationEntity.m */,
-				E940B3EC1801EDB5007645F3 /* BlogEntity.h */,
-				E940B3ED1801EDB5007645F3 /* BlogEntity.m */,
-				E940B3E01801EDB4007645F3 /* SensorEntity.h */,
-				E940B3E11801EDB4007645F3 /* SensorEntity.m */,
-				E940B3E81801EDB5007645F3 /* SensorTypeEntity.h */,
-				E940B3E91801EDB5007645F3 /* SensorTypeEntity.m */,
+				E9F816C81807602500464220 /* AlarmEntity.h */,
+				E9F816C91807602500464220 /* AlarmEntity.m */,
+				E9F816C51807602400464220 /* AlarmTypeEntity.h */,
+				E9F816C61807602400464220 /* AlarmTypeEntity.m */,
+				E9F8169B180748B600464220 /* CheckListEntity.h */,
+				E9F8169C180748B600464220 /* CheckListEntity.m */,
+				E9F816921807483200464220 /* ReminderType.h */,
+				E9F816931807483200464220 /* ReminderType.m */,
+				E9F8168F1807483200464220 /* InfusionConfigurationEntity.h */,
+				E9F816901807483200464220 /* InfusionConfigurationEntity.m */,
+				E9F8168C1807483100464220 /* InfusionEntity.h */,
+				E9F8168D1807483100464220 /* InfusionEntity.m */,
+				E9F816891807483100464220 /* BlogEntity.h */,
+				E9F8168A1807483100464220 /* BlogEntity.m */,
+				E9F816861807483100464220 /* SensorTypeEntity.h */,
+				E9F816871807483100464220 /* SensorTypeEntity.m */,
+				E9F816831807483100464220 /* PumpSettingCategory.h */,
+				E9F816841807483100464220 /* PumpSettingCategory.m */,
+				E9F816801807483100464220 /* SensorConfigurationEntity.h */,
+				E9F816811807483100464220 /* SensorConfigurationEntity.m */,
+				E9F8167D1807483100464220 /* PumpSetting.h */,
+				E9F8167E1807483100464220 /* PumpSetting.m */,
+				E9F8167A1807483100464220 /* PumpSettingType.h */,
+				E9F8167B1807483100464220 /* PumpSettingType.m */,
+				E9F816771807483000464220 /* SensorEntity.h */,
+				E9F816781807483000464220 /* SensorEntity.m */,
+				E9F816741807483000464220 /* Reminder.h */,
+				E9F816751807483000464220 /* Reminder.m */,
 				E940B32618005588007645F3 /* coredata_model_definitions.h */,
 			);
 			path = model;
@@ -996,6 +1105,7 @@
 		E940B35A18016F89007645F3 /* stub */ = {
 			isa = PBXGroup;
 			children = (
+				E9F816B1180750C500464220 /* stubBackground.jpg */,
 				E940B35B18016F89007645F3 /* stub01.jpg */,
 				E940B35C18016F89007645F3 /* stub02.jpg */,
 				E940B35D18016F89007645F3 /* stub03.jpg */,
@@ -1126,6 +1236,7 @@
 		E940B4281805EE1E007645F3 /* datasets */ = {
 			isa = PBXGroup;
 			children = (
+				E9F816B31807585700464220 /* pumpAndSensorAlarmsDataset */,
 				E940B4291805EE1E007645F3 /* infusionDataset */,
 				E940B42A1805EE1E007645F3 /* sensorDataset */,
 				E940B42E1805EF96007645F3 /* MYMDatasetProtocol.h */,
@@ -1224,6 +1335,161 @@
 			path = ApplicationCommandManager;
 			sourceTree = "<group>";
 		};
+		E9F815FC18072DD600464220 /* alerts */ = {
+			isa = PBXGroup;
+			children = (
+				E9F815FD18072DD600464220 /* alertsSettings */,
+				E9F815FE18072DD600464220 /* pumpSettings */,
+				E9F816091807303200464220 /* MYMAlertsViewController.h */,
+				E9F8160A1807303200464220 /* MYMAlertsViewController.m */,
+				E9F8160B1807303200464220 /* MYMAlertsViewController.xib */,
+			);
+			path = alerts;
+			sourceTree = "<group>";
+		};
+		E9F815FD18072DD600464220 /* alertsSettings */ = {
+			isa = PBXGroup;
+			children = (
+				E9F815FF18072DF100464220 /* MYMAlertsSettingsViewController.h */,
+				E9F8160018072DF200464220 /* MYMAlertsSettingsViewController.m */,
+				E9F8160118072DF200464220 /* MYMAlertsSettingsViewController.xib */,
+			);
+			path = alertsSettings;
+			sourceTree = "<group>";
+		};
+		E9F815FE18072DD600464220 /* pumpSettings */ = {
+			isa = PBXGroup;
+			children = (
+				E9F8160418072E0400464220 /* MYMPumpSettingsViewController.h */,
+				E9F8160518072E0400464220 /* MYMPumpSettingsViewController.m */,
+				E9F8160618072E0400464220 /* MYMPumpSettingsViewController.xib */,
+			);
+			path = pumpSettings;
+			sourceTree = "<group>";
+		};
+		E9F816381807419000464220 /* PumpSettingsCategoriesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E9F816611807464800464220 /* PumpSettingsCategoriesDataProvider.h */,
+				E9F816621807464800464220 /* PumpSettingsCategoriesDataProvider.m */,
+			);
+			path = PumpSettingsCategoriesDataProvider;
+			sourceTree = "<group>";
+		};
+		E9F816391807419000464220 /* PumpSettingsDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E9F816641807465600464220 /* PumpSettingsDataProvider.h */,
+				E9F816651807465600464220 /* PumpSettingsDataProvider.m */,
+			);
+			path = PumpSettingsDataProvider;
+			sourceTree = "<group>";
+		};
+		E9F8163A1807419000464220 /* PumpSettingTypesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E9F816671807466500464220 /* PumpSettingTypesDataProvider.h */,
+				E9F816681807466500464220 /* PumpSettingTypesDataProvider.m */,
+			);
+			path = PumpSettingTypesDataProvider;
+			sourceTree = "<group>";
+		};
+		E9F8163B1807419000464220 /* RemindersDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E9F8166B1807468B00464220 /* RemindersDataProvider.h */,
+				E9F8166C1807468B00464220 /* RemindersDataProvider.m */,
+			);
+			path = RemindersDataProvider;
+			sourceTree = "<group>";
+		};
+		E9F8163C1807419000464220 /* RemindersTypeDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E9F8166E1807469700464220 /* RemindersTypeDataProvider.h */,
+				E9F8166F1807469700464220 /* RemindersTypeDataProvider.m */,
+			);
+			path = RemindersTypeDataProvider;
+			sourceTree = "<group>";
+		};
+		E9F8166A1807467D00464220 /* CheckListDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E9F81671180746A400464220 /* CheckListDataProvider.h */,
+				E9F81672180746A400464220 /* CheckListDataProvider.m */,
+			);
+			path = CheckListDataProvider;
+			sourceTree = "<group>";
+		};
+		E9F8169E18074AA200464220 /* help */ = {
+			isa = PBXGroup;
+			children = (
+				E9F8169F18074AA200464220 /* PumpAndAlarmViewController */,
+				E9F816A018074AA200464220 /* TravelViewController */,
+				E9F816A118074AA200464220 /* VideoTutorialViewController */,
+			);
+			path = help;
+			sourceTree = "<group>";
+		};
+		E9F8169F18074AA200464220 /* PumpAndAlarmViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E9F816A218074ABF00464220 /* MYMPumpAndAlarmViewController.h */,
+				E9F816A318074ABF00464220 /* MYMPumpAndAlarmViewController.m */,
+				E9F816A418074ABF00464220 /* MYMPumpAndAlarmViewController.xib */,
+			);
+			path = PumpAndAlarmViewController;
+			sourceTree = "<group>";
+		};
+		E9F816A018074AA200464220 /* TravelViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E9F816A718074ACB00464220 /* MYMTravelViewController.h */,
+				E9F816A818074ACB00464220 /* MYMTravelViewController.m */,
+				E9F816A918074ACB00464220 /* MYMTravelViewController.xib */,
+			);
+			path = TravelViewController;
+			sourceTree = "<group>";
+		};
+		E9F816A118074AA200464220 /* VideoTutorialViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E9F816AC18074ADA00464220 /* MYMVideoTutorialViewController.h */,
+				E9F816AD18074ADA00464220 /* MYMVideoTutorialViewController.m */,
+				E9F816AE18074ADA00464220 /* MYMVideoTutorialViewController.xib */,
+			);
+			path = VideoTutorialViewController;
+			sourceTree = "<group>";
+		};
+		E9F816B31807585700464220 /* pumpAndSensorAlarmsDataset */ = {
+			isa = PBXGroup;
+			children = (
+				E9F816B41807587200464220 /* MYMPumpAndSensorAlarmsDataset.h */,
+				E9F816B51807587200464220 /* MYMPumpAndSensorAlarmsDataset.m */,
+				E9F816CB18076A4500464220 /* MYMPumpAndSensorAlarmTypesDataset.h */,
+				E9F816CC18076A4500464220 /* MYMPumpAndSensorAlarmTypesDataset.m */,
+			);
+			path = pumpAndSensorAlarmsDataset;
+			sourceTree = "<group>";
+		};
+		E9F816BD18075F6F00464220 /* AlarmDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E9F816BF18075F9000464220 /* MYMAlarmDataProvider.h */,
+				E9F816C018075F9000464220 /* MYMAlarmDataProvider.m */,
+			);
+			path = AlarmDataProvider;
+			sourceTree = "<group>";
+		};
+		E9F816BE18075F6F00464220 /* AlarmTypeDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E9F816C218075FA500464220 /* MYMAlarmTypeDataProvider.h */,
+				E9F816C318075FA500464220 /* MYMAlarmTypeDataProvider.m */,
+			);
+			path = AlarmTypeDataProvider;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1306,12 +1572,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D65419E180437F3007F118B /* CheckboxCell.xib in Resources */,
+				E9F816B2180750C500464220 /* stubBackground.jpg in Resources */,
 				1D6541B218044A38007F118B /* InfusionSelectorViewController.xib in Resources */,
 				E9D7CE6217F20D12006FB178 /* Settings.png in Resources */,
 				E940B3421800AF31007645F3 /* ActionsButton.png in Resources */,
 				1D65418D180437F3007F118B /* HomeViewController.xib in Resources */,
 				E940B36318016F89007645F3 /* stub02.jpg in Resources */,
 				E940B4241805E158007645F3 /* eulaApplicationText.png in Resources */,
+				E9F8160D1807303200464220 /* MYMAlertsViewController.xib in Resources */,
 				1D6541A4180437F3007F118B /* SwitchCell.xib in Resources */,
 				E940B3461800AF32007645F3 /* myOrderButton.png in Resources */,
 				E940B3481800AF32007645F3 /* SetingsButton.png in Resources */,
@@ -1321,6 +1589,7 @@
 				1D4E9C591802CA3C00C59E53 /* Localizable.strings in Resources */,
 				E940B3DB1801EB9B007645F3 /* CheckBoxOn.png in Resources */,
 				E940B3441800AF32007645F3 /* HelpButton.png in Resources */,
+				E9F8160818072E0400464220 /* MYMPumpSettingsViewController.xib in Resources */,
 				1D65418F180437F3007F118B /* TabContainerAlertsController.xib in Resources */,
 				1D6DF93017F1BEBB003174C8 /* Images.xcassets in Resources */,
 				E9D7CE6917F20D5E006FB178 /* Blog.png in Resources */,
@@ -1335,11 +1604,13 @@
 				E940B3DE1801EB9B007645F3 /* Download.png in Resources */,
 				1D654199180437F3007F118B /* TabContainerOrderController.xib in Resources */,
 				E940B36718016F8A007645F3 /* stub04.jpg in Resources */,
+				E9F816B018074ADA00464220 /* MYMVideoTutorialViewController.xib in Resources */,
 				1D65418A180437F3007F118B /* TermsAndConditionsViewController.xib in Resources */,
 				E940B34F18015D53007645F3 /* BarButtonBack.png in Resources */,
 				E940B3DF1801EB9B007645F3 /* Plus.png in Resources */,
 				E9D7CE6717F20D5E006FB178 /* Home.png in Resources */,
 				1D65419B180437F3007F118B /* TabContainerSettingsController.xib in Resources */,
+				E9F816A618074ABF00464220 /* MYMPumpAndAlarmViewController.xib in Resources */,
 				1D654188180437F3007F118B /* SettingsViewController.xib in Resources */,
 				1D6541A6180437F3007F118B /* TextCell.xib in Resources */,
 				E940B4261805E158007645F3 /* eulaNoticeText.png in Resources */,
@@ -1355,8 +1626,10 @@
 				E940B36118016F89007645F3 /* stub01.jpg in Resources */,
 				1D65417B180437F3007F118B /* BlogDescriptionViewController.xib in Resources */,
 				E940B4271805E158007645F3 /* eulaTermsText.png in Resources */,
+				E9F8160318072DF200464220 /* MYMAlertsSettingsViewController.xib in Resources */,
 				E940B3DA1801EB9B007645F3 /* CheckBoxOff.png in Resources */,
 				E940B36918016F8A007645F3 /* stub05.jpg in Resources */,
+				E9F816AB18074ACB00464220 /* MYMTravelViewController.xib in Resources */,
 				E940B36518016F89007645F3 /* stub03.jpg in Resources */,
 				1D6541A0180437F3007F118B /* CheckboxOptionalCell.xib in Resources */,
 				E940B34C18015CE7007645F3 /* BarButtonShare.png in Resources */,
@@ -1398,27 +1671,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				E940B33318006D4B007645F3 /* CoreDataProvider.m in Sources */,
-				E940B3E21801EDB4007645F3 /* SensorEntity.m in Sources */,
 				1D654178180437F3007F118B /* ActionsViewController.m in Sources */,
 				E940B37A180195B1007645F3 /* StubdataManager.m in Sources */,
 				1D6DF92B17F1BEBB003174C8 /* AppDelegate.m in Sources */,
+				E9F816791807483000464220 /* SensorEntity.m in Sources */,
+				E9F816AF18074ADA00464220 /* MYMVideoTutorialViewController.m in Sources */,
 				1D6541B518053284007F118B /* SensorSelectorView.m in Sources */,
 				1D654181180437F3007F118B /* InitialPathViewController.m in Sources */,
 				1D6DF92717F1BEBB003174C8 /* main.m in Sources */,
+				E9F816A518074ABF00464220 /* MYMPumpAndAlarmViewController.m in Sources */,
 				1D6541A5180437F3007F118B /* TextCell.m in Sources */,
+				E9F81673180746A400464220 /* CheckListDataProvider.m in Sources */,
 				E9D7CE7117F218CC006FB178 /* ApplicationCommandsManager.m in Sources */,
 				E940B4061801EEE2007645F3 /* SensorConfigurationDataProvider.m in Sources */,
 				1D6541A3180437F3007F118B /* SwitchCell.m in Sources */,
 				E9F815F818060E4E00464220 /* MYMSensorObject.m in Sources */,
+				E9F816851807483100464220 /* PumpSettingCategory.m in Sources */,
 				1D654189180437F3007F118B /* TermsAndConditionsViewController.m in Sources */,
 				E940B3FA1801EEB0007645F3 /* SensorTypeDependenceDataProvider.m in Sources */,
 				1D65419A180437F3007F118B /* TabContainerSettingsController.m in Sources */,
 				1D654183180437F3007F118B /* NodataAvailableController.m in Sources */,
 				1D65419D180437F3007F118B /* CheckboxCell.m in Sources */,
 				1D654190180437F3007F118B /* TabContainerBlogController.m in Sources */,
-				E940B3EE1801EDB5007645F3 /* BlogEntity.m in Sources */,
+				E9F8169D180748B600464220 /* CheckListEntity.m in Sources */,
 				1D65417C180437F3007F118B /* BlogHeadlineView.m in Sources */,
-				1D65410B18043449007F118B /* InfusionConfigurationEntity.m in Sources */,
+				E9F8168E1807483100464220 /* InfusionEntity.m in Sources */,
+				E9F8160218072DF200464220 /* MYMAlertsSettingsViewController.m in Sources */,
+				E9F816661807465600464220 /* PumpSettingsDataProvider.m in Sources */,
+				E9F816CA1807602500464220 /* AlarmEntity.m in Sources */,
+				E9F816B61807587200464220 /* MYMPumpAndSensorAlarmsDataset.m in Sources */,
 				E9D7CE7A17F21CD3006FB178 /* ApplicationCommandOpenActionsTab.m in Sources */,
 				E940B375180178D0007645F3 /* UIImageUtils.m in Sources */,
 				E940B43418060004007645F3 /* MYMInfusionObject.m in Sources */,
@@ -1426,47 +1707,63 @@
 				E940B3FE1801EEC0007645F3 /* SensorTypeDataProvider.m in Sources */,
 				1D654187180437F3007F118B /* SettingsViewController.m in Sources */,
 				E9D7CE8217F21CE8006FB178 /* ApplicationCommandOpenHelpTab.m in Sources */,
+				E9F816881807483100464220 /* SensorTypeEntity.m in Sources */,
 				1D6541021804329E007F118B /* InfusionDataProvider.m in Sources */,
 				1D65419F180437F3007F118B /* CheckboxOptionalCell.m in Sources */,
 				E9F815FB1806188E00464220 /* MYMSensorTypeObject.m in Sources */,
 				1D4E9C561802ACB900C59E53 /* NSBundle+Localization.m in Sources */,
-				E940B41A18033806007645F3 /* SensorConfigurationEntity.m in Sources */,
 				E940B4021801EECF007645F3 /* SensorDataProvider.m in Sources */,
-				E940B3EA1801EDB5007645F3 /* SensorTypeEntity.m in Sources */,
 				1D65417A180437F3007F118B /* BlogDescriptionViewController.m in Sources */,
 				1D65418B180437F3007F118B /* UIViewControllerWithContext.m in Sources */,
 				E9F815F518060E3500464220 /* MYMSensorDataset.m in Sources */,
 				1D6DF92E17F1BEBB003174C8 /* MedTronicPrototype.xcdatamodeld in Sources */,
+				E9F8160C1807303200464220 /* MYMAlertsViewController.m in Sources */,
 				1D6541B118044A38007F118B /* InfusionSelectorViewController.m in Sources */,
 				E940B42D1805EE44007645F3 /* MYMInfusionDataset.m in Sources */,
+				E9F8160718072E0400464220 /* MYMPumpSettingsViewController.m in Sources */,
 				E9D7CE8617F21CF4006FB178 /* ApplicationCommandOpenSettingsTab.m in Sources */,
+				E9F816C418075FA500464220 /* MYMAlarmTypeDataProvider.m in Sources */,
 				E940B32E18006066007645F3 /* CoreDataManager.m in Sources */,
 				E940B4311805FBCC007645F3 /* MYMDataset.m in Sources */,
+				E9F8167F1807483100464220 /* PumpSetting.m in Sources */,
+				E9F816AA18074ACB00464220 /* MYMTravelViewController.m in Sources */,
 				1D654105180432B2007F118B /* InfusionConfigurationDataProvider.m in Sources */,
+				E9F8166D1807468B00464220 /* RemindersDataProvider.m in Sources */,
+				E9F8167C1807483100464220 /* PumpSettingType.m in Sources */,
 				1D654195180437F3007F118B /* TabContainerHomeController.m in Sources */,
+				E9F816C71807602400464220 /* AlarmTypeEntity.m in Sources */,
+				E9F816941807483200464220 /* ReminderType.m in Sources */,
+				E9F816701807469700464220 /* RemindersTypeDataProvider.m in Sources */,
 				1D654197180437F3007F118B /* TabContainerHomeView.m in Sources */,
 				1D65419C180437F3007F118B /* CellAccessorsFabric.m in Sources */,
 				1D6DF96017F1C74B003174C8 /* UserStandardDefaultsManager.m in Sources */,
 				1D65418E180437F3007F118B /* TabContainerAlertsController.m in Sources */,
 				E940B38F1801BE40007645F3 /* UIPageControl+CustomIndicatorSize.m in Sources */,
 				1D6541A7180437F3007F118B /* VideoTutorialCell.m in Sources */,
-				1D6540FD1804323B007F118B /* InfusionEntity.m in Sources */,
 				1D654192180437F3007F118B /* TabContainerBlogView.m in Sources */,
 				1D65418C180437F3007F118B /* HomeViewController.m in Sources */,
+				E9F8168B1807483100464220 /* BlogEntity.m in Sources */,
+				E9F816911807483200464220 /* InfusionConfigurationEntity.m in Sources */,
+				E9F816C118075F9000464220 /* MYMAlarmDataProvider.m in Sources */,
 				1D654185180437F3007F118B /* SensorsSelectorViewController.m in Sources */,
 				E9D7CE7617F2195D006FB178 /* ApplicationCommandOpenHomeTab.m in Sources */,
 				1D654198180437F3007F118B /* TabContainerOrderController.m in Sources */,
 				1D654193180437F3007F118B /* TabContainerHelpController.m in Sources */,
+				E9F816CD18076A4500464220 /* MYMPumpAndSensorAlarmTypesDataset.m in Sources */,
 				E9D7CE8A17F22074006FB178 /* ApplicationCommandOpenBlog.m in Sources */,
 				1D4E9C4E1802A9C700C59E53 /* UILabel+CustomLocalization.m in Sources */,
 				1D6541A1180437F3007F118B /* ReminderCell.m in Sources */,
 				E940B3981801DA61007645F3 /* DateFormatManager.m in Sources */,
 				1D6541AC18043F18007F118B /* SensorConfigurationComplexDataProvider.m in Sources */,
 				1D6540C61802CEC6007F118B /* UITableViewCell+CustomLocalization.m in Sources */,
+				E9F816631807464800464220 /* PumpSettingsCategoriesDataProvider.m in Sources */,
 				E940B370180175B6007645F3 /* UIAppearanceManager.m in Sources */,
 				1D6541BA18054841007F118B /* InfusionSelectorView.m in Sources */,
 				1D65417D180437F3007F118B /* BlogHeadlineViewController.m in Sources */,
+				E9F816691807466500464220 /* PumpSettingTypesDataProvider.m in Sources */,
 				1D4E9C521802ABE200C59E53 /* NSObject+IMP.m in Sources */,
+				E9F816761807483000464220 /* Reminder.m in Sources */,
+				E9F816821807483100464220 /* SensorConfigurationEntity.m in Sources */,
 				E9D7CE7E17F21CDE006FB178 /* ApplicationCommandOpenMyOrderTab.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1492,11 +1789,8 @@
 				E940B4031801EECF007645F3 /* SensorDataProvider.m in Sources */,
 				1D6DF94417F1BEBB003174C8 /* MedTronicPrototypeTests.m in Sources */,
 				E940B4071801EEE2007645F3 /* SensorConfigurationDataProvider.m in Sources */,
-				E940B3EF1801EDB5007645F3 /* BlogEntity.m in Sources */,
 				E940B371180175B6007645F3 /* UIAppearanceManager.m in Sources */,
 				E940B33418006D4B007645F3 /* CoreDataProvider.m in Sources */,
-				E940B3E31801EDB4007645F3 /* SensorEntity.m in Sources */,
-				E940B3EB1801EDB5007645F3 /* SensorTypeEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

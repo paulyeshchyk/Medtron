@@ -28,7 +28,7 @@ static SensorConfigurationDataProvider *sharedInstance_ = nil;
 }
 
 - (NSString*)entityName {
-    return kEntitySensorConfiguration;
+    return kSensorConfigurationEntity;
 }
 
 

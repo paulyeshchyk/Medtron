@@ -7,7 +7,7 @@
 //
 
 #import "InfusionSelectorView.h"
-#import "MedtronicCellProtocols.h"
+#import "MYMCellProtocols.h"
 
 
 static NSString* const kCellIdentifier = @"CheckboxCellId";
@@ -48,6 +48,7 @@ static NSString* const kCellIdentifier = @"CheckboxCellId";
     [self.tableView reloadData];
 
 }
+
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView*)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath*)indexPath {
     [self.datasource switchStateForInfusionAtIndexPath:indexPath];

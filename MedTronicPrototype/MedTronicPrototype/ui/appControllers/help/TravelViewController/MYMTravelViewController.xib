@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MYMTravelViewController">
+            <connections>
+                <outlet property="view" destination="nD3-J8-hTA" id="q6C-CU-22b"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="nD3-J8-hTA">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stubBackground.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OeM-7t-wAY">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="178"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="OeM-7t-wAY" firstAttribute="top" secondItem="nD3-J8-hTA" secondAttribute="top" id="5Np-eF-eqZ"/>
+                <constraint firstItem="OeM-7t-wAY" firstAttribute="leading" secondItem="nD3-J8-hTA" secondAttribute="leading" id="9Kc-md-QKk"/>
+                <constraint firstAttribute="bottom" secondItem="OeM-7t-wAY" secondAttribute="bottom" constant="390" id="DEd-r2-oZe"/>
+                <constraint firstAttribute="trailing" secondItem="OeM-7t-wAY" secondAttribute="trailing" id="pSx-d6-Fa8"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="stubBackground.jpg" width="1610" height="1066"/>
+    </resources>
+</document>

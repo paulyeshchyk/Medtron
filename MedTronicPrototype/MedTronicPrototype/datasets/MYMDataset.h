@@ -18,7 +18,9 @@
 @interface MYMDataset : NSObject
 
 @property (nonatomic, weak)id<MYMDatasetDelegate> delegate;
+@property (nonatomic, weak)id userInfo;
 
 - (void)willStartLoad;
 - (void)hasFinishedLoad;
+
 @end

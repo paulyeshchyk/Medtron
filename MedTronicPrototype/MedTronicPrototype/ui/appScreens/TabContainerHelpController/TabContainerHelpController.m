@@ -8,6 +8,9 @@
 
 #import "TabContainerHelpController.h"
 #import "ApplicationCommandsManager.h"
+#import "MYMVideoTutorialViewController.h"
+#import "MYMPumpAndAlarmViewController.h"
+#import "MYMTravelViewController.h"
 
 @interface TabContainerHelpController ()
 
@@ -39,6 +42,21 @@
 #pragma mark -
 - (IBAction)onBackButtonClicked:(id)sender {
     [[ApplicationCommandsManager sharedInstance] openTabHome:nil];
+}
+
+- (IBAction)onVideoTutorialsClicked:(id)sender {
+    MYMVideoTutorialViewController* viewController = [[MYMVideoTutorialViewController alloc] initWithNibName:@"MYMVideoTutorialViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:viewController animated:YES ];
+}
+
+- (IBAction)onPumpAndAlarmsClicked:(id)sender {
+    MYMPumpAndAlarmViewController* viewController = [[MYMPumpAndAlarmViewController alloc] initWithNibName:@"MYMPumpAndAlarmViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:viewController animated:YES ];
+}
+
+- (IBAction)onTravelClicked:(id)sender {
+    MYMTravelViewController* viewController = [[MYMTravelViewController alloc] initWithNibName:@"MYMTravelViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:viewController animated:YES ];
 }
 
 @end

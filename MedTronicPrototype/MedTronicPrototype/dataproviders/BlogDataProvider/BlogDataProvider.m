@@ -16,7 +16,6 @@
 
 @implementation BlogDataProvider
 
-
 static BlogDataProvider *sharedInstance_ = nil;
 
 + (BlogDataProvider*)sharedInstance{
@@ -27,26 +26,19 @@ static BlogDataProvider *sharedInstance_ = nil;
     return sharedInstance_;
 }
 
-- (id)initWithContext:(NSManagedObjectContext*)context {
-    self = [super init];
-    if (self){
-    }
-    return self;
-}
-
 - (NSString*)entityName {
-    return kEntityBlog;
+    return kBlogEntity;
 }
 
 - (id)addBlogWithHeadline:(NSString*)headline body:(NSString*)body author:(NSString*)author image:(NSData*)image{
-    BlogEntity* blogEntity = [self newEntity];
-    blogEntity.headline = headline;
-    blogEntity.body = body;
-    blogEntity.author = author;
-    blogEntity.created = [NSDate date];
-    blogEntity.image = image;
+    BlogEntity* entity = [self newEntity];
+    entity.headline = headline;
+    entity.body = body;
+    entity.author = author;
+    entity.created = [NSDate date];
+    entity.image = image;
 
-    return [blogEntity objectID];
+    return [entity objectID];
 }
 
 - (NSUInteger)blogsCountWithFilter:(id)filter {

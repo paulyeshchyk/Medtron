@@ -7,6 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+@protocol MYMDatasetListenerProtocol
+@required
+- (void)contextHasChanged;
+- (void)contextHasRollbacked;
+- (void)contextHasSaved;
+@end
 
 @interface CoreDataProvider : NSObject
 
@@ -23,6 +29,10 @@
 - (id)anyObjectByObjectId:(NSManagedObjectID*)objectId;
 - (void)removeObjectByID:(NSManagedObjectID*)objectId;
 - (void)removeObject:(NSManagedObject*)object;
+
+- (void)addListener:(id<MYMDatasetListenerProtocol>)listener;
+- (void)removeListener:(id<MYMDatasetListenerProtocol>)listener;
+
 @end
 
 @interface NSFetchRequest(UserInfo)

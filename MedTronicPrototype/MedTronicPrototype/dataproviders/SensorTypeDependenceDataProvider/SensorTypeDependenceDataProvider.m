@@ -30,7 +30,7 @@ static SensorTypeDependenceDataProvider *sharedInstance_ = nil;
 }
 
 - (NSString*)entityName {
-    return kEntitySensorTypeDependence;
+    return kSensorTypeDependenceEntity;
 }
 
 - (id)setSensor:(NSManagedObjectID*)sensorId dependingOnType:(NSManagedObjectID*)sensorTypeId {

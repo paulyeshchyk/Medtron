@@ -12,7 +12,7 @@
 #import "SensorDataProvider.h"
 #import "SensorTypeEntity.h"
 #import "SensorEntity.h"
-#import "MedtronicCellProtocols.h"
+#import "MYMCellProtocols.h"
 #import "SensorConfigurationComplexDataProvider.h"
 #import "SensorSelectorViewProtocol.h"
 #import "MYMSensorDataset.h"

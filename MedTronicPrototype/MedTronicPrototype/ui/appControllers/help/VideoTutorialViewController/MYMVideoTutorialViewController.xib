@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MYMVideoTutorialViewController">
+            <connections>
+                <outlet property="tableView" destination="fzW-5D-lOb" id="ni9-zc-dhY"/>
+                <outlet property="view" destination="sxs-Jc-eq3" id="dwB-7j-yII"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="sxs-Jc-eq3">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stubBackground.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="BLR-ho-pqJ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="178"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fzW-5D-lOb">
+                    <rect key="frame" x="0.0" y="178" width="320" height="390"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="mhX-di-c6X"/>
+                        <outlet property="delegate" destination="-1" id="CUU-O0-Yqd"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="BLR-ho-pqJ" firstAttribute="leading" secondItem="sxs-Jc-eq3" secondAttribute="leading" id="1FW-Gt-dBQ"/>
+                <constraint firstAttribute="trailing" secondItem="BLR-ho-pqJ" secondAttribute="trailing" id="2UZ-PV-gGU"/>
+                <constraint firstAttribute="trailing" secondItem="fzW-5D-lOb" secondAttribute="trailing" id="BAY-3L-g4u"/>
+                <constraint firstAttribute="bottom" secondItem="BLR-ho-pqJ" secondAttribute="bottom" constant="390" id="CxW-wO-Ka4"/>
+                <constraint firstAttribute="bottom" secondItem="fzW-5D-lOb" secondAttribute="bottom" id="HDe-lr-hTn"/>
+                <constraint firstItem="fzW-5D-lOb" firstAttribute="leading" secondItem="sxs-Jc-eq3" secondAttribute="leading" id="Iip-4K-nDc"/>
+                <constraint firstItem="fzW-5D-lOb" firstAttribute="top" secondItem="BLR-ho-pqJ" secondAttribute="bottom" id="OfT-yH-5sM"/>
+                <constraint firstItem="BLR-ho-pqJ" firstAttribute="top" secondItem="sxs-Jc-eq3" secondAttribute="top" id="R3d-SG-hvB"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="stubBackground.jpg" width="1610" height="1066"/>
+    </resources>
+</document>

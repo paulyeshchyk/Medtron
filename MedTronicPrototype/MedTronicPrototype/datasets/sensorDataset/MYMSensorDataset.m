@@ -22,10 +22,21 @@ static NSString* const kDatasetNameSensor = @"sensor";
 @interface MYMSensorDataset()<DataProviderDelegate>{
     NSInteger providersExecutionCount_;
     NSMutableArray* sensorTypeData_;
+    SensorConfigurationDataProvider* sensorConfigurationDataProvider_;
 }
 @end
 
 @implementation MYMSensorDataset
+
+- (id)init {
+    self = [super init];
+    if (self){
+    }
+    return self;
+}
+
+- (void)dealloc {
+}
 
 - (void)saveChanges {
     NSError* error = [[SensorConfigurationDataProvider sharedInstance] saveContext];
@@ -86,11 +97,11 @@ static NSString* const kDatasetNameSensor = @"sensor";
 }
 
 #pragma mark - DataProviderDelegate
-- (void)sensor:(NSManagedObjectID*)sensor markAsConfiguredInConfiguration:(NSManagedObjectID*)configObjectID {
+- (void)sensor:(NSManagedObjectID*)sensorID markAsConfiguredInConfiguration:(NSManagedObjectID*)configObjectID {
     NSPredicate* predicate =[NSPredicate predicateWithFormat:@"managedObjectID == %@",configObjectID];
     NSArray* types = [sensorTypeData_ filteredArrayUsingPredicate:predicate];
     for(MYMSensorTypeObject* type in types) {
-        NSArray* sensors = [type.sensors filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"managedObjectID == %@",sensor]] ;
+        NSArray* sensors = [type.sensors filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"managedObjectID == %@",sensorID]] ;
         for(MYMSensorObject* sen in sensors) {
             sen.configured = YES;
         }
@@ -142,5 +153,6 @@ static NSString* const kDatasetNameSensor = @"sensor";
         child.configured = (child.managedObjectID ==sensor.managedObjectID);
     }
 }
+
 
 @end

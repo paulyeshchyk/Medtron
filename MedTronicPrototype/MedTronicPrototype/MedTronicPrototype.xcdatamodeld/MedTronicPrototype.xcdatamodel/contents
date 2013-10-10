@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F45" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AlarmEntity" representedClassName="AlarmEntity" syncable="YES">
+        <attribute name="explanation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="alarmType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AlarmTypeEntity" inverseName="alarms" inverseEntity="AlarmTypeEntity" syncable="YES"/>
+    </entity>
+    <entity name="AlarmTypeEntity" representedClassName="AlarmTypeEntity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="alarms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AlarmEntity" inverseName="alarmType" inverseEntity="AlarmEntity" syncable="YES"/>
+    </entity>
     <entity name="BlogEntity" representedClassName="BlogEntity" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="headline" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="CheckListEntity" representedClassName="CheckListEntity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="InfusionConfigurationEntity" representedClassName="InfusionConfigurationEntity" syncable="YES">
         <attribute name="checked" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -14,6 +26,29 @@
     <entity name="InfusionEntity" representedClassName="InfusionEntity" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="configuraton" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InfusionConfigurationEntity" inverseName="infusion" inverseEntity="InfusionConfigurationEntity" syncable="YES"/>
+    </entity>
+    <entity name="PumpSettingCategoryEntity" representedClassName="PumpSettingCategory" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pumpSetting" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PumpSettingEntity" inverseName="pumpSettingCategory" inverseEntity="PumpSettingEntity" syncable="YES"/>
+    </entity>
+    <entity name="PumpSettingEntity" representedClassName="PumpSetting" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userInfo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pumpSettingCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PumpSettingCategoryEntity" inverseName="pumpSetting" inverseEntity="PumpSettingCategoryEntity" syncable="YES"/>
+        <relationship name="pumpSettingType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PumpSettingTypeEntity" inverseName="pumpSetting" inverseEntity="PumpSettingTypeEntity" syncable="YES"/>
+    </entity>
+    <entity name="PumpSettingTypeEntity" representedClassName="PumpSettingType" syncable="YES">
+        <relationship name="pumpSetting" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PumpSettingEntity" inverseName="pumpSettingType" inverseEntity="PumpSettingEntity" syncable="YES"/>
+    </entity>
+    <entity name="ReminderEntity" representedClassName="Reminder" syncable="YES">
+        <attribute name="isSwitched" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userInfo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="reminderType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ReminderTypeEntity" inverseName="reminders" inverseEntity="ReminderTypeEntity" syncable="YES"/>
+    </entity>
+    <entity name="ReminderTypeEntity" representedClassName="ReminderType" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="reminders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ReminderEntity" inverseName="reminderType" inverseEntity="ReminderEntity" syncable="YES"/>
     </entity>
     <entity name="SensorConfigurationEntity" representedClassName="SensorConfigurationEntity" syncable="YES">
         <relationship name="configurationSensor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SensorEntity" inverseName="configuration" inverseEntity="SensorEntity" syncable="YES"/>
@@ -31,10 +66,18 @@
     </entity>
     <elements>
         <element name="BlogEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CheckListEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="InfusionConfigurationEntity" positionX="0" positionY="0" width="0" height="0"/>
         <element name="InfusionEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PumpSettingCategoryEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PumpSettingEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PumpSettingTypeEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ReminderEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ReminderTypeEntity" positionX="0" positionY="0" width="0" height="0"/>
         <element name="SensorConfigurationEntity" positionX="0" positionY="0" width="0" height="0"/>
         <element name="SensorEntity" positionX="0" positionY="0" width="0" height="0"/>
         <element name="SensorTypeEntity" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="InfusionConfigurationEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="AlarmEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="AlarmTypeEntity" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

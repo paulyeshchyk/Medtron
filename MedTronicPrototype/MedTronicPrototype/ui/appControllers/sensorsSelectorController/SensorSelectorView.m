@@ -9,7 +9,7 @@
 #import "SensorSelectorView.h"
 #import "SensorEntity.h"
 #import "SensorTypeEntity.h"
-#import "MedtronicCellProtocols.h"
+#import "MYMCellProtocols.h"
 
 static NSString* const kCellIdentifier = @"CheckboxCellId";
 

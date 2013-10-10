@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MedtronicCellProtocols.h"
+#import "MYMCellProtocols.h"
 
 @interface CheckboxCell : UITableViewCell <CheckboxCellProtocol>
 @end

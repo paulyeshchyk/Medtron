@@ -28,7 +28,7 @@ static InfusionDataProvider *sharedInstance_ = nil;
 }
 
 - (NSString*)entityName {
-    return kEntityInfusion;
+    return kInfusionEntity;
 }
 
 - (void)performLoadConfigurationWithFilter:(NSPredicate*)filter delegate:(id<DataProviderDelegate>)delegate userInfo:(id)userInfo {

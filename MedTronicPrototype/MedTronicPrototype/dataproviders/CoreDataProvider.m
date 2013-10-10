@@ -11,18 +11,65 @@
 #import <objc/runtime.h>
 @interface CoreDataProvider(){
     NSManagedObjectContext* providersContext_;
+    NSMutableSet* listeners_;
+
 }
 @end
 
 @implementation CoreDataProvider
 //@synthesize context;
 
+
+
+
+- (void)dealloc {
+    [listeners_ removeAllObjects];
+    listeners_ = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextObjectsDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:nil];
+}
+
+- (void)addListener:(id<MYMDatasetListenerProtocol>)listener {
+    [listeners_ addObject:listener];
+}
+
+- (void)removeListener:(id<MYMDatasetListenerProtocol>)listener {
+    [listeners_ removeObject:listener];
+}
+
+- (void)contextHasChanged {
+    [listeners_ enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+        if ([obj respondsToSelector:@selector(contextHasChanged)]){
+            [obj performSelector:@selector(contextHasChanged)];
+        }
+    }];
+}
+
+- (void)contextHasRollbacked {
+    [listeners_ enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+        if ([obj respondsToSelector:@selector(contextHasRollbacked)]){
+            [obj performSelector:@selector(contextHasRollbacked)];
+        }
+    }];
+}
+
+- (void)contextHasSaved {
+    [listeners_ enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+        if ([obj respondsToSelector:@selector(contextHasSaved)]){
+            [obj performSelector:@selector(contextHasSaved)];
+        }
+    }];
+}
+
+
 - (NSManagedObjectContext*)context {
     if (providersContext_ == nil){
-        providersContext_ = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        NSManagedObjectContext* parentContext = [[CoreDataManager sharedInstance] managedObjectContext];
-        [providersContext_ setParentContext:parentContext];
-        
+//        providersContext_ = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+//        NSManagedObjectContext* parentContext = [[CoreDataManager sharedInstance] managedObjectContext];
+//        [providersContext_ setParentContext:parentContext];
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onNSManagedObjectContextObjectsDidChangeNotification:) name:NSManagedObjectContextObjectsDidChangeNotification object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onNSManagedObjectContextObjectsDidSaveNotification:) name:NSManagedObjectContextDidSaveNotification object:nil];
+        providersContext_ = [[CoreDataManager sharedInstance] managedObjectContext];
     }
     
     return providersContext_;
@@ -33,7 +80,7 @@
     if ([providersContext_ hasChanges]){
         [providersContext_ save:&error];
         if (error == nil){
-            [[CoreDataManager sharedInstance] saveContext];
+//            [[CoreDataManager sharedInstance] saveContext];
         } else {
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         }
@@ -99,6 +146,8 @@
     
     NSEntityDescription* entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:[self context]];
 
+    NSFetchRequestResultType resultType = NSManagedObjectResultType;
+    
     NSMutableArray* propertiesToFetch = nil;
     if ([properties count]>0){
         propertiesToFetch = [NSMutableArray new];
@@ -107,19 +156,8 @@
         for (NSString*propName in properties) {
             [propertiesToFetch addObject:[entityProperties objectForKey:propName]];
         }
+        resultType = NSDictionaryResultType;
     }
-    
-//    NSMutableArray* relationshipsToFetch = nil;
-//    if ([relationshipNames count]>0){
-//        relationshipsToFetch = [NSMutableArray new];
-//        NSDictionary *relationships = [entity relationshipsByName];
-//        
-//        for (NSString*relationShipName in relationshipNames) {
-//            [relationshipsToFetch addObject:[relationships objectForKey:relationShipName]];
-//        }
-//    }
-    
-    
     
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     [request setUserInfo:userInfo];
@@ -129,7 +167,7 @@
     [request setPredicate:predicate];
     [request setFetchLimit:fetchLimit];
     [request setSortDescriptors:sortDescriptors];
-//    [request setResultType:NSDictionaryResultType];
+    [request setResultType:resultType];
     
     return [[self context] executeFetchRequest:request error:error];
 }
@@ -160,6 +198,43 @@
     } else {
         return nil;
     }
+}
+
+
+- (NSArray*)validObjectsFromNotificationObjects:(NSArray*)notificationObjects {
+    NSMutableArray* result = [NSMutableArray new];
+    Class clazz = NSClassFromString(self.entityName);
+    [notificationObjects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([[obj class] isKindOfClass:clazz]){
+            [result addObject:obj];
+        }
+    }];
+    return result;
+    
+}
+         
+- (void)onNSManagedObjectContextObjectsDidSaveNotification:(NSNotification*)notification {
+    if (self.entityName == nil){
+        return;
+    }
+    [self contextHasSaved];
+}
+         
+- (void)onNSManagedObjectContextObjectsDidChangeNotification:(NSNotification*)notification {
+    if (self.entityName == nil){
+        return;
+    }
+    NSArray* insertedObjects = [self validObjectsFromNotificationObjects:[[notification userInfo] objectForKey:NSInsertedObjectsKey]];
+    NSArray* deletedObjects = [self validObjectsFromNotificationObjects:[[notification userInfo] objectForKey:NSDeletedObjectsKey]];
+    NSArray* updatedObjects = [self validObjectsFromNotificationObjects:[[notification userInfo] objectForKey:NSUpdatedObjectsKey]];
+    
+    
+    if (([insertedObjects count] >0) || ([deletedObjects count] >0) || ([updatedObjects count] >0)){
+        [self contextHasChanged];
+    }
+    
+    
+    
 }
 
 @end

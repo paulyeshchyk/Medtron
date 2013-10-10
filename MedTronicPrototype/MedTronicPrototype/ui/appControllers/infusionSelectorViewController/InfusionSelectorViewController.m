@@ -8,7 +8,7 @@
 
 #import "InfusionSelectorViewController.h"
 #import "InfusionEntity.h"
-#import "MedtronicCellProtocols.h"
+#import "MYMCellProtocols.h"
 #import "DataProviderProtocol.h"
 #import "InfusionConfigurationDataProvider.h"
 #import "InfusionDataProvider.h"

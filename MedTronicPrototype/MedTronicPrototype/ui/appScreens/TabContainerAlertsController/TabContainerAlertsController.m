@@ -8,9 +8,11 @@
 
 #import "TabContainerAlertsController.h"
 #import "ApplicationCommandsManager.h"
+#import "MYMAlertsSettingsViewController.h"
+#import "MYMPumpSettingsViewController.h"
 
-@interface TabContainerAlertsController ()
-
+@interface TabContainerAlertsController (){
+}
 @end
 
 @implementation TabContainerAlertsController
@@ -27,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,6 +41,17 @@
 #pragma mark -
 - (IBAction)onBackButtonClicked:(id)sender {
     [[ApplicationCommandsManager sharedInstance] openTabHome:nil];
+}
+
+
+- (IBAction)onAlertsButtonClicked:(id)sender {
+    MYMAlertsSettingsViewController* viewController = [[MYMAlertsSettingsViewController alloc] initWithNibName:@"MYMAlertsSettingsViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:viewController animated:YES ];
+}
+
+- (IBAction)onPumpButtonClicked:(id)sender {
+    MYMPumpSettingsViewController* viewController = [[MYMPumpSettingsViewController alloc] initWithNibName:@"MYMPumpSettingsViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

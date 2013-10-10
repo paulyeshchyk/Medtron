@@ -20,15 +20,8 @@ static SensorTypeDataProvider *sharedInstance_ = nil;
     return sharedInstance_;
 }
 
-- (id)initWithContext:(NSManagedObjectContext*)context {
-    self = [super init];
-    if (self){
-    }
-    return self;
-}
-
 - (NSString*)entityName {
-    return kEntitySensorType;
+    return kSensorTypeEntity;
 }
 
 - (id)addSensorTypeName:(NSString*)sensorTypeName {
@@ -40,7 +33,7 @@ static SensorTypeDataProvider *sharedInstance_ = nil;
 
 - (void)performLoadSensorTypesWithFilter:(NSPredicate*)filter delegate:(id<DataProviderDelegate>)delegate userInfo:(id)userInfo{
     NSError* error = nil;
-    NSArray* properties = nil;//@[@"author",@"headline",@"body"];
+    NSArray* properties = nil;
     NSArray* result = [self itemsForPredicate:filter
                                      userInfo:userInfo
                                    properties:properties

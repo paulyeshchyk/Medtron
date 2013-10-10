@@ -14,6 +14,7 @@
     IBOutlet SensorsSelectorViewController* sensorSelectorViewController_;
     IBOutlet InfusionSelectorViewController* infusionSelectorViewController_;
     IBOutlet UIScrollView* scrollView_;
+    IBOutlet UIBarButtonItem* doneButtonItem_;
 }
 
 @end
