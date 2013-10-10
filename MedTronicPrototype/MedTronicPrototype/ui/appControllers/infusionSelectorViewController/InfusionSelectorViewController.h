@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InfusionSelectorViewController : UIViewController
+@interface InfusionSelectorViewController : UIViewControllerWithContext
 
 @end

@@ -33,6 +33,7 @@
     NSManagedObjectID* sensorType1ID = [[SensorTypeDataProvider sharedInstance] addSensorTypeName:@"My Pump"];
     NSManagedObjectID* sensorType2ID = [[SensorTypeDataProvider sharedInstance] addSensorTypeName:@"My Sensor"];
     NSManagedObjectID* sensorType3ID = [[SensorTypeDataProvider sharedInstance] addSensorTypeName:@"My Infusion Set"];
+    [[SensorTypeDataProvider sharedInstance] saveContext];
 
     id sensor1ID = [[SensorDataProvider sharedInstance] addSensorName:@"MiniMed Paradigm® Revel™" sensorType:sensorType1ID];
     [[SensorDataProvider sharedInstance] addSensorName:@"MiniMed 530G" sensorType:sensorType1ID];
@@ -42,12 +43,12 @@
     id sensor3ID = [[SensorDataProvider sharedInstance] addSensorName:@"Quick-set®" sensorType:sensorType3ID];
     [[SensorDataProvider sharedInstance] addSensorName:@"mio®" sensorType:sensorType3ID];
     [[SensorDataProvider sharedInstance] addSensorName:@"Sure-T®" sensorType:sensorType3ID];
+    [[SensorDataProvider sharedInstance] saveContext];
 
     [[SensorConfigurationDataProvider sharedInstance] addConfigurationWithSensorID:sensor1ID andSensorTypeID:sensorType1ID];
     [[SensorConfigurationDataProvider sharedInstance] addConfigurationWithSensorID:sensor2ID andSensorTypeID:sensorType2ID];
     [[SensorConfigurationDataProvider sharedInstance] addConfigurationWithSensorID:sensor3ID andSensorTypeID:sensorType3ID];
-
-
+    [[SensorConfigurationDataProvider sharedInstance] saveContext];
 }
 
 + (void)blogStubExecution {
@@ -71,25 +72,23 @@
     [[BlogDataProvider sharedInstance] addBlogWithHeadline:@"Lorem113" body:@"ipsum113" author:@"dolores113" image:UIImageJPEGRepresentation ([UIImage imageNamed:@"stub03.jpg"],1.0f)];
     [[BlogDataProvider sharedInstance] addBlogWithHeadline:@"Lorem114" body:@"ipsum114" author:@"dolores114" image:UIImageJPEGRepresentation ([UIImage imageNamed:@"stub04.jpg"],1.0f)];
     [[BlogDataProvider sharedInstance] addBlogWithHeadline:@"Lorem115" body:@"ipsum115" author:@"dolores115" image:UIImageJPEGRepresentation ([UIImage imageNamed:@"stub05.jpg"],1.0f)];
+    [[BlogDataProvider sharedInstance] saveContext];
 }
 
 + (void)infusionExecution {
-    NSManagedObjectID* infusionID = nil;
-    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"my Infusion Set"];
-    [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:infusionID];
+    NSManagedObjectID* infusionID1 = [[InfusionDataProvider sharedInstance] addInfusionName:@"my Infusion Set"];
+    NSManagedObjectID* infusionID2 = [[InfusionDataProvider sharedInstance] addInfusionName:@"Using the Bolus Wizard® Feature"];
+    [[InfusionDataProvider sharedInstance] addInfusionName:@"Inserting The Sensor"];
+    [[InfusionDataProvider sharedInstance] addInfusionName:@"Programming a Single Basal Rate"];
+    NSManagedObjectID* infusionID5 = [[InfusionDataProvider sharedInstance] addInfusionName:@"Setting Temporary Basal Rates"];
+    [[InfusionDataProvider sharedInstance] addInfusionName:@"Square Wave®"];
+    [[InfusionDataProvider sharedInstance] addInfusionName:@"Dual Wave®"];
+    [[InfusionDataProvider sharedInstance] saveContext];
 
-    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Using the Bolus Wizard® Feature"];
-    [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:infusionID];
-
-    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Inserting The Sensor"];
-
-    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Programming a Single Basal Rate"];
-    
-    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Setting Temporary Basal Rates"];
-    [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:infusionID];
-    
-    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Square Wave®"];
-    infusionID = [[InfusionDataProvider sharedInstance] addInfusionName:@"Dual Wave®"];
+    [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:infusionID1];
+    [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:infusionID2];
+    [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:infusionID5];
+    [[InfusionConfigurationDataProvider sharedInstance] saveContext];
 }
 
 @end

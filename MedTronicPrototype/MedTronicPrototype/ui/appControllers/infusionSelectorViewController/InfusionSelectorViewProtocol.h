@@ -10,6 +10,8 @@
 
 @protocol InfusionSelectorViewDatasource
 @required
+- (NSInteger)numberOfSections;
+- (NSString*)sectionNameAtIndex:(NSInteger)index;
 - (void)switchStateForInfusionAtIndexPath:(NSIndexPath*)indexPath;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (BOOL)isInfusionConfiguredAtIndexPath:(NSIndexPath*)indexPath;

@@ -46,7 +46,6 @@ static BlogDataProvider *sharedInstance_ = nil;
     blogEntity.created = [NSDate date];
     blogEntity.image = image;
 
-    [self saveContext];
     return [blogEntity objectID];
 }
 

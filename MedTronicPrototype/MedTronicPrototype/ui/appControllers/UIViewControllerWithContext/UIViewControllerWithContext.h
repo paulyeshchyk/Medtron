@@ -10,4 +10,6 @@
 
 @interface UIViewControllerWithContext : UIViewController
 @property (nonatomic, strong)NSDictionary* args;
+- (void)rollbackChanges;
+- (void)saveChanges;
 @end

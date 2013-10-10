@@ -9,20 +9,52 @@
 #import "CoreDataProvider.h"
 #import "CoreDataManager.h"
 #import <objc/runtime.h>
+@interface CoreDataProvider(){
+    NSManagedObjectContext* providersContext_;
+}
+@end
 
 @implementation CoreDataProvider
 //@synthesize context;
 
 - (NSManagedObjectContext*)context {
-    return [[CoreDataManager sharedInstance] managedObjectContext];
+    if (providersContext_ == nil){
+        providersContext_ = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+        NSManagedObjectContext* parentContext = [[CoreDataManager sharedInstance] managedObjectContext];
+        [providersContext_ setParentContext:parentContext];
+        
+    }
+    
+    return providersContext_;
 }
 
 - (NSError*)saveContext {
-    return [[CoreDataManager sharedInstance] saveContext];
-    
+    __block NSError* error  = nil;
+    if ([providersContext_ hasChanges]){
+        [providersContext_ save:&error];
+        if (error == nil){
+            [[CoreDataManager sharedInstance] saveContext];
+        } else {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        }
+        
+    }
+    return error;
+}
+
+- (NSError*)rollback {
+    __block NSError* result  = nil;
+    if ([providersContext_ hasChanges]){
+        [providersContext_ rollback];
+
+        [[CoreDataManager sharedInstance] rollback];
+        
+    }
+    return result;
 }
 
 - (NSString*)entityName {
+    NSCAssert(NO, @"entityName must be defined");
     return nil;
 }
 
@@ -77,22 +109,22 @@
         }
     }
     
-    NSMutableArray* relationshipsToFetch = nil;
-    if ([relationshipNames count]>0){
-        relationshipsToFetch = [NSMutableArray new];
-        NSDictionary *relationships = [entity relationshipsByName];
-        
-        for (NSString*relationShipName in relationshipNames) {
-            [relationshipsToFetch addObject:[relationships objectForKey:relationShipName]];
-        }
-    }
+//    NSMutableArray* relationshipsToFetch = nil;
+//    if ([relationshipNames count]>0){
+//        relationshipsToFetch = [NSMutableArray new];
+//        NSDictionary *relationships = [entity relationshipsByName];
+//        
+//        for (NSString*relationShipName in relationshipNames) {
+//            [relationshipsToFetch addObject:[relationships objectForKey:relationShipName]];
+//        }
+//    }
     
     
     
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     [request setUserInfo:userInfo];
     [request setPropertiesToFetch:propertiesToFetch];
-    [request setRelationshipKeyPathsForPrefetching:nil];
+    [request setRelationshipKeyPathsForPrefetching:relationshipNames];
     [request setEntity:entity];
     [request setPredicate:predicate];
     [request setFetchLimit:fetchLimit];

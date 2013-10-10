@@ -50,7 +50,6 @@ static InfusionDataProvider *sharedInstance_ = nil;
     infusionEntity.name = name;
     
     
-    [self saveContext];
     return [infusionEntity objectID];
     
 }

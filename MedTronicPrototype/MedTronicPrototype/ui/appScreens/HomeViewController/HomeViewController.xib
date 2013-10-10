@@ -191,6 +191,11 @@
                                         <action selector="onBackButtonClicked:" destination="gI4-kS-F6g" id="oX9-s9-mOu"/>
                                     </connections>
                                 </barButtonItem>
+                                <barButtonItem key="rightBarButtonItem" title="Done" id="0dm-Ea-vkl">
+                                    <connections>
+                                        <action selector="onDoneButtonClicked:" destination="gI4-kS-F6g" id="TM0-FW-PCL"/>
+                                    </connections>
+                                </barButtonItem>
                             </navigationItem>
                             <nil key="simulatedStatusBarMetrics"/>
                             <nil key="simulatedTopBarMetrics"/>

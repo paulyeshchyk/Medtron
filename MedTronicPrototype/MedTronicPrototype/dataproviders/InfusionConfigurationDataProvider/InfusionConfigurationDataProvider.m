@@ -70,7 +70,6 @@ static InfusionConfigurationDataProvider *sharedInstance_ = nil;
     }
     
     
-    [self saveContext];
     return [result objectID];
 }
 

@@ -14,5 +14,4 @@
 - (NSString*)sensorNameAtIndexPath:(NSIndexPath*)indexPath;
 - (NSString*)sensorTypeNameAtIndex:(NSInteger)index;
 - (void)addConfigurationForIndexPath:(NSIndexPath*)indexPath;
-
 @end

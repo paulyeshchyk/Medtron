@@ -38,7 +38,6 @@ static SensorTypeDependenceDataProvider *sharedInstance_ = nil;
 //    sensorTypeDependencyEntity.sensorrelationship = [[SensorDataProvider sharedInstance] objectByObjectId:sensorId];
 //    sensorTypeDependencyEntity.sensortyperelationship = [[SensorTypeDataProvider sharedInstance] objectByObjectId:sensorTypeId];
 //    
-//    [self saveContext];
 //    return [sensorTypeDependencyEntity objectID];
     return nil;
 }

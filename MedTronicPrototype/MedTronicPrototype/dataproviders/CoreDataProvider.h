@@ -13,6 +13,7 @@
 //@property (nonatomic, readonly) NSManagedObjectContext* context;
 - (NSManagedObjectContext*)context;
 - (NSError*)saveContext;
+- (NSError*)rollback;
 - (NSString*)entityName;
 - (id)newEntity;
 - (NSEntityDescription*)entityDescription;

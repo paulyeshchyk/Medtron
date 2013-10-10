@@ -53,11 +53,9 @@
     
     [blogsContainer_ addSubview:pageViewController_.view];
     [pageViewController_.view setFrame:blogsContainer_.bounds];
-//    [pageViewController_.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
     
     [actionsContainer_ addSubview:actionsViewController_.view];
     [actionsViewController_.view setFrame:actionsContainer_.bounds];
-//    [actionsViewController_.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
     [actionsViewController_ reloadActionSheet];
     
     [[BlogDataProvider sharedInstance] performLoadBlogsWithFilter:nil delegate:self];

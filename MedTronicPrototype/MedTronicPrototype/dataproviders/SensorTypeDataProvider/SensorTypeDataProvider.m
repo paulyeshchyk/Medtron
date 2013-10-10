@@ -35,7 +35,6 @@ static SensorTypeDataProvider *sharedInstance_ = nil;
     SensorTypeEntity* sensorTypeEntity = [self newEntity];
     sensorTypeEntity.name = sensorTypeName;
     
-    [self saveContext];
     return [sensorTypeEntity objectID];
 }
 
@@ -45,7 +44,7 @@ static SensorTypeDataProvider *sharedInstance_ = nil;
     NSArray* result = [self itemsForPredicate:filter
                                      userInfo:userInfo
                                    properties:properties
-                            relationshipNames:nil
+                            relationshipNames:@[@"sensors",@"configuration"]
                                    fetchLimit:NSUIntegerMax
                               sortDescriptors:nil
                                         error:&error];

@@ -28,13 +28,14 @@
     return self;
 }
 
+- (void)dealloc {
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [settingsViewControllerContainer_ addSubview:settingsViewController_.view];
     [settingsViewController_.view setFrame:settingsViewControllerContainer_.bounds];
-//    [settingsViewController_.view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -53,7 +54,13 @@
 
 
 #pragma mark -
+- (IBAction)onDoneButtonClicked:(id)sender {
+    [settingsViewController_ saveChanges];
+    [[ApplicationCommandsManager sharedInstance] openTabHome:nil];
+}
+
 - (IBAction)onBackButtonClicked:(id)sender {
+    [settingsViewController_ rollbackChanges];
     [[ApplicationCommandsManager sharedInstance] openTabHome:nil];
 }
 @end

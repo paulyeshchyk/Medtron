@@ -22,14 +22,30 @@ static CoreDataManager *sharedInstance_ = nil;
     return sharedInstance_;
 }
 
-- (NSError*)saveContext
-{
+- (NSError*)rollback {
     NSError *error = nil;
     if (_managedObjectContext != nil) {
         if ([_managedObjectContext hasChanges]){
-            if (![_managedObjectContext save:&error]) {
-                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            }
+            [_managedObjectContext performBlockAndWait:^{
+                [_managedObjectContext rollback];
+            }];
+        }
+    }
+    return error;
+}
+
+- (NSError*)saveContext
+{
+    __block NSError *error = nil;
+    if (_managedObjectContext != nil) {
+        if ([_managedObjectContext hasChanges]){
+            [_managedObjectContext performBlockAndWait:^{
+                [_managedObjectContext save:&error];
+                if (error){
+                    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                }
+            }];
+
         }
     }
     return error;
@@ -47,7 +63,7 @@ static CoreDataManager *sharedInstance_ = nil;
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     return _managedObjectContext;

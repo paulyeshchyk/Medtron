@@ -11,11 +11,14 @@
 
 
 @protocol MYMDatasetProtocol <NSObject>
+
 @required
+- (void)saveChanges;
+- (void)rollback;
 - (void)reloadData;
 - (NSInteger)sectionsCount;
-- (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (id)sectionAtIndex:(NSInteger)index;
+- (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (id)objectAtIndexPath:(NSIndexPath*)indexPath;
 
 @end

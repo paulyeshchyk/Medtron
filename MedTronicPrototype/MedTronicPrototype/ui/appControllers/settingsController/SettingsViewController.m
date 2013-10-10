@@ -29,12 +29,14 @@
     return self;
 }
 
+- (void)dealloc {
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     CGSize sensorViewSize = [sensorSelectorViewController_.view sizeThatFits:CGSizeMake(CGRectGetWidth(scrollView_.bounds),20000)];
-//    [scrollView_ setContentSize:CGSizeMake(CGRectGetWidth(scrollView_.bounds),sensorViewSize.height)];
     [scrollView_ addSubview:sensorSelectorViewController_.view];
     [sensorSelectorViewController_.view setFrame:CGRectMake(0,0,sensorViewSize.width,sensorViewSize.height)];
 
@@ -57,6 +59,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)rollbackChanges {
+    [sensorSelectorViewController_ rollbackChanges];
+    [infusionSelectorViewController_ rollbackChanges];
+}
+
+- (void)saveChanges {
+    [sensorSelectorViewController_ saveChanges];
+    [infusionSelectorViewController_ saveChanges];
 }
 
 

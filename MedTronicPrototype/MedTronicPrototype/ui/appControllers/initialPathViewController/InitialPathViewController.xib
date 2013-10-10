@@ -30,7 +30,6 @@
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUb-Xj-S3u">
                             <rect key="frame" x="10" y="10" width="260" height="475"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="amw-sa-OG0"/>
                             </connections>
@@ -81,6 +80,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="MFu-Qx-4wq" firstAttribute="leading" secondItem="bgf-t9-AXz" secondAttribute="leading" id="1IM-gW-WGj"/>
                 <constraint firstItem="MFu-Qx-4wq" firstAttribute="top" secondItem="bgf-t9-AXz" secondAttribute="top" id="Qpi-xr-MWr"/>
@@ -91,19 +91,21 @@
         <view contentMode="scaleToFill" id="9kp-tb-l1l">
             <rect key="frame" x="0.0" y="0.0" width="260" height="284"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
         </view>
         <view contentMode="scaleToFill" id="BPH-b1-ykk">
-            <rect key="frame" x="0.0" y="0.0" width="260" height="142"/>
+            <rect key="frame" x="0.0" y="0.0" width="260" height="95"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="infusion descr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IS-re-mHI">
-                    <rect key="frame" x="0.0" y="0.0" width="260" height="142"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="8IS-re-mHI">
+                    <rect key="frame" x="0.0" y="0.0" width="260" height="95"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <string key="text">Links to streming videos viewable with internet connection reside in the Help section within the Video Library. To store a video for viewing without internet connection available, please select from the list below</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="8IS-re-mHI" firstAttribute="top" secondItem="BPH-b1-ykk" secondAttribute="top" id="aRj-pP-RGX"/>
                 <constraint firstAttribute="bottom" secondItem="8IS-re-mHI" secondAttribute="bottom" id="lK8-AV-oSp"/>
@@ -114,7 +116,7 @@
         <view contentMode="scaleToFill" id="y3S-jA-ck1">
             <rect key="frame" x="0.0" y="0.0" width="260" height="142"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
         </view>
         <viewController id="RrP-BC-d0G" customClass="SensorsSelectorViewController">
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

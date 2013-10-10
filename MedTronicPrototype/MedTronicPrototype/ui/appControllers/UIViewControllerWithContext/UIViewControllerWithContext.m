@@ -37,5 +37,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)saveChanges {
+}
 
+- (void)rollbackChanges {
+}
 @end

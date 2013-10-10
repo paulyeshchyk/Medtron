@@ -26,6 +26,25 @@ static NSString* const kDatasetNameSensor = @"sensor";
 @end
 
 @implementation MYMSensorDataset
+
+- (void)saveChanges {
+    NSError* error = [[SensorConfigurationDataProvider sharedInstance] saveContext];
+    if (error){
+        NSLog(@"%@",error.localizedDescription);
+    }
+    
+    error = [[SensorTypeDataProvider sharedInstance] saveContext];
+    if (error){
+        NSLog(@"%@",error.localizedDescription);
+    }
+    
+}
+
+- (void)rollback {
+    [[SensorConfigurationDataProvider sharedInstance] rollback];
+    [[SensorTypeDataProvider sharedInstance] rollback];
+}
+
 - (void)reloadData {
     sensorTypeData_ = [NSMutableArray new];
     providersExecutionCount_ = 0;

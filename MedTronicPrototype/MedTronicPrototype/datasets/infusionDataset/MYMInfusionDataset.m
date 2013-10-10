@@ -26,6 +26,24 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
 
 @synthesize delegate;
 
+- (void)saveChanges {
+    NSError* error = [[InfusionConfigurationDataProvider sharedInstance] saveContext];
+    if (error){
+        NSLog(@"%@",error.localizedDescription);
+    }
+    
+    error = [[InfusionDataProvider sharedInstance] saveContext];
+    if (error){
+        NSLog(@"%@",error.localizedDescription);
+    }
+    
+}
+
+- (void)rollback {
+    [[InfusionConfigurationDataProvider sharedInstance] rollback];
+    [[InfusionDataProvider sharedInstance] rollback];
+}
+
 - (void)switchStateForInfusionAtIndexPath:(NSIndexPath*)indexPath{
     
     MYMInfusionObject* obj = [self objectAtIndexPath:indexPath];
@@ -58,15 +76,16 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
 }
 
 - (NSInteger)sectionsCount {
-    return 0;
+    return 1;
 }
+
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section {
     return [data_ count];
 }
 
 - (id)sectionAtIndex:(NSInteger)index {
-    return nil;
+    return @"Medtronic information";
 }
 
 - (id)objectAtIndexPath:(NSIndexPath*)indexPath{

@@ -7,35 +7,34 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfusionSelectorViewController">
             <connections>
-                <outlet property="view" destination="1" id="3"/>
+                <outlet property="view" destination="fbL-3V-zOc" id="bL4-pR-orC"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="1" customClass="InfusionSelectorView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+        <view contentMode="scaleToFill" id="fbL-3V-zOc" customClass="InfusionSelectorView">
+            <rect key="frame" x="0.0" y="0.0" width="333" height="239"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hUb-91-22i">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="333" height="239"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="1" id="Di3-WC-Dqu"/>
-                        <outlet property="delegate" destination="1" id="T0B-ow-rnJ"/>
+                        <outlet property="dataSource" destination="fbL-3V-zOc" id="cAX-up-KsN"/>
+                        <outlet property="delegate" destination="fbL-3V-zOc" id="Kb7-sg-nwq"/>
                     </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="hUb-91-22i" secondAttribute="trailing" id="4Qm-jx-6Xc"/>
-                <constraint firstItem="hUb-91-22i" firstAttribute="top" secondItem="1" secondAttribute="top" id="K1a-A7-NSO"/>
-                <constraint firstAttribute="bottom" secondItem="hUb-91-22i" secondAttribute="bottom" id="iaM-tK-s3W"/>
-                <constraint firstItem="hUb-91-22i" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="wgw-dU-oyz"/>
+                <constraint firstItem="hUb-91-22i" firstAttribute="top" secondItem="fbL-3V-zOc" secondAttribute="top" id="YlI-9r-6e4"/>
+                <constraint firstAttribute="bottom" secondItem="hUb-91-22i" secondAttribute="bottom" id="lSl-ro-W75"/>
+                <constraint firstItem="hUb-91-22i" firstAttribute="leading" secondItem="fbL-3V-zOc" secondAttribute="leading" id="p13-da-f6Z"/>
+                <constraint firstAttribute="trailing" secondItem="hUb-91-22i" secondAttribute="trailing" id="yGz-wv-yry"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
-                <outlet property="tableView" destination="hUb-91-22i" id="Uz3-zU-gUq"/>
+                <outlet property="tableView" destination="hUb-91-22i" id="lI5-7n-RL4"/>
             </connections>
         </view>
     </objects>

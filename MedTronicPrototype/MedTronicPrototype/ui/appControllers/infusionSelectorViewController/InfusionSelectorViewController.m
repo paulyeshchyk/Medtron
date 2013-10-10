@@ -58,6 +58,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -
+- (void)saveChanges {
+    [dataset_ saveChanges];
+}
+
+- (void)rollbackChanges {
+    [dataset_ rollback];
+}
+
+- (NSInteger)numberOfSections {
+    return [dataset_ sectionsCount];
+}
+
+- (NSString*)sectionNameAtIndex:(NSInteger)index {
+    return [dataset_ sectionAtIndex:index];
+}
+
 - (BOOL)isInfusionConfiguredAtIndexPath:(NSIndexPath*)indexPath{
     return [dataset_ isInfusionConfiguredAtIndexPath:indexPath];
 }

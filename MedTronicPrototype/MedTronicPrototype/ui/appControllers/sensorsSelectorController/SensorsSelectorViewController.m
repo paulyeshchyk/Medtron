@@ -52,6 +52,15 @@
 }
 
 #pragma mark -
+
+- (void)saveChanges {
+    [dataset_ saveChanges];
+}
+
+- (void)rollbackChanges {
+    [dataset_ rollback];
+}
+
 - (void)reloadData {
     resultset_ = [NSMutableDictionary new];
     

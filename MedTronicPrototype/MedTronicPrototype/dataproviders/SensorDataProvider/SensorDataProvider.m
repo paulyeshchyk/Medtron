@@ -39,7 +39,6 @@ static SensorDataProvider *sharedInstance_ = nil;
     id object = [self anyObjectByObjectId:sensorTypeId];
     sensorEntity.sensortypes = object;
     
-    [self saveContext];
     return [sensorEntity objectID];
     
 }

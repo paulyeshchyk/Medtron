@@ -58,8 +58,6 @@ static SensorConfigurationDataProvider *sharedInstance_ = nil;
         result.configurationSensor = [self anyObjectByObjectId:sensorID];
     }
 
-    [self saveContext];
-
     return [result objectID];
 }
 
@@ -69,7 +67,7 @@ static SensorConfigurationDataProvider *sharedInstance_ = nil;
     NSArray* result = [self itemsForPredicate:filter
                                      userInfo:userInfo
                                    properties:nil
-                            relationshipNames:nil
+                            relationshipNames:@[@"configurationSensorType",@"configurationSensor"]
                                    fetchLimit:NSUIntegerMax
                               sortDescriptors:nil
                                         error:&error];

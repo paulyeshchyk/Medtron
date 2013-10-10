@@ -16,5 +16,5 @@
 + (CoreDataManager*)sharedInstance;
 - (NSURL *)applicationDocumentsDirectory;
 - (NSError*)saveContext;
-
+- (NSError*)rollback;
 @end
