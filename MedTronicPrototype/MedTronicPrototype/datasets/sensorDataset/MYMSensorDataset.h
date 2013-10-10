@@ -10,9 +10,9 @@
 #import "MYMDataset.h"
 
 @interface MYMSensorDataset : MYMDataset<MYMDatasetProtocol>
-- (BOOL)isSensorConfiguredAtSection:(NSInteger)section andRow:(NSInteger)row;
-- (NSString*)sensorNameAtSection:(NSInteger)section andRow:(NSInteger)row;
+- (BOOL)isSensorConfiguredAtIndexPath:(NSIndexPath*)indexPath;
+- (NSString*)sensorNameAtIndexPath:(NSIndexPath*)indexPath;
 - (NSString*)sensorTypeNameAtIndex:(NSInteger)index;
-- (void)addConfigurationForSection:(NSInteger)section andRow:(NSInteger)row;
+- (void)addConfigurationForIndexPath:(NSIndexPath*)indexPath;
 
 @end

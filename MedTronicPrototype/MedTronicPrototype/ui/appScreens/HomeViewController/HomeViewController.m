@@ -40,7 +40,6 @@
 
         if (accepted) {
 
-            [InitialPathViewController newInstanceInsideNavigationController:self.navigationController pushWithCloseBlock:NULL];
 
             UIView* viewToOpen = self.tabBarController.view;
             [self.view addSubview:viewToOpen];
@@ -49,11 +48,12 @@
             if (wasFirstTime){
                 
                 [StubdataManager performExecution];
+                [InitialPathViewController newInstanceInsideNavigationController:self.navigationController pushWithCloseBlock:NULL];
 
             }
         }
     }];
-    
+
 }
 
 - (BOOL)prefersStatusBarHidden {

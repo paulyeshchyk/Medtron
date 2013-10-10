@@ -58,12 +58,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)isInfusionConfiguredAtSection:(NSInteger)section andRow:(NSInteger)row {
-    return [dataset_ isInfusionConfiguredAtSection:section andRow:row];
+- (BOOL)isInfusionConfiguredAtIndexPath:(NSIndexPath*)indexPath{
+    return [dataset_ isInfusionConfiguredAtIndexPath:indexPath];
 }
 
-- (NSString*)infusionNameAtSection:(NSInteger)section andRow:(NSInteger)row {
-    return  [dataset_ infusionNameAtSection:section andRow:row];
+- (NSString*)infusionNameAtIndexPath:(NSIndexPath*)indexPath{
+    return  [dataset_ infusionNameAtIndexPath:indexPath];
 }
 
 
@@ -71,8 +71,8 @@
     return [dataset_ numberOfRowsInSection:section];
 }
 
-- (void)switchStateForInfusionAtSection:(NSInteger)section andRow:(NSInteger)row {
-    [dataset_ switchStateForInfusionAtSection:section andRow:row];
+- (void)switchStateForInfusionAtIndexPath:(NSIndexPath*)indexPath{
+    [dataset_ switchStateForInfusionAtIndexPath:indexPath];
 }
 
 - (void)willStartLoadDataset:(id<MYMDatasetProtocol>)dataset {

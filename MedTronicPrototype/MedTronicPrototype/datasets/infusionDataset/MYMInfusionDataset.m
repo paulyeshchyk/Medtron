@@ -26,23 +26,23 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
 
 @synthesize delegate;
 
-- (void)switchStateForInfusionAtSection:(NSInteger)section andRow:(NSInteger)row {
+- (void)switchStateForInfusionAtIndexPath:(NSIndexPath*)indexPath{
     
-    MYMInfusionObject* obj = [self objectAtSection:section andRow:row];
+    MYMInfusionObject* obj = [self objectAtIndexPath:indexPath];
     
     NSManagedObjectID* objID = obj.managedObjectID;
     NSManagedObjectID* infusionConfigurationID = [[InfusionConfigurationDataProvider sharedInstance] switchStateForInfusionID:objID];
     obj.configured = (infusionConfigurationID != nil);
 }
 
-- (BOOL)isInfusionConfiguredAtSection:(NSInteger)section andRow:(NSInteger)row {
-    MYMInfusionObject* obj = [self objectAtSection:section andRow:row];
+- (BOOL)isInfusionConfiguredAtIndexPath:(NSIndexPath*)indexPath{
+    MYMInfusionObject* obj = [self objectAtIndexPath:indexPath];
 
     return (obj.configured);
 }
 
-- (NSString*)infusionNameAtSection:(NSInteger)section andRow:(NSInteger)row {
-    MYMInfusionObject* obj = [data_ objectAtIndex:row];
+- (NSString*)infusionNameAtIndexPath:(NSIndexPath*)indexPath{
+    MYMInfusionObject* obj = [data_ objectAtIndex:indexPath.row];
     return obj.name;
 }
 
@@ -69,8 +69,8 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
     return nil;
 }
 
-- (id)objectAtSection:(NSInteger)section andRow:(NSInteger)row {
-    return [data_ objectAtIndex:row];
+- (id)objectAtIndexPath:(NSIndexPath*)indexPath{
+    return [data_ objectAtIndex:indexPath.row];
 }
 
 #pragma mark - DataProviderDelegate

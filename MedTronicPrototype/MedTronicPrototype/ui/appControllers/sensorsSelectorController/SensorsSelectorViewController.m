@@ -71,12 +71,12 @@
 }
 
 
-- (NSString*)sensorNameAtSection:(NSInteger)section andRow:(NSInteger)row {
-    return [dataset_ sensorNameAtSection:section andRow:row];
+- (NSString*)sensorNameAtIndexPath:(NSIndexPath*)indexPath {
+    return [dataset_ sensorNameAtIndexPath:indexPath];
 }
 
-- (BOOL)isSensorConfiguredAtSection:(NSInteger)section andRow:(NSInteger)row {
-    return [dataset_ isSensorConfiguredAtSection:section andRow:row];
+- (BOOL)isSensorConfiguredAtIndexPath:(NSIndexPath*)indexPath{
+    return [dataset_ isSensorConfiguredAtIndexPath:indexPath];
 }
 
 
@@ -85,7 +85,7 @@
 }
 
 - (id)sensorAtIndexPath:(NSIndexPath*)indexPath {
-    return [dataset_ sensorNameAtSection:indexPath.section andRow:indexPath.row];
+    return [dataset_ sensorNameAtIndexPath:indexPath];
 }
 
 - (NSInteger)sensorTypeCount {
@@ -95,8 +95,8 @@
     return [dataset_ sectionAtIndex:index];
 }
 
-- (void)addConfigurationForSection:(NSInteger)section andRow:(NSInteger)row {
-    [dataset_ addConfigurationForSection:section andRow:row];
+- (void)addConfigurationForIndexPath:(NSIndexPath*)indexPath{
+    [dataset_ addConfigurationForIndexPath:indexPath];
 }
 - (NSInteger)sensorsCountAtSection:(NSInteger)section {
     return [dataset_ numberOfRowsInSection:section];

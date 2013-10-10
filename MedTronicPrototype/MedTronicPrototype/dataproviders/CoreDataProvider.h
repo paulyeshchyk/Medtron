@@ -11,12 +11,13 @@
 @interface CoreDataProvider : NSObject
 
 //@property (nonatomic, readonly) NSManagedObjectContext* context;
+- (NSManagedObjectContext*)context;
 - (NSError*)saveContext;
 - (NSString*)entityName;
 - (id)newEntity;
 - (NSEntityDescription*)entityDescription;
 - (NSUInteger)itemsCountForPredicate:(NSPredicate*)predicate error:(NSError**)error;
-- (NSArray*)itemsForPredicate:(NSPredicate*)predicate userInfo:(id)userInfo  properties:(NSArray*)properties error:(NSError**)error;
+- (NSArray*)itemsForPredicate:(NSPredicate*)predicate userInfo:(id)userInfo  properties:(NSArray*)properties relationshipNames:(NSArray*)relationshipNames fetchLimit:(NSInteger)fetchLimit  sortDescriptors:(NSArray*)sortDescriptors error:(NSError**)error;
 - (id)objectByObjectId:(NSManagedObjectID*)objectId;
 - (id)anyObjectByObjectId:(NSManagedObjectID*)objectId;
 - (void)removeObjectByID:(NSManagedObjectID*)objectId;

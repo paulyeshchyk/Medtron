@@ -61,7 +61,13 @@ static BlogDataProvider *sharedInstance_ = nil;
 - (void)performLoadBlogsWithFilter:(NSPredicate*)filter delegate:(id<DataProviderDelegate>)delegate {
     NSError* error = nil;
     NSArray* properties = nil;//@[@"author",@"headline",@"body"];
-    NSArray* result = [self itemsForPredicate:filter userInfo:nil properties:properties error:&error];
+    NSArray* result = [self itemsForPredicate:filter
+                                     userInfo:nil
+                                   properties:properties
+                            relationshipNames:nil
+                                   fetchLimit:5
+                              sortDescriptors:nil
+                                        error:&error];
     
     [delegate provider:self didFinishExecuteFetchWithResult:result andError:error userInfo:nil];
 }

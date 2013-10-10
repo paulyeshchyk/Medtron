@@ -52,8 +52,8 @@ static NSString* const kCellIdentifier = @"CheckboxCellId";
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
-    BOOL isConfigured = [datasource isSensorConfiguredAtSection:indexPath.section andRow:indexPath.row];
-    NSString* sensorName = [datasource sensorNameAtSection:indexPath.section andRow:indexPath.row];
+    BOOL isConfigured = [datasource isSensorConfiguredAtIndexPath:indexPath];
+    NSString* sensorName = [datasource sensorNameAtIndexPath:indexPath];
     
     UITableViewCell<CheckboxCellProtocol>* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     [cell setTableView:tableView];
@@ -68,7 +68,7 @@ static NSString* const kCellIdentifier = @"CheckboxCellId";
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView*)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath*)indexPath {
-    [datasource addConfigurationForSection:indexPath.section andRow:indexPath.row];
+    [datasource addConfigurationForIndexPath:indexPath];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
 }
 

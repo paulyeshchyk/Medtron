@@ -11,11 +11,11 @@
 @required
 - (id)sensorTypeAtIndex:(NSInteger)index;
 - (id)sensorAtIndexPath:(NSIndexPath*)indexPath;
-- (NSString*)sensorNameAtSection:(NSInteger)section andRow:(NSInteger)row;
-- (BOOL)isSensorConfiguredAtSection:(NSInteger)section andRow:(NSInteger)row;
+- (NSString*)sensorNameAtIndexPath:(NSIndexPath*)indexPath;
+- (BOOL)isSensorConfiguredAtIndexPath:(NSIndexPath*)indexPath;
 - (NSInteger)sensorTypeCount;
 - (NSString*)sensorTypeNameAtIndex:(NSInteger)index;
-- (void)addConfigurationForSection:(NSInteger)section andRow:(NSInteger)row;
+- (void)addConfigurationForIndexPath:(NSIndexPath*)indexPath;
 - (NSInteger)sensorsCountAtSection:(NSInteger)section;
 @end
 

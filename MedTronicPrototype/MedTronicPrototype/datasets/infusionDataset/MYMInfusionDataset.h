@@ -10,7 +10,7 @@
 #import "MYMDataset.h"
 
 @interface MYMInfusionDataset : MYMDataset <MYMDatasetProtocol>
-- (void)switchStateForInfusionAtSection:(NSInteger)section andRow:(NSInteger)row;
-- (BOOL)isInfusionConfiguredAtSection:(NSInteger)section andRow:(NSInteger)row;
-- (NSString*)infusionNameAtSection:(NSInteger)section andRow:(NSInteger)row;
+- (void)switchStateForInfusionAtIndexPath:(NSIndexPath*)indexPath;
+- (BOOL)isInfusionConfiguredAtIndexPath:(NSIndexPath*)indexPath;
+- (NSString*)infusionNameAtIndexPath:(NSIndexPath*)indexPath;
 @end

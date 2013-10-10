@@ -42,7 +42,13 @@ static SensorTypeDataProvider *sharedInstance_ = nil;
 - (void)performLoadSensorTypesWithFilter:(NSPredicate*)filter delegate:(id<DataProviderDelegate>)delegate userInfo:(id)userInfo{
     NSError* error = nil;
     NSArray* properties = nil;//@[@"author",@"headline",@"body"];
-    NSArray* result = [self itemsForPredicate:filter userInfo:userInfo properties:properties error:&error];
+    NSArray* result = [self itemsForPredicate:filter
+                                     userInfo:userInfo
+                                   properties:properties
+                            relationshipNames:nil
+                                   fetchLimit:NSUIntegerMax
+                              sortDescriptors:nil
+                                        error:&error];
     
     [delegate provider:self didFinishExecuteFetchWithResult:result andError:error userInfo:userInfo];
 }

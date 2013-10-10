@@ -50,7 +50,7 @@ static NSString* const kCellIdentifier = @"CheckboxCellId";
 }
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView*)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath*)indexPath {
-    [self.datasource switchStateForInfusionAtSection:indexPath.section andRow:indexPath.row];
+    [self.datasource switchStateForInfusionAtIndexPath:indexPath];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
 }
 
@@ -66,8 +66,8 @@ static NSString* const kCellIdentifier = @"CheckboxCellId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    BOOL isConfigured = [self.datasource isInfusionConfiguredAtSection:indexPath.section andRow:indexPath.row];
-    NSString* infusionName = [self.datasource infusionNameAtSection:indexPath.section andRow:indexPath.row];
+    BOOL isConfigured = [self.datasource isInfusionConfiguredAtIndexPath:indexPath];
+    NSString* infusionName = [self.datasource infusionNameAtIndexPath:indexPath];
     
     UITableViewCell<CheckboxCellProtocol>* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     [cell setTableView:tableView];

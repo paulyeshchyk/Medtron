@@ -16,6 +16,6 @@
 - (NSInteger)sectionsCount;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (id)sectionAtIndex:(NSInteger)index;
-- (id)objectAtSection:(NSInteger)section andRow:(NSInteger)row;
+- (id)objectAtIndexPath:(NSIndexPath*)indexPath;
 
 @end

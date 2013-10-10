@@ -34,7 +34,13 @@ static InfusionConfigurationDataProvider *sharedInstance_ = nil;
 - (void)performLoadConfigurationWithFilter:(NSPredicate*)filter delegate:(id<DataProviderDelegate>)delegate userInfo:(id)userInfo {
     NSError* error = nil;
     NSArray* properties = nil;
-    NSArray* result = [self itemsForPredicate:filter userInfo:userInfo properties:properties error:&error];
+    NSArray* result = [self itemsForPredicate:filter
+                                     userInfo:userInfo
+                                   properties:properties
+                            relationshipNames:nil
+                                   fetchLimit:NSUIntegerMax
+                              sortDescriptors:nil
+                                        error:&error];
     
     [delegate provider:self didFinishExecuteFetchWithResult:result andError:error userInfo:userInfo];
 }
@@ -44,7 +50,13 @@ static InfusionConfigurationDataProvider *sharedInstance_ = nil;
     
     NSError* error = nil;
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(infusion == %@)", infusionID];
-    NSArray* resultArray = [self itemsForPredicate:predicate userInfo:nil properties:nil error:&error];
+    NSArray* resultArray = [self itemsForPredicate:predicate
+                                          userInfo:nil
+                                        properties:nil
+                                 relationshipNames:nil
+                                        fetchLimit:NSUIntegerMax
+                                   sortDescriptors:nil
+                                             error:&error];
     
     NSCAssert(([resultArray count] <= 1), @"The only one configuration should be stored for pair of sensor and sensor type");
     

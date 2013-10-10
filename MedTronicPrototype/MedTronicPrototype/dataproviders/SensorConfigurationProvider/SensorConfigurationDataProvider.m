@@ -33,11 +33,17 @@ static SensorConfigurationDataProvider *sharedInstance_ = nil;
 
 
 - (id)addConfigurationWithSensorID:(NSManagedObjectID*)sensorID andSensorTypeID:(NSManagedObjectID*)sensorTypeID {
-    SensorConfigurationEntity* result = nil;
+    __block SensorConfigurationEntity* result = nil;
 
     NSError* error = nil;
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(configurationSensorType == %@) OR (configurationSensor == %@)", sensorTypeID, sensorID];
-    NSArray* resultArray = [self itemsForPredicate:predicate userInfo:nil properties:nil error:&error];
+    NSArray* resultArray = [self itemsForPredicate:predicate
+                                          userInfo:nil
+                                        properties:nil
+                                 relationshipNames:@[@"configurationSensorType",@"configurationSensor"]
+                                        fetchLimit:NSUIntegerMax
+                                   sortDescriptors:nil
+                                             error:&error];
     
     NSCAssert(([resultArray count] <= 1), @"The only one configuration should be stored for pair of sensor and sensor type");
 
@@ -51,16 +57,22 @@ static SensorConfigurationDataProvider *sharedInstance_ = nil;
         result.configurationSensorType = [self anyObjectByObjectId:sensorTypeID];
         result.configurationSensor = [self anyObjectByObjectId:sensorID];
     }
-    
 
     [self saveContext];
+
     return [result objectID];
 }
 
 - (void)performLoadConfigurationWithFilter:(NSPredicate*)filter delegate:(id<DataProviderDelegate>)delegate userInfo:(id)userInfo {
     NSError* error = nil;
-    NSArray* properties = nil;
-    NSArray* result = [self itemsForPredicate:filter userInfo:userInfo properties:properties error:&error];
+
+    NSArray* result = [self itemsForPredicate:filter
+                                     userInfo:userInfo
+                                   properties:nil
+                            relationshipNames:nil
+                                   fetchLimit:NSUIntegerMax
+                              sortDescriptors:nil
+                                        error:&error];
     
     [delegate provider:self didFinishExecuteFetchWithResult:result andError:error userInfo:userInfo];
     

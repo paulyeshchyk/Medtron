@@ -59,27 +59,51 @@
     return [[self context] countForFetchRequest:request error:error];
 }
 
-- (NSArray*)itemsForPredicate:(NSPredicate*)predicate  userInfo:(id)userInfo properties:(NSArray*)properties error:(NSError**)error{
+- (NSArray*)itemsForPredicate:(NSPredicate*)predicate userInfo:(id)userInfo  properties:(NSArray*)properties relationshipNames:(NSArray*)relationshipNames fetchLimit:(NSInteger)fetchLimit sortDescriptors:(NSArray*)sortDescriptors error:(NSError**)error{
     NSString* entityName = self.entityName;
     if ([entityName length] == 0){
         return nil;
     }
     
     NSEntityDescription* entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:[self context]];
+
+    NSMutableArray* propertiesToFetch = nil;
+    if ([properties count]>0){
+        propertiesToFetch = [NSMutableArray new];
+        NSDictionary *entityProperties = [entity propertiesByName];
+        
+        for (NSString*propName in properties) {
+            [propertiesToFetch addObject:[entityProperties objectForKey:propName]];
+        }
+    }
+    
+    NSMutableArray* relationshipsToFetch = nil;
+    if ([relationshipNames count]>0){
+        relationshipsToFetch = [NSMutableArray new];
+        NSDictionary *relationships = [entity relationshipsByName];
+        
+        for (NSString*relationShipName in relationshipNames) {
+            [relationshipsToFetch addObject:[relationships objectForKey:relationShipName]];
+        }
+    }
+    
+    
     
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     [request setUserInfo:userInfo];
-    [request setPropertiesToFetch:properties];
+    [request setPropertiesToFetch:propertiesToFetch];
+    [request setRelationshipKeyPathsForPrefetching:nil];
     [request setEntity:entity];
     [request setPredicate:predicate];
-    [request setFetchLimit:5];
+    [request setFetchLimit:fetchLimit];
+    [request setSortDescriptors:sortDescriptors];
 //    [request setResultType:NSDictionaryResultType];
     
-    return [self.context executeFetchRequest:request error:error];
+    return [[self context] executeFetchRequest:request error:error];
 }
 
 - (id)anyObjectByObjectId:(NSManagedObjectID*)objectId {
-    return [self.context objectWithID:objectId];
+    return [[self context] objectWithID:objectId];
 }
 - (void)removeObject:(NSManagedObject*)object {
     [[self context] deleteObject:object];
@@ -98,7 +122,7 @@
     [request setPredicate:predicate];
     
     NSError* error = nil;
-    NSArray* result = [self.context executeFetchRequest:request error:&error];
+    NSArray* result = [[self context] executeFetchRequest:request error:&error];
     if (!error){
         return [result lastObject];
     } else {

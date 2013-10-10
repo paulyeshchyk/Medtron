@@ -97,11 +97,6 @@
     [scrollView_ setContentSize:CGSizeMake(contentWidth,CGRectGetMaxY(scrollViewFrame))];
     [scrollView_ addSubview:infusionView_];
     [infusionView_ setFrame:scrollViewFrame];
-
-    
-    
-    
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning

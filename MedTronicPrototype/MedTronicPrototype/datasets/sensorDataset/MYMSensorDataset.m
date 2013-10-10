@@ -48,18 +48,18 @@ static NSString* const kDatasetNameSensor = @"sensor";
     return [[sensorTypeData_ objectAtIndex:index] name];
 }
 
-- (id)objectAtSection:(NSInteger)section andRow:(NSInteger)row {
-    return [[[sensorTypeData_ objectAtIndex:section] sensors] objectAtIndex:row];
+- (id)objectAtIndexPath:(NSIndexPath*)indexPath{
+    return [[[sensorTypeData_ objectAtIndex:indexPath.section] sensors] objectAtIndex:indexPath.row];
 }
 
-- (BOOL)isSensorConfiguredAtSection:(NSInteger)section andRow:(NSInteger)row {
-    MYMSensorTypeObject* type = [sensorTypeData_ objectAtIndex:section];
-    MYMSensorObject* sensor = [type.sensors objectAtIndex:row];
+- (BOOL)isSensorConfiguredAtIndexPath:(NSIndexPath*)indexPath{
+    MYMSensorTypeObject* type = [sensorTypeData_ objectAtIndex:indexPath.section];
+    MYMSensorObject* sensor = [type.sensors objectAtIndex:indexPath.row];
     return sensor.configured;
 }
 
-- (NSString*)sensorNameAtSection:(NSInteger)section andRow:(NSInteger)row {
-    return [[[[sensorTypeData_ objectAtIndex:section] sensors] objectAtIndex:row] name];
+- (NSString*)sensorNameAtIndexPath:(NSIndexPath*)indexPath {
+    return [[[[sensorTypeData_ objectAtIndex:indexPath.section] sensors] objectAtIndex:indexPath.row] name];
 }
 
 - (NSString*)sensorTypeNameAtIndex:(NSInteger)index {
@@ -67,13 +67,25 @@ static NSString* const kDatasetNameSensor = @"sensor";
 }
 
 #pragma mark - DataProviderDelegate
+- (void)sensor:(NSManagedObjectID*)sensor markAsConfiguredInConfiguration:(NSManagedObjectID*)configObjectID {
+    NSPredicate* predicate =[NSPredicate predicateWithFormat:@"managedObjectID == %@",configObjectID];
+    NSArray* types = [sensorTypeData_ filteredArrayUsingPredicate:predicate];
+    for(MYMSensorTypeObject* type in types) {
+        NSArray* sensors = [type.sensors filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"managedObjectID == %@",sensor]] ;
+        for(MYMSensorObject* sen in sensors) {
+            sen.configured = YES;
+        }
+        
+    }
+}
+
 - (void)provider:(id)dataprovider didFinishExecuteFetchWithResult:(NSArray*)resultArray andError:(NSError*)error userInfo:(id)userInfo {
     if ([userInfo isEqualToString:kDatasetNameSensorType]){
         for(SensorTypeEntity* managedObject in resultArray){
-            
-
+            NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+            NSArray* sensorsArray = [managedObject.sensors sortedArrayUsingDescriptors:@[sortDescriptor]];
             NSMutableArray* sensorData_ = [NSMutableArray new];
-            for(SensorEntity* sensor in managedObject.sensors){
+            for(SensorEntity* sensor in sensorsArray){
                 MYMSensorObject* obj = [MYMSensorObject new];
                 obj.name = [sensor name];
                 obj.managedObjectID = [sensor objectID];
@@ -90,15 +102,7 @@ static NSString* const kDatasetNameSensor = @"sensor";
         }
     } else if ([userInfo isEqualToString:kDatasetNameSensorConfiguration]) {
         for(SensorConfigurationEntity* managedObject in resultArray){
-            NSPredicate* predicate =[NSPredicate predicateWithFormat:@"managedObjectID == %@",[managedObject.configurationSensorType objectID]];
-            NSArray* types = [sensorTypeData_ filteredArrayUsingPredicate:predicate];
-            for(MYMSensorTypeObject* type in types) {
-                NSArray* sensors = [type.sensors filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"managedObjectID == %@",[managedObject.configurationSensor objectID]]];
-                for(MYMSensorObject* sen in sensors) {
-                    sen.configured = YES;
-                }
-                
-            }
+            [self sensor:[managedObject.configurationSensor objectID] markAsConfiguredInConfiguration:[managedObject.configurationSensorType objectID]];
         }
     }
     
@@ -110,13 +114,14 @@ static NSString* const kDatasetNameSensor = @"sensor";
     
 }
 
-- (void)addConfigurationForSection:(NSInteger)section andRow:(NSInteger)row {
-    MYMSensorTypeObject* type = [sensorTypeData_ objectAtIndex:section];
-    MYMSensorObject* sensor = [type.sensors objectAtIndex:row];
-    sensor.configured = !sensor.configured;
-    
+- (void)addConfigurationForIndexPath:(NSIndexPath*)indexPath{
+    MYMSensorTypeObject* type = [sensorTypeData_ objectAtIndex:indexPath.section];
+    MYMSensorObject* sensor = [type.sensors objectAtIndex:indexPath.row];
+
    [[SensorConfigurationDataProvider sharedInstance] addConfigurationWithSensorID:[sensor managedObjectID] andSensorTypeID:[type managedObjectID]];
-    
+    for(MYMSensorObject* child in type.sensors) {
+        child.configured = (child.managedObjectID ==sensor.managedObjectID);
+    }
 }
 
 @end
