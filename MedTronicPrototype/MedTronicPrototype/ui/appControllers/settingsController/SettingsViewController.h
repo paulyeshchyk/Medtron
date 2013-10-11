@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Pavel Yeshchyk. All rights reserved.
 //
 
-#import "UIViewControllerWithContext.h"
+#import "MYMViewController.h"
 
-@interface SettingsViewController : UIViewControllerWithContext <UIScrollViewDelegate>
+@interface SettingsViewController : MYMViewController
 
 @end

@@ -60,7 +60,7 @@ static NSString* const kDatasetNameAlarm = @"kDatasetNameAlarm";
 }
 
 - (id)sectionAtIndex:(NSInteger)index {
-    return @"No name";
+    return @"";
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section {

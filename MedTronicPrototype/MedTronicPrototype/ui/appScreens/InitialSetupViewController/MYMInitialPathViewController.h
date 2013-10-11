@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 typedef void (^InitialPathControllerCloseActionBlock)(id sender);
-@interface InitialPathViewController : UIViewController
+
+@interface MYMInitialPathViewController : UIViewController
 @property (nonatomic, copy)InitialPathControllerCloseActionBlock onCloseBlock;
 +(void)newInstanceInsideNavigationController:(UINavigationController*)navController pushWithCloseBlock:(InitialPathControllerCloseActionBlock)block;
 @end

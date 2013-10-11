@@ -17,7 +17,7 @@
 #import "NodataAvailableController.h"
 
 
-@interface TabContainerHomeController ()  <UIPageViewControllerDataSource,UIPageViewControllerDelegate, DataProviderDelegate>{
+@interface TabContainerHomeController ()  <UIPageViewControllerDataSource,UIPageViewControllerDelegate, DataProviderDelegate, ActionsViewConrollerDatasource>{
 @private
     IBOutlet UIPageViewController* pageViewController_;
     IBOutlet ActionsViewController* actionsViewController_;

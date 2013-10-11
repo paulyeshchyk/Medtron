@@ -17,4 +17,11 @@
 - (void)openTabHelp:(NSDictionary*)args ;
 - (void)openTabSettings:(NSDictionary*)args ;
 - (void)shareBlog:(NSDictionary*)args ;
+- (void)openTravel:(NSDictionary*)args ;
+- (void)openCheckList:(NSDictionary*)args ;
+- (void)openVideoTutorial:(NSDictionary*)args;
+- (void)openPumpAndAlarms:(NSDictionary*)args;
+- (void)openTips:(NSDictionary*)args;
+- (void)openPumpSettings:(NSDictionary*)args;
+- (void)openAlertsSettings:(NSDictionary*)args;
 @end

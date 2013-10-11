@@ -10,7 +10,7 @@
 #import "SensorsSelectorViewController.h"
 #import "InfusionSelectorViewController.h"
 
-@interface SettingsViewController () {
+@interface SettingsViewController ()  <UIScrollViewDelegate>{
     IBOutlet SensorsSelectorViewController* sensorSelectorViewController_;
     IBOutlet InfusionSelectorViewController* infusionSelectorViewController_;
     IBOutlet UIScrollView* scrollView_;

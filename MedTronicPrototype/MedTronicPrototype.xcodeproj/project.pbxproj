@@ -21,8 +21,6 @@
 		1D65417C180437F3007F118B /* BlogHeadlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D65411C180437F3007F118B /* BlogHeadlineView.m */; };
 		1D65417D180437F3007F118B /* BlogHeadlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D65411E180437F3007F118B /* BlogHeadlineViewController.m */; };
 		1D65417E180437F3007F118B /* BlogHeadlineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D65411F180437F3007F118B /* BlogHeadlineViewController.xib */; };
-		1D654181180437F3007F118B /* InitialPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D654126180437F3007F118B /* InitialPathViewController.m */; };
-		1D654182180437F3007F118B /* InitialPathViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D654127180437F3007F118B /* InitialPathViewController.xib */; };
 		1D654183180437F3007F118B /* NodataAvailableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D65412A180437F3007F118B /* NodataAvailableController.m */; };
 		1D654184180437F3007F118B /* NodataAvailableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D65412B180437F3007F118B /* NodataAvailableController.xib */; };
 		1D654185180437F3007F118B /* SensorsSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D65412E180437F3007F118B /* SensorsSelectorViewController.m */; };
@@ -31,7 +29,6 @@
 		1D654188180437F3007F118B /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D654133180437F3007F118B /* SettingsViewController.xib */; };
 		1D654189180437F3007F118B /* TermsAndConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D654136180437F3007F118B /* TermsAndConditionsViewController.m */; };
 		1D65418A180437F3007F118B /* TermsAndConditionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D654137180437F3007F118B /* TermsAndConditionsViewController.xib */; };
-		1D65418B180437F3007F118B /* UIViewControllerWithContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D65413A180437F3007F118B /* UIViewControllerWithContext.m */; };
 		1D65418C180437F3007F118B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D65413E180437F3007F118B /* HomeViewController.m */; };
 		1D65418D180437F3007F118B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D65413F180437F3007F118B /* HomeViewController.xib */; };
 		1D65418E180437F3007F118B /* TabContainerAlertsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D654142180437F3007F118B /* TabContainerAlertsController.m */; };
@@ -82,6 +79,22 @@
 		1D6DF94217F1BEBB003174C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D6DF94017F1BEBB003174C8 /* InfoPlist.strings */; };
 		1D6DF94417F1BEBB003174C8 /* MedTronicPrototypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6DF94317F1BEBB003174C8 /* MedTronicPrototypeTests.m */; };
 		1D6DF96017F1C74B003174C8 /* UserStandardDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6DF95F17F1C74B003174C8 /* UserStandardDefaultsManager.m */; };
+		1DEB069C18080A07007D9C69 /* MYMInitialPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB069A18080A07007D9C69 /* MYMInitialPathViewController.m */; };
+		1DEB069D18080A07007D9C69 /* MYMInitialPathViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DEB069B18080A07007D9C69 /* MYMInitialPathViewController.xib */; };
+		1DEB06A218080A62007D9C69 /* MYMExpandableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06A018080A62007D9C69 /* MYMExpandableViewController.m */; };
+		1DEB06A318080A62007D9C69 /* MYMExpandableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DEB06A118080A62007D9C69 /* MYMExpandableViewController.xib */; };
+		1DEB06A718080A74007D9C69 /* MYMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06A618080A74007D9C69 /* MYMViewController.m */; };
+		1DEB06AD18080C31007D9C69 /* MYMCheckListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06AB18080C31007D9C69 /* MYMCheckListViewController.m */; };
+		1DEB06AE18080C31007D9C69 /* MYMCheckListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DEB06AC18080C31007D9C69 /* MYMCheckListViewController.xib */; };
+		1DEB06B218080C3E007D9C69 /* MYMTipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06B018080C3E007D9C69 /* MYMTipsViewController.m */; };
+		1DEB06B318080C3E007D9C69 /* MYMTipsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DEB06B118080C3E007D9C69 /* MYMTipsViewController.xib */; };
+		1DEB06B618080F42007D9C69 /* ApplicationCommandOpenTravel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06B518080F42007D9C69 /* ApplicationCommandOpenTravel.m */; };
+		1DEB06B918080F6F007D9C69 /* ApplicationCommandOpenCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06B818080F6F007D9C69 /* ApplicationCommandOpenCheckList.m */; };
+		1DEB06BC180810B0007D9C69 /* ApplicationCommandOpenVideoTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06BB180810B0007D9C69 /* ApplicationCommandOpenVideoTutorial.m */; };
+		1DEB06BF180811CD007D9C69 /* ApplicationCommandOpenPumpAndAlarms.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06BE180811CD007D9C69 /* ApplicationCommandOpenPumpAndAlarms.m */; };
+		1DEB06C218081374007D9C69 /* ApplicationCommandOpenTips.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06C118081374007D9C69 /* ApplicationCommandOpenTips.m */; };
+		1DEB06C518081633007D9C69 /* ApplicationCommandOpenAlertsSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06C418081633007D9C69 /* ApplicationCommandOpenAlertsSettings.m */; };
+		1DEB06C8180818D7007D9C69 /* ApplicationCommandOpenPumpSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06C7180818D7007D9C69 /* ApplicationCommandOpenPumpSettings.m */; };
 		E940B3251800551F007645F3 /* BlogDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B3241800551F007645F3 /* BlogDataProvider.m */; };
 		E940B32E18006066007645F3 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B32D18006066007645F3 /* CoreDataManager.m */; };
 		E940B32F18006066007645F3 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B32D18006066007645F3 /* CoreDataManager.m */; };
@@ -252,9 +265,6 @@
 		1D65411D180437F3007F118B /* BlogHeadlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogHeadlineViewController.h; sourceTree = "<group>"; };
 		1D65411E180437F3007F118B /* BlogHeadlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogHeadlineViewController.m; sourceTree = "<group>"; };
 		1D65411F180437F3007F118B /* BlogHeadlineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogHeadlineViewController.xib; sourceTree = "<group>"; };
-		1D654125180437F3007F118B /* InitialPathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialPathViewController.h; sourceTree = "<group>"; };
-		1D654126180437F3007F118B /* InitialPathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialPathViewController.m; sourceTree = "<group>"; };
-		1D654127180437F3007F118B /* InitialPathViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InitialPathViewController.xib; sourceTree = "<group>"; };
 		1D654129180437F3007F118B /* NodataAvailableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodataAvailableController.h; sourceTree = "<group>"; };
 		1D65412A180437F3007F118B /* NodataAvailableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodataAvailableController.m; sourceTree = "<group>"; };
 		1D65412B180437F3007F118B /* NodataAvailableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NodataAvailableController.xib; sourceTree = "<group>"; };
@@ -267,8 +277,6 @@
 		1D654135180437F3007F118B /* TermsAndConditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsAndConditionsViewController.h; sourceTree = "<group>"; };
 		1D654136180437F3007F118B /* TermsAndConditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsViewController.m; sourceTree = "<group>"; };
 		1D654137180437F3007F118B /* TermsAndConditionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TermsAndConditionsViewController.xib; sourceTree = "<group>"; };
-		1D654139180437F3007F118B /* UIViewControllerWithContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewControllerWithContext.h; sourceTree = "<group>"; };
-		1D65413A180437F3007F118B /* UIViewControllerWithContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewControllerWithContext.m; sourceTree = "<group>"; };
 		1D65413D180437F3007F118B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		1D65413E180437F3007F118B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		1D65413F180437F3007F118B /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -346,6 +354,34 @@
 		1D6DF94317F1BEBB003174C8 /* MedTronicPrototypeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MedTronicPrototypeTests.m; sourceTree = "<group>"; };
 		1D6DF95E17F1C74B003174C8 /* UserStandardDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserStandardDefaultsManager.h; sourceTree = "<group>"; };
 		1D6DF95F17F1C74B003174C8 /* UserStandardDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserStandardDefaultsManager.m; sourceTree = "<group>"; };
+		1DEB069918080A07007D9C69 /* MYMInitialPathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMInitialPathViewController.h; sourceTree = "<group>"; };
+		1DEB069A18080A07007D9C69 /* MYMInitialPathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMInitialPathViewController.m; sourceTree = "<group>"; };
+		1DEB069B18080A07007D9C69 /* MYMInitialPathViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYMInitialPathViewController.xib; sourceTree = "<group>"; };
+		1DEB069F18080A62007D9C69 /* MYMExpandableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMExpandableViewController.h; sourceTree = "<group>"; };
+		1DEB06A018080A62007D9C69 /* MYMExpandableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMExpandableViewController.m; sourceTree = "<group>"; };
+		1DEB06A118080A62007D9C69 /* MYMExpandableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYMExpandableViewController.xib; sourceTree = "<group>"; };
+		1DEB06A518080A74007D9C69 /* MYMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMViewController.h; sourceTree = "<group>"; };
+		1DEB06A618080A74007D9C69 /* MYMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMViewController.m; sourceTree = "<group>"; };
+		1DEB06AA18080C31007D9C69 /* MYMCheckListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMCheckListViewController.h; sourceTree = "<group>"; };
+		1DEB06AB18080C31007D9C69 /* MYMCheckListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMCheckListViewController.m; sourceTree = "<group>"; };
+		1DEB06AC18080C31007D9C69 /* MYMCheckListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYMCheckListViewController.xib; sourceTree = "<group>"; };
+		1DEB06AF18080C3E007D9C69 /* MYMTipsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMTipsViewController.h; sourceTree = "<group>"; };
+		1DEB06B018080C3E007D9C69 /* MYMTipsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMTipsViewController.m; sourceTree = "<group>"; };
+		1DEB06B118080C3E007D9C69 /* MYMTipsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYMTipsViewController.xib; sourceTree = "<group>"; };
+		1DEB06B418080F42007D9C69 /* ApplicationCommandOpenTravel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationCommandOpenTravel.h; sourceTree = "<group>"; };
+		1DEB06B518080F42007D9C69 /* ApplicationCommandOpenTravel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationCommandOpenTravel.m; sourceTree = "<group>"; };
+		1DEB06B718080F6F007D9C69 /* ApplicationCommandOpenCheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationCommandOpenCheckList.h; sourceTree = "<group>"; };
+		1DEB06B818080F6F007D9C69 /* ApplicationCommandOpenCheckList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationCommandOpenCheckList.m; sourceTree = "<group>"; };
+		1DEB06BA180810B0007D9C69 /* ApplicationCommandOpenVideoTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationCommandOpenVideoTutorial.h; sourceTree = "<group>"; };
+		1DEB06BB180810B0007D9C69 /* ApplicationCommandOpenVideoTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationCommandOpenVideoTutorial.m; sourceTree = "<group>"; };
+		1DEB06BD180811CD007D9C69 /* ApplicationCommandOpenPumpAndAlarms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationCommandOpenPumpAndAlarms.h; sourceTree = "<group>"; };
+		1DEB06BE180811CD007D9C69 /* ApplicationCommandOpenPumpAndAlarms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationCommandOpenPumpAndAlarms.m; sourceTree = "<group>"; };
+		1DEB06C018081374007D9C69 /* ApplicationCommandOpenTips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationCommandOpenTips.h; sourceTree = "<group>"; };
+		1DEB06C118081374007D9C69 /* ApplicationCommandOpenTips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationCommandOpenTips.m; sourceTree = "<group>"; };
+		1DEB06C318081633007D9C69 /* ApplicationCommandOpenAlertsSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationCommandOpenAlertsSettings.h; sourceTree = "<group>"; };
+		1DEB06C418081633007D9C69 /* ApplicationCommandOpenAlertsSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationCommandOpenAlertsSettings.m; sourceTree = "<group>"; };
+		1DEB06C6180818D7007D9C69 /* ApplicationCommandOpenPumpSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationCommandOpenPumpSettings.h; sourceTree = "<group>"; };
+		1DEB06C7180818D7007D9C69 /* ApplicationCommandOpenPumpSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationCommandOpenPumpSettings.m; sourceTree = "<group>"; };
 		E940B3231800551F007645F3 /* BlogDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogDataProvider.h; sourceTree = "<group>"; };
 		E940B3241800551F007645F3 /* BlogDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogDataProvider.m; sourceTree = "<group>"; };
 		E940B32618005588007645F3 /* coredata_model_definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = coredata_model_definitions.h; sourceTree = "<group>"; };
@@ -582,6 +618,7 @@
 		1D65410C180437F3007F118B /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				1DEB06921807F250007D9C69 /* controls */,
 				1D65410D180437F3007F118B /* appControllers */,
 				1D65413B180437F3007F118B /* appScreens */,
 				1D65415C180437F3007F118B /* cells */,
@@ -597,12 +634,10 @@
 				1D6541AD18044A38007F118B /* infusionSelectorViewController */,
 				1D65410E180437F3007F118B /* actions */,
 				1D654114180437F3007F118B /* blogs */,
-				1D654124180437F3007F118B /* initialPathViewController */,
 				1D654128180437F3007F118B /* nodataAvailableController */,
 				1D65412C180437F3007F118B /* sensorsSelectorController */,
 				1D654130180437F3007F118B /* settingsController */,
 				1D654134180437F3007F118B /* termsAndConditions */,
-				1D654138180437F3007F118B /* UIViewControllerWithContext */,
 			);
 			path = appControllers;
 			sourceTree = "<group>";
@@ -650,16 +685,6 @@
 			path = blogsHeadline;
 			sourceTree = "<group>";
 		};
-		1D654124180437F3007F118B /* initialPathViewController */ = {
-			isa = PBXGroup;
-			children = (
-				1D654125180437F3007F118B /* InitialPathViewController.h */,
-				1D654126180437F3007F118B /* InitialPathViewController.m */,
-				1D654127180437F3007F118B /* InitialPathViewController.xib */,
-			);
-			path = initialPathViewController;
-			sourceTree = "<group>";
-		};
 		1D654128180437F3007F118B /* nodataAvailableController */ = {
 			isa = PBXGroup;
 			children = (
@@ -703,19 +728,11 @@
 			path = termsAndConditions;
 			sourceTree = "<group>";
 		};
-		1D654138180437F3007F118B /* UIViewControllerWithContext */ = {
-			isa = PBXGroup;
-			children = (
-				1D654139180437F3007F118B /* UIViewControllerWithContext.h */,
-				1D65413A180437F3007F118B /* UIViewControllerWithContext.m */,
-			);
-			path = UIViewControllerWithContext;
-			sourceTree = "<group>";
-		};
 		1D65413B180437F3007F118B /* appScreens */ = {
 			isa = PBXGroup;
 			children = (
 				1D65413C180437F3007F118B /* HomeViewController */,
+				1DEB069818080A07007D9C69 /* InitialSetupViewController */,
 				1D654140180437F3007F118B /* TabContainerAlertsController */,
 				1D654144180437F3007F118B /* TabContainerBlogController */,
 				1D65414A180437F3007F118B /* TabContainerHelpController */,
@@ -999,6 +1016,64 @@
 				1D6DF95F17F1C74B003174C8 /* UserStandardDefaultsManager.m */,
 			);
 			path = UserStandartDefaultsManager;
+			sourceTree = "<group>";
+		};
+		1DEB06921807F250007D9C69 /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				1DEB06A418080A74007D9C69 /* UIViewControllerWithContext */,
+				1DEB069E18080A62007D9C69 /* ExpandableViewController */,
+			);
+			path = controls;
+			sourceTree = "<group>";
+		};
+		1DEB069818080A07007D9C69 /* InitialSetupViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1DEB069918080A07007D9C69 /* MYMInitialPathViewController.h */,
+				1DEB069A18080A07007D9C69 /* MYMInitialPathViewController.m */,
+				1DEB069B18080A07007D9C69 /* MYMInitialPathViewController.xib */,
+			);
+			path = InitialSetupViewController;
+			sourceTree = "<group>";
+		};
+		1DEB069E18080A62007D9C69 /* ExpandableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1DEB069F18080A62007D9C69 /* MYMExpandableViewController.h */,
+				1DEB06A018080A62007D9C69 /* MYMExpandableViewController.m */,
+				1DEB06A118080A62007D9C69 /* MYMExpandableViewController.xib */,
+			);
+			path = ExpandableViewController;
+			sourceTree = "<group>";
+		};
+		1DEB06A418080A74007D9C69 /* UIViewControllerWithContext */ = {
+			isa = PBXGroup;
+			children = (
+				1DEB06A518080A74007D9C69 /* MYMViewController.h */,
+				1DEB06A618080A74007D9C69 /* MYMViewController.m */,
+			);
+			path = UIViewControllerWithContext;
+			sourceTree = "<group>";
+		};
+		1DEB06A818080C19007D9C69 /* CheckListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1DEB06AA18080C31007D9C69 /* MYMCheckListViewController.h */,
+				1DEB06AB18080C31007D9C69 /* MYMCheckListViewController.m */,
+				1DEB06AC18080C31007D9C69 /* MYMCheckListViewController.xib */,
+			);
+			path = CheckListViewController;
+			sourceTree = "<group>";
+		};
+		1DEB06A918080C19007D9C69 /* TipsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1DEB06AF18080C3E007D9C69 /* MYMTipsViewController.h */,
+				1DEB06B018080C3E007D9C69 /* MYMTipsViewController.m */,
+				1DEB06B118080C3E007D9C69 /* MYMTipsViewController.xib */,
+			);
+			path = TipsViewController;
 			sourceTree = "<group>";
 		};
 		E940B31D18004971007645F3 /* dataproviders */ = {
@@ -1322,6 +1397,20 @@
 				E9D7CE8517F21CF4006FB178 /* ApplicationCommandOpenSettingsTab.m */,
 				E9D7CE8817F22074006FB178 /* ApplicationCommandOpenBlog.h */,
 				E9D7CE8917F22074006FB178 /* ApplicationCommandOpenBlog.m */,
+				1DEB06B418080F42007D9C69 /* ApplicationCommandOpenTravel.h */,
+				1DEB06B518080F42007D9C69 /* ApplicationCommandOpenTravel.m */,
+				1DEB06B718080F6F007D9C69 /* ApplicationCommandOpenCheckList.h */,
+				1DEB06B818080F6F007D9C69 /* ApplicationCommandOpenCheckList.m */,
+				1DEB06BA180810B0007D9C69 /* ApplicationCommandOpenVideoTutorial.h */,
+				1DEB06BB180810B0007D9C69 /* ApplicationCommandOpenVideoTutorial.m */,
+				1DEB06BD180811CD007D9C69 /* ApplicationCommandOpenPumpAndAlarms.h */,
+				1DEB06BE180811CD007D9C69 /* ApplicationCommandOpenPumpAndAlarms.m */,
+				1DEB06C018081374007D9C69 /* ApplicationCommandOpenTips.h */,
+				1DEB06C118081374007D9C69 /* ApplicationCommandOpenTips.m */,
+				1DEB06C318081633007D9C69 /* ApplicationCommandOpenAlertsSettings.h */,
+				1DEB06C418081633007D9C69 /* ApplicationCommandOpenAlertsSettings.m */,
+				1DEB06C6180818D7007D9C69 /* ApplicationCommandOpenPumpSettings.h */,
+				1DEB06C7180818D7007D9C69 /* ApplicationCommandOpenPumpSettings.m */,
 			);
 			path = ApplicationCommands;
 			sourceTree = "<group>";
@@ -1424,6 +1513,8 @@
 		E9F8169E18074AA200464220 /* help */ = {
 			isa = PBXGroup;
 			children = (
+				1DEB06A818080C19007D9C69 /* CheckListViewController */,
+				1DEB06A918080C19007D9C69 /* TipsViewController */,
 				E9F8169F18074AA200464220 /* PumpAndAlarmViewController */,
 				E9F816A018074AA200464220 /* TravelViewController */,
 				E9F816A118074AA200464220 /* VideoTutorialViewController */,
@@ -1571,6 +1662,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DEB06B318080C3E007D9C69 /* MYMTipsViewController.xib in Resources */,
 				1D65419E180437F3007F118B /* CheckboxCell.xib in Resources */,
 				E9F816B2180750C500464220 /* stubBackground.jpg in Resources */,
 				1D6541B218044A38007F118B /* InfusionSelectorViewController.xib in Resources */,
@@ -1590,6 +1682,7 @@
 				E940B3DB1801EB9B007645F3 /* CheckBoxOn.png in Resources */,
 				E940B3441800AF32007645F3 /* HelpButton.png in Resources */,
 				E9F8160818072E0400464220 /* MYMPumpSettingsViewController.xib in Resources */,
+				1DEB069D18080A07007D9C69 /* MYMInitialPathViewController.xib in Resources */,
 				1D65418F180437F3007F118B /* TabContainerAlertsController.xib in Resources */,
 				1D6DF93017F1BEBB003174C8 /* Images.xcassets in Resources */,
 				E9D7CE6917F20D5E006FB178 /* Blog.png in Resources */,
@@ -1614,7 +1707,6 @@
 				1D654188180437F3007F118B /* SettingsViewController.xib in Resources */,
 				1D6541A6180437F3007F118B /* TextCell.xib in Resources */,
 				E940B4261805E158007645F3 /* eulaNoticeText.png in Resources */,
-				1D654182180437F3007F118B /* InitialPathViewController.xib in Resources */,
 				E9D7CE6017F20D12006FB178 /* Order.png in Resources */,
 				1D654179180437F3007F118B /* ActionsViewController.xib in Resources */,
 				1D654196180437F3007F118B /* TabContainerHomeController.xib in Resources */,
@@ -1630,8 +1722,10 @@
 				E940B3DA1801EB9B007645F3 /* CheckBoxOff.png in Resources */,
 				E940B36918016F8A007645F3 /* stub05.jpg in Resources */,
 				E9F816AB18074ACB00464220 /* MYMTravelViewController.xib in Resources */,
+				1DEB06AE18080C31007D9C69 /* MYMCheckListViewController.xib in Resources */,
 				E940B36518016F89007645F3 /* stub03.jpg in Resources */,
 				1D6541A0180437F3007F118B /* CheckboxOptionalCell.xib in Resources */,
+				1DEB06A318080A62007D9C69 /* MYMExpandableViewController.xib in Resources */,
 				E940B34C18015CE7007645F3 /* BarButtonShare.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1677,26 +1771,32 @@
 				E9F816791807483000464220 /* SensorEntity.m in Sources */,
 				E9F816AF18074ADA00464220 /* MYMVideoTutorialViewController.m in Sources */,
 				1D6541B518053284007F118B /* SensorSelectorView.m in Sources */,
-				1D654181180437F3007F118B /* InitialPathViewController.m in Sources */,
+				1DEB06B618080F42007D9C69 /* ApplicationCommandOpenTravel.m in Sources */,
 				1D6DF92717F1BEBB003174C8 /* main.m in Sources */,
 				E9F816A518074ABF00464220 /* MYMPumpAndAlarmViewController.m in Sources */,
+				1DEB06C8180818D7007D9C69 /* ApplicationCommandOpenPumpSettings.m in Sources */,
 				1D6541A5180437F3007F118B /* TextCell.m in Sources */,
 				E9F81673180746A400464220 /* CheckListDataProvider.m in Sources */,
 				E9D7CE7117F218CC006FB178 /* ApplicationCommandsManager.m in Sources */,
+				1DEB069C18080A07007D9C69 /* MYMInitialPathViewController.m in Sources */,
 				E940B4061801EEE2007645F3 /* SensorConfigurationDataProvider.m in Sources */,
 				1D6541A3180437F3007F118B /* SwitchCell.m in Sources */,
 				E9F815F818060E4E00464220 /* MYMSensorObject.m in Sources */,
 				E9F816851807483100464220 /* PumpSettingCategory.m in Sources */,
+				1DEB06C218081374007D9C69 /* ApplicationCommandOpenTips.m in Sources */,
 				1D654189180437F3007F118B /* TermsAndConditionsViewController.m in Sources */,
 				E940B3FA1801EEB0007645F3 /* SensorTypeDependenceDataProvider.m in Sources */,
+				1DEB06BF180811CD007D9C69 /* ApplicationCommandOpenPumpAndAlarms.m in Sources */,
 				1D65419A180437F3007F118B /* TabContainerSettingsController.m in Sources */,
 				1D654183180437F3007F118B /* NodataAvailableController.m in Sources */,
 				1D65419D180437F3007F118B /* CheckboxCell.m in Sources */,
+				1DEB06A718080A74007D9C69 /* MYMViewController.m in Sources */,
 				1D654190180437F3007F118B /* TabContainerBlogController.m in Sources */,
 				E9F8169D180748B600464220 /* CheckListEntity.m in Sources */,
 				1D65417C180437F3007F118B /* BlogHeadlineView.m in Sources */,
 				E9F8168E1807483100464220 /* InfusionEntity.m in Sources */,
 				E9F8160218072DF200464220 /* MYMAlertsSettingsViewController.m in Sources */,
+				1DEB06AD18080C31007D9C69 /* MYMCheckListViewController.m in Sources */,
 				E9F816661807465600464220 /* PumpSettingsDataProvider.m in Sources */,
 				E9F816CA1807602500464220 /* AlarmEntity.m in Sources */,
 				E9F816B61807587200464220 /* MYMPumpAndSensorAlarmsDataset.m in Sources */,
@@ -1712,15 +1812,17 @@
 				1D65419F180437F3007F118B /* CheckboxOptionalCell.m in Sources */,
 				E9F815FB1806188E00464220 /* MYMSensorTypeObject.m in Sources */,
 				1D4E9C561802ACB900C59E53 /* NSBundle+Localization.m in Sources */,
+				1DEB06B918080F6F007D9C69 /* ApplicationCommandOpenCheckList.m in Sources */,
 				E940B4021801EECF007645F3 /* SensorDataProvider.m in Sources */,
 				1D65417A180437F3007F118B /* BlogDescriptionViewController.m in Sources */,
-				1D65418B180437F3007F118B /* UIViewControllerWithContext.m in Sources */,
 				E9F815F518060E3500464220 /* MYMSensorDataset.m in Sources */,
 				1D6DF92E17F1BEBB003174C8 /* MedTronicPrototype.xcdatamodeld in Sources */,
+				1DEB06C518081633007D9C69 /* ApplicationCommandOpenAlertsSettings.m in Sources */,
 				E9F8160C1807303200464220 /* MYMAlertsViewController.m in Sources */,
 				1D6541B118044A38007F118B /* InfusionSelectorViewController.m in Sources */,
 				E940B42D1805EE44007645F3 /* MYMInfusionDataset.m in Sources */,
 				E9F8160718072E0400464220 /* MYMPumpSettingsViewController.m in Sources */,
+				1DEB06B218080C3E007D9C69 /* MYMTipsViewController.m in Sources */,
 				E9D7CE8617F21CF4006FB178 /* ApplicationCommandOpenSettingsTab.m in Sources */,
 				E9F816C418075FA500464220 /* MYMAlarmTypeDataProvider.m in Sources */,
 				E940B32E18006066007645F3 /* CoreDataManager.m in Sources */,
@@ -1732,6 +1834,7 @@
 				E9F8167C1807483100464220 /* PumpSettingType.m in Sources */,
 				1D654195180437F3007F118B /* TabContainerHomeController.m in Sources */,
 				E9F816C71807602400464220 /* AlarmTypeEntity.m in Sources */,
+				1DEB06A218080A62007D9C69 /* MYMExpandableViewController.m in Sources */,
 				E9F816941807483200464220 /* ReminderType.m in Sources */,
 				E9F816701807469700464220 /* RemindersTypeDataProvider.m in Sources */,
 				1D654197180437F3007F118B /* TabContainerHomeView.m in Sources */,
@@ -1752,6 +1855,7 @@
 				E9F816CD18076A4500464220 /* MYMPumpAndSensorAlarmTypesDataset.m in Sources */,
 				E9D7CE8A17F22074006FB178 /* ApplicationCommandOpenBlog.m in Sources */,
 				1D4E9C4E1802A9C700C59E53 /* UILabel+CustomLocalization.m in Sources */,
+				1DEB06BC180810B0007D9C69 /* ApplicationCommandOpenVideoTutorial.m in Sources */,
 				1D6541A1180437F3007F118B /* ReminderCell.m in Sources */,
 				E940B3981801DA61007645F3 /* DateFormatManager.m in Sources */,
 				1D6541AC18043F18007F118B /* SensorConfigurationComplexDataProvider.m in Sources */,

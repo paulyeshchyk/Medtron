@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Pavel Yeshchyk. All rights reserved.
 //
 
-#import "UIViewControllerWithContext.h"
+#import "MYMViewController.h"
 
-@interface TabContainerSettingsController : UIViewControllerWithContext
+@interface TabContainerSettingsController : MYMViewController
 
 - (IBAction)onBackButtonClicked:(id)sender ;
 

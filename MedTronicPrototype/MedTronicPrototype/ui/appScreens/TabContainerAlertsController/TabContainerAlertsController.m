@@ -8,8 +8,6 @@
 
 #import "TabContainerAlertsController.h"
 #import "ApplicationCommandsManager.h"
-#import "MYMAlertsSettingsViewController.h"
-#import "MYMPumpSettingsViewController.h"
 
 @interface TabContainerAlertsController (){
 }
@@ -45,13 +43,11 @@
 
 
 - (IBAction)onAlertsButtonClicked:(id)sender {
-    MYMAlertsSettingsViewController* viewController = [[MYMAlertsSettingsViewController alloc] initWithNibName:@"MYMAlertsSettingsViewController" bundle:[NSBundle mainBundle]];
-    [self.navigationController pushViewController:viewController animated:YES ];
+    [[ApplicationCommandsManager sharedInstance] openAlertsSettings:@{@"navigationController": self.navigationController}];
 }
 
 - (IBAction)onPumpButtonClicked:(id)sender {
-    MYMPumpSettingsViewController* viewController = [[MYMPumpSettingsViewController alloc] initWithNibName:@"MYMPumpSettingsViewController" bundle:[NSBundle mainBundle]];
-    [self.navigationController pushViewController:viewController animated:YES];
+    [[ApplicationCommandsManager sharedInstance] openPumpSettings:@{@"navigationController": self.navigationController}];
 }
 
 @end

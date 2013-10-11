@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Pavel Yeshchyk. All rights reserved.
 //
 
-#import "InitialPathViewController.h"
+#import "MYMInitialPathViewController.h"
 #import "UIImageUtils.h"
 #import "SensorsSelectorViewController.h"
 #import "InfusionSelectorViewController.h"
 
-@interface InitialPathViewController () <UIScrollViewDelegate>{
+@interface MYMInitialPathViewController () <UIScrollViewDelegate>{
     IBOutlet UIView* container_;
     IBOutlet UIScrollView* scrollView_;
     IBOutlet UIView* pumpDescriptionView_;
@@ -23,11 +23,11 @@
 }
 @end
 
-@implementation InitialPathViewController
+@implementation MYMInitialPathViewController
 
 
 +(void)newInstanceInsideNavigationController:(UINavigationController*)navController pushWithCloseBlock:(InitialPathControllerCloseActionBlock)block {
-    InitialPathViewController* result = [[InitialPathViewController alloc] initWithNibName:@"InitialPathViewController" bundle:[NSBundle mainBundle]];
+    MYMInitialPathViewController* result = [[MYMInitialPathViewController alloc] initWithNibName:@"MYMInitialPathViewController" bundle:[NSBundle mainBundle]];
 
     
     [result setOnCloseBlock:^(id sender){

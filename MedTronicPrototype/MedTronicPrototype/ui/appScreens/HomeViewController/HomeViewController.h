@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Pavel Yeshchyk. All rights reserved.
 //
 
-#import "UIViewControllerWithContext.h"
+#import "MYMViewController.h"
 
-@interface HomeViewController : UIViewControllerWithContext
+@interface HomeViewController : MYMViewController
 @property (nonatomic, strong)IBOutlet UITabBarController* tabBarController;
 - (void)openTabHome:(NSDictionary*)args;
 - (void)openTabBlog:(NSDictionary*)args;

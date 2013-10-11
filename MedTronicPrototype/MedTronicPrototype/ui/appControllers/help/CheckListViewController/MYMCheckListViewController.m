@@ -1,20 +1,18 @@
 //
-//  UIViewControllerWithContext.m
+//  MYMCheckListViewController.m
 //  MedTronicPrototype
 //
-//  Created by Pavel on 10/5/13.
+//  Created by Pavel Yeshchyk on 10/11/13.
 //  Copyright (c) 2013 Pavel Yeshchyk. All rights reserved.
 //
 
-#import "UIViewControllerWithContext.h"
-#import "CoreDataManager.h"
+#import "MYMCheckListViewController.h"
 
-@interface UIViewControllerWithContext ()
+@interface MYMCheckListViewController ()
 
 @end
 
-@implementation UIViewControllerWithContext
-
+@implementation MYMCheckListViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,9 +35,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)saveChanges {
-}
-
-- (void)rollbackChanges {
-}
 @end

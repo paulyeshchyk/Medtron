@@ -8,18 +8,18 @@
 
 #import "TabContainerHelpController.h"
 #import "ApplicationCommandsManager.h"
-#import "MYMVideoTutorialViewController.h"
 #import "MYMPumpAndAlarmViewController.h"
 #import "MYMTravelViewController.h"
+#import "MYMExpandableViewController.h"
 
-@interface TabContainerHelpController ()
-
+@interface TabContainerHelpController () <MYMExpandableViewControllerDelegate>
+@property (nonatomic, strong) IBOutlet MYMExpandableViewController* expandableViewController;
+@property (nonatomic, weak) IBOutlet UIView* travelSubView;
 @end
 
 @implementation TabContainerHelpController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -27,14 +27,14 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.view addSubview:self.expandableViewController.view];
+    [self.expandableViewController setIsExpanded:NO];
+    [self.expandableViewController.view setFrame:CGRectMake (100,300,200,200)];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -45,18 +45,28 @@
 }
 
 - (IBAction)onVideoTutorialsClicked:(id)sender {
-    MYMVideoTutorialViewController* viewController = [[MYMVideoTutorialViewController alloc] initWithNibName:@"MYMVideoTutorialViewController" bundle:[NSBundle mainBundle]];
-    [self.navigationController pushViewController:viewController animated:YES ];
+    [[ApplicationCommandsManager sharedInstance] openVideoTutorial:@{@"navigationController": self.navigationController}];
+}
+
+- (IBAction)onChecklistClicked:(id)sender {
+    [[ApplicationCommandsManager sharedInstance] openCheckList:@{@"navigationController": self.navigationController}];
+}
+
+- (IBAction)onTipsClicked:(id)sender {
+    [[ApplicationCommandsManager sharedInstance] openTips:@{@"navigationController": self.navigationController}];
 }
 
 - (IBAction)onPumpAndAlarmsClicked:(id)sender {
-    MYMPumpAndAlarmViewController* viewController = [[MYMPumpAndAlarmViewController alloc] initWithNibName:@"MYMPumpAndAlarmViewController" bundle:[NSBundle mainBundle]];
-    [self.navigationController pushViewController:viewController animated:YES ];
+    [[ApplicationCommandsManager sharedInstance] openPumpAndAlarms:@{@"navigationController": self.navigationController}];
 }
 
 - (IBAction)onTravelClicked:(id)sender {
-    MYMTravelViewController* viewController = [[MYMTravelViewController alloc] initWithNibName:@"MYMTravelViewController" bundle:[NSBundle mainBundle]];
-    [self.navigationController pushViewController:viewController animated:YES ];
+    [[ApplicationCommandsManager sharedInstance] openTravel:@{@"navigationController": self.navigationController}];
+}
+
+#pragma mark - MYMExpandableViewControllerDelegate
+- (UIView*)viewToExpand {
+    return self.travelSubView;
 }
 
 @end

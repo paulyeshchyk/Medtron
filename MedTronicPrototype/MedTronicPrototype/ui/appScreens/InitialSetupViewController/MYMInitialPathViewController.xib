@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InitialPathViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MYMInitialPathViewController">
             <connections>
                 <outlet property="container_" destination="vpW-Vp-YbF" id="gQK-Gx-1t1"/>
                 <outlet property="infusionDescriptionView_" destination="BPH-b1-ykk" id="QjR-4I-1TC"/>

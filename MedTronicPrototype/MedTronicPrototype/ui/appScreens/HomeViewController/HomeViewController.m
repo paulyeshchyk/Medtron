@@ -10,7 +10,7 @@
 #import "TermsAndConditionsViewController.h"
 #import "UserStandardDefaultsManager.h"
 #import "StubdataManager.h"
-#import "InitialPathViewController.h"
+#import "MYMInitialPathViewController.h"
 
 @interface HomeViewController () <UITabBarControllerDelegate>{
     NSDictionary* args_;
@@ -48,7 +48,7 @@
             if (wasFirstTime){
                 
                 [StubdataManager performExecution];
-                [InitialPathViewController newInstanceInsideNavigationController:self.navigationController pushWithCloseBlock:NULL];
+                [MYMInitialPathViewController newInstanceInsideNavigationController:self.navigationController pushWithCloseBlock:NULL];
 
             }
         }
@@ -69,7 +69,7 @@
 
 - (void)openTabHome:(NSDictionary*)args {
     UINavigationController* navController = [[self.tabBarController viewControllers] objectAtIndex:0];
-    UIViewControllerWithContext* viewController = (UIViewControllerWithContext*)navController.topViewController;
+    MYMViewController* viewController = (MYMViewController*)navController.topViewController;
     [viewController setArgs:args];
     [self.tabBarController setSelectedViewController:navController];
     [self tabBarController:self.tabBarController didSelectViewController:navController];
@@ -77,7 +77,7 @@
 
 - (void)openTabBlog:(NSDictionary*)args {
     UINavigationController* navController = [[self.tabBarController viewControllers] objectAtIndex:1];
-    UIViewControllerWithContext* viewController = (UIViewControllerWithContext*)navController.topViewController;
+    MYMViewController* viewController = (MYMViewController*)navController.topViewController;
     [viewController setArgs:args];
     [self.tabBarController setSelectedViewController:navController];
     [self tabBarController:self.tabBarController didSelectViewController:navController];
@@ -85,7 +85,7 @@
 
 - (void)openTabActions:(NSDictionary*)args {
     UINavigationController* navController = [[self.tabBarController viewControllers] objectAtIndex:2];
-    UIViewControllerWithContext* viewController = (UIViewControllerWithContext*)navController.topViewController;
+    MYMViewController* viewController = (MYMViewController*)navController.topViewController;
     [viewController setArgs:args];
     [self.tabBarController setSelectedViewController:navController];
     [self tabBarController:self.tabBarController didSelectViewController:navController];
@@ -93,7 +93,7 @@
 
 - (void)openTabHelp:(NSDictionary*)args {
     UINavigationController* navController = [[self.tabBarController viewControllers] objectAtIndex:3];
-    UIViewControllerWithContext* viewController = (UIViewControllerWithContext*)navController.topViewController;
+    MYMViewController* viewController = (MYMViewController*)navController.topViewController;
     [viewController setArgs:args];
     [self.tabBarController setSelectedViewController:navController];
     [self tabBarController:self.tabBarController didSelectViewController:navController];
@@ -101,7 +101,7 @@
 
 - (void)openTabMyOrder:(NSDictionary*)args {
     UINavigationController* navController = [[self.tabBarController viewControllers] objectAtIndex:4];
-    UIViewControllerWithContext* viewController = (UIViewControllerWithContext*)navController.topViewController;
+    MYMViewController* viewController = (MYMViewController*)navController.topViewController;
     [viewController setArgs:args];
     [self.tabBarController setSelectedViewController:navController];
     [self tabBarController:self.tabBarController didSelectViewController:navController];
@@ -109,7 +109,7 @@
 
 - (void)openTabSettings:(NSDictionary*)args {
     UINavigationController* navController = [[self.tabBarController viewControllers] objectAtIndex:5];
-    UIViewControllerWithContext* viewController = (UIViewControllerWithContext*)navController.topViewController;
+    MYMViewController* viewController = (MYMViewController*)navController.topViewController;
     [viewController setArgs:args];
     [self.tabBarController setSelectedViewController:navController];
     [self tabBarController:self.tabBarController didSelectViewController:navController];

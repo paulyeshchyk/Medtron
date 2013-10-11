@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewControllerWithContext : UIViewController
+@interface MYMViewController : UIViewController
 @property (nonatomic, strong)NSDictionary* args;
 - (void)rollbackChanges;
 - (void)saveChanges;

@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Pavel Yeshchyk. All rights reserved.
 //
 
-#import "UIViewControllerWithContext.h"
+#import "MYMViewController.h"
 #import "BlogDescriptionViewControllerProtocol.h"
 
-@interface TabContainerBlogController : UIViewControllerWithContext <BlogDescriptionViewControllerDatasource>
+@interface TabContainerBlogController : MYMViewController <BlogDescriptionViewControllerDatasource>
 @property (nonatomic, assign)NSInteger pageIndex;
 - (IBAction)onBackButtonClicked:(id)sender;
 - (IBAction)onShareButtonClicked:(id)sender;

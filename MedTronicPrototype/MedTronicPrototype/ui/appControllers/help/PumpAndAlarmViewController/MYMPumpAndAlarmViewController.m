@@ -106,6 +106,8 @@ static NSString* const kCellIdentifier = @"CheckboxCellId";
                 NSString* segmentName = [[ds objectAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] name];
                 [self.segmentControl insertSegmentWithTitle:segmentName atIndex:i animated:NO];
             }
+            
+            [self.segmentControl setSelectedSegmentIndex:0];
         }
         
     } else if ([dataset.userInfo isEqualToString:@"MYMPumpAndSensorAlarmsDataset"]){

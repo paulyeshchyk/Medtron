@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MYMExpandableViewController">
+            <connections>
+                <outlet property="scrollView" destination="Phi-SV-noP" id="26d-M9-qZF"/>
+                <outlet property="view" destination="vbU-Qm-dgb" id="ne7-0f-89Z"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="vbU-Qm-dgb">
+            <rect key="frame" x="0.0" y="0.0" width="392" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Phi-SV-noP">
+                    <rect key="frame" x="0.0" y="50" width="392" height="250"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZE-gv-GA5">
+                    <rect key="frame" x="0.0" y="0.0" width="392" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S94-IA-Oaz">
+                            <rect key="frame" x="0.0" y="10" width="77" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Travel">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="onExpandButtonClicked:" destination="-1" eventType="touchUpInside" id="W1c-cu-DLN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="JZE-gv-GA5" firstAttribute="top" secondItem="vbU-Qm-dgb" secondAttribute="top" id="Anj-Fh-ki4"/>
+                <constraint firstItem="Phi-SV-noP" firstAttribute="top" secondItem="JZE-gv-GA5" secondAttribute="bottom" id="IHz-ax-xGb"/>
+                <constraint firstItem="JZE-gv-GA5" firstAttribute="leading" secondItem="vbU-Qm-dgb" secondAttribute="leading" id="PZz-QI-ZMY"/>
+                <constraint firstAttribute="trailing" secondItem="JZE-gv-GA5" secondAttribute="trailing" id="Ual-iv-oPm"/>
+                <constraint firstAttribute="trailing" secondItem="Phi-SV-noP" secondAttribute="trailing" id="W9d-jw-vKa"/>
+                <constraint firstItem="Phi-SV-noP" firstAttribute="top" secondItem="vbU-Qm-dgb" secondAttribute="top" constant="50" id="lEH-ve-nli"/>
+                <constraint firstItem="Phi-SV-noP" firstAttribute="leading" secondItem="vbU-Qm-dgb" secondAttribute="leading" id="mwF-uP-vBh"/>
+                <constraint firstItem="Phi-SV-noP" firstAttribute="leading" secondItem="vbU-Qm-dgb" secondAttribute="leading" id="pBn-Hf-uSX"/>
+                <constraint firstAttribute="trailing" secondItem="Phi-SV-noP" secondAttribute="trailing" id="tDd-34-fp2"/>
+                <constraint firstAttribute="bottom" secondItem="Phi-SV-noP" secondAttribute="bottom" id="wAK-hW-za0"/>
+                <constraint firstAttribute="bottom" secondItem="Phi-SV-noP" secondAttribute="bottom" id="xBb-ga-zu9"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
