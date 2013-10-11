@@ -14,7 +14,7 @@
 static NSString* const kDatasetNameAlarmType = @"kDatasetNameAlarmType";
 
 @interface MYMPumpAndSensorAlarmTypesDataset() <DataProviderDelegate>{
-    NSMutableArray* alarmTypeData_;
+    NSMutableArray* data_;
     NSInteger providersExecutionCount_;
     
 }
@@ -32,7 +32,7 @@ static NSString* const kDatasetNameAlarmType = @"kDatasetNameAlarmType";
 - (void)reloadData {
     [self willStartLoad];
     
-    alarmTypeData_ = [NSMutableArray new];
+    data_ = [NSMutableArray new];
     
     providersExecutionCount_ = 0;
     [[MYMAlarmTypeDataProvider sharedInstance] performLoadAlarmTypessWithFilter:nil delegate:self userInfo:kDatasetNameAlarmType];
@@ -48,21 +48,29 @@ static NSString* const kDatasetNameAlarmType = @"kDatasetNameAlarmType";
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section {
-    return [alarmTypeData_ count];
+    return [data_ count];
 }
 
 - (id)objectAtIndexPath:(NSIndexPath*)indexPath {
-    return [alarmTypeData_ objectAtIndex:indexPath.row];
+    return [data_ objectAtIndex:indexPath.row];
+}
+
+- (void)deleteObjectsAtIndexPaths:(NSArray*)indexPaths {
+    //FIXME:check
+    for(NSIndexPath* indexPath in indexPaths) {
+        [[MYMAlarmTypeDataProvider sharedInstance] removeObject:[self objectAtIndexPath:indexPath]];
+        [data_ removeObjectAtIndex:indexPath.row];
+    }
 }
 
 - (NSString*)alarmNameAtIndexPath:(NSIndexPath*)indexPath {
-    AlarmTypeEntity* entity = [alarmTypeData_ objectAtIndex:indexPath.row];
+    AlarmTypeEntity* entity = [data_ objectAtIndex:indexPath.row];
     return entity.name;
 }
 
 - (void)provider:(id)dataprovider didFinishExecuteFetchWithResult:(NSArray*)resultArray andError:(NSError*)error userInfo:(id)userInfo {
     
-    [alarmTypeData_ addObjectsFromArray:resultArray];
+    [data_ addObjectsFromArray:resultArray];
     [self hasFinishedLoad];
     
 }

@@ -46,7 +46,15 @@
     self.isMultiSelectAllowed = NO;
 }
 
+- (void)setEditing:(BOOL)editing {
+    [super setEditing:editing];
+    [self.accessoryView setHidden:editing];
+}
 
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated{
+    [super setEditing:editing animated:animated];
+    [self.accessoryView setHidden:editing];
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

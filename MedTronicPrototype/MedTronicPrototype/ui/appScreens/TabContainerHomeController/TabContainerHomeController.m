@@ -58,7 +58,7 @@
     [actionsViewController_.view setFrame:actionsContainer_.bounds];
     [actionsViewController_ reloadActionSheet];
     
-    [[BlogDataProvider sharedInstance] performLoadBlogsWithFilter:nil delegate:self];
+    [[BlogDataProvider sharedInstance] performLoadBlogsWithFilter:nil delegate:self userInfo:nil];
 
 }
 

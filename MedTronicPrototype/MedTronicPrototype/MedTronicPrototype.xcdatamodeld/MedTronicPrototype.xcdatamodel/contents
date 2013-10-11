@@ -17,6 +17,7 @@
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
     <entity name="CheckListEntity" representedClassName="CheckListEntity" syncable="YES">
+        <attribute name="checked" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="InfusionConfigurationEntity" representedClassName="InfusionConfigurationEntity" syncable="YES">
@@ -64,6 +65,11 @@
         <relationship name="configuration" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SensorConfigurationEntity" inverseName="configurationSensorType" inverseEntity="SensorConfigurationEntity" syncable="YES"/>
         <relationship name="sensors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SensorEntity" inverseName="sensortypes" inverseEntity="SensorEntity" syncable="YES"/>
     </entity>
+    <entity name="TipEntity" representedClassName="TipEntity" syncable="YES">
+        <attribute name="explanation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="explanationURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="BlogEntity" positionX="0" positionY="0" width="0" height="0"/>
         <element name="CheckListEntity" positionX="0" positionY="0" width="0" height="0"/>
@@ -79,5 +85,6 @@
         <element name="SensorTypeEntity" positionX="0" positionY="0" width="0" height="0"/>
         <element name="AlarmEntity" positionX="0" positionY="0" width="0" height="0"/>
         <element name="AlarmTypeEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="TipEntity" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

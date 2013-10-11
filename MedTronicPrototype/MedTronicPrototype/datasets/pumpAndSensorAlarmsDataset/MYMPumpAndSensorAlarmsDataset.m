@@ -15,7 +15,7 @@
 static NSString* const kDatasetNameAlarm = @"kDatasetNameAlarm";
 
 @interface MYMPumpAndSensorAlarmsDataset() <DataProviderDelegate>{
-    NSMutableArray* alarmData_;
+    NSMutableArray* data_;
     NSManagedObjectID* alarmTypeID_;
 }
 @end
@@ -25,7 +25,6 @@ static NSString* const kDatasetNameAlarm = @"kDatasetNameAlarm";
 - (id)init {
     self = [super init];
     if(self){
-        alarmData_ = [NSMutableArray new];
         alarmTypeID_ = nil;
     }
     return self;
@@ -45,7 +44,8 @@ static NSString* const kDatasetNameAlarm = @"kDatasetNameAlarm";
 
 - (void)reloadData {
     [self willStartLoad];
-    
+
+    data_ = [NSMutableArray new];
     NSPredicate* predicate = nil;
     if (alarmTypeID_){
         predicate = [NSPredicate predicateWithFormat:@" alarmType == %@ ",alarmTypeID_];
@@ -65,21 +65,30 @@ static NSString* const kDatasetNameAlarm = @"kDatasetNameAlarm";
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section {
     
-    return [alarmData_ count];
+    return [data_ count];
 }
 
 - (id)objectAtIndexPath:(NSIndexPath*)indexPath {
-    return [alarmData_ objectAtIndex:indexPath.row];
+    return [data_ objectAtIndex:indexPath.row];
 }
 
 - (NSString*)alarmNameAtIndexPath:(NSIndexPath*)indexPath {
-    AlarmEntity* alarm =[alarmData_ objectAtIndex:indexPath.row];
+    AlarmEntity* alarm =[data_ objectAtIndex:indexPath.row];
     return alarm.name;
+}
+
+
+- (void)deleteObjectsAtIndexPaths:(NSArray*)indexPaths {
+    //FIXME:check
+    for(NSIndexPath* indexPath in indexPaths) {
+        [[MYMAlarmDataProvider sharedInstance] removeObject:[self objectAtIndexPath:indexPath]];
+        [data_ removeObjectAtIndex:indexPath.row];
+    }
 }
 
 - (void)provider:(id)dataprovider didFinishExecuteFetchWithResult:(NSArray*)resultArray andError:(NSError*)error userInfo:(id)userInfo {
     
-    [alarmData_ addObjectsFromArray:resultArray];
+    [data_ addObjectsFromArray:resultArray];
     
     [self hasFinishedLoad];
     

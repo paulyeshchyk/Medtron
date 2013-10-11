@@ -50,7 +50,7 @@
     [blogDescriptionViewController_.view setFrame:descriptionContainer_.bounds];
     [blogDescriptionViewController_ reloadDescription];
     
-    [[BlogDataProvider sharedInstance] performLoadBlogsWithFilter:nil delegate:self];
+    [[BlogDataProvider sharedInstance] performLoadBlogsWithFilter:nil delegate:self userInfo:nil];
     
 }
 

@@ -16,6 +16,8 @@
 #import "InfusionConfigurationDataProvider.h"
 #import "MYMAlarmDataProvider.h"
 #import "MYMAlarmTypeDataProvider.h"
+#import "CheckListDataProvider.h"
+#import "TipsDataProvider.h"
 
 
 @implementation StubdataManager
@@ -29,6 +31,10 @@
     [self infusionExecution];
     
     [self alarmsExecution];
+    
+    [self checkListExecution];
+    
+    [self tipsExecution];
     
 }
 
@@ -148,6 +154,26 @@
 
     [[InfusionDataProvider sharedInstance] saveContext];
     [[InfusionConfigurationDataProvider sharedInstance] saveContext];
+}
+
++ (void)checkListExecution {
+    [[CheckListDataProvider sharedInstance] addCheckListName:@"Blood glucose meter" ];
+    [[CheckListDataProvider sharedInstance] addCheckListName:@"Test strips and lancets" ];
+    [[CheckListDataProvider sharedInstance] addCheckListName:@"Glucose tablets or fast acting sugar" ];
+    [[CheckListDataProvider sharedInstance] addCheckListName:@"Snacks" ];
+    [[CheckListDataProvider sharedInstance] addCheckListName:@"Glucagon Emergency Kit" ];
+    [[CheckListDataProvider sharedInstance] addCheckListName:@"Ketone strips" ];
+    [[CheckListDataProvider sharedInstance] addCheckListName:@"Medical ID" ];
+    
+}
+
++ (void)tipsExecution {
+    [[TipsDataProvider sharedInstance] addTipWithName:@"Travel Loaner Program" explanation:@"Lorem ipsum" explanationURL:nil];
+    [[TipsDataProvider sharedInstance] addTipWithName:@"Airport Security" explanation:@"Lorem ipsum" explanationURL:nil];
+    [[TipsDataProvider sharedInstance] addTipWithName:@"Using Device on an Airplane" explanation:@"Lorem ipsum" explanationURL:nil];
+    [[TipsDataProvider sharedInstance] addTipWithName:@"Support Outside the U.S" explanation:@"Lorem ipsum" explanationURL:@"www.google.com"];
+    [[TipsDataProvider sharedInstance] addTipWithName:@"Updating for Time Zone Changes" explanation:@"Lorem ipsum" explanationURL:nil];
+    
 }
 
 @end

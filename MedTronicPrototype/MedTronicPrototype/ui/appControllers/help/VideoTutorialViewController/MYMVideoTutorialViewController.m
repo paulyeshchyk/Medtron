@@ -47,11 +47,6 @@ static NSString* const kCellIdentifier = @"CheckboxCellId";
 }
 
 
-- (void)reloadView {
-    [self.tableView reloadData];
-    
-}
-
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView*)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath*)indexPath {
 //    [self.datasource switchStateForInfusionAtIndexPath:indexPath];
@@ -95,7 +90,7 @@ static NSString* const kCellIdentifier = @"CheckboxCellId";
 }
 
 - (void)didEndLoadDataset:(MYMDataset*)dataset {
-    [self reloadView];
+    [self.tableView reloadData];
 }
 
 

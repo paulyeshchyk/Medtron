@@ -14,5 +14,5 @@
 + (BlogDataProvider*)sharedInstance;
 - (NSUInteger)blogsCountWithFilter:(id)filter;
 - (id)addBlogWithHeadline:(NSString*)headline body:(NSString*)body author:(NSString*)author image:(NSData*)image;
-- (void)performLoadBlogsWithFilter:(NSPredicate*)filter delegate:(id<DataProviderDelegate>)delegate;
+- (void)performLoadBlogsWithFilter:(NSPredicate*)filter delegate:(id<DataProviderDelegate>)delegate userInfo:(id)userInfo;
 @end

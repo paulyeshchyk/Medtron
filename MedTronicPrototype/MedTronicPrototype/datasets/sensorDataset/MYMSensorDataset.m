@@ -82,6 +82,15 @@ static NSString* const kDatasetNameSensor = @"sensor";
     return [[[sensorTypeData_ objectAtIndex:indexPath.section] sensors] objectAtIndex:indexPath.row];
 }
 
+- (void)deleteObjectsAtIndexPaths:(NSArray*)indexPaths {
+    //FIXME:check
+    for(NSIndexPath* indexPath in indexPaths) {
+        id obj = [self objectAtIndexPath:indexPath];
+        [[SensorTypeDataProvider sharedInstance] removeObject:obj];
+    }
+}
+
+
 - (BOOL)isSensorConfiguredAtIndexPath:(NSIndexPath*)indexPath{
     MYMSensorTypeObject* type = [sensorTypeData_ objectAtIndex:indexPath.section];
     MYMSensorObject* sensor = [type.sensors objectAtIndex:indexPath.row];

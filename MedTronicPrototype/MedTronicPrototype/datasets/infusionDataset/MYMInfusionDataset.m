@@ -92,6 +92,14 @@ static NSString* const kDatasetNameInfusionConfiguration = @"kDatasetNameInfusio
     return [data_ objectAtIndex:indexPath.row];
 }
 
+- (void)deleteObjectsAtIndexPaths:(NSArray*)indexPaths {
+    //FIXME:check
+    for(NSIndexPath* indexPath in indexPaths) {
+        [[InfusionDataProvider sharedInstance] removeObject:[self objectAtIndexPath:indexPath]];
+        [data_ removeObjectAtIndex:indexPath.row];
+    }
+}
+
 #pragma mark - DataProviderDelegate
 - (void)provider:(id)dataprovider didFinishExecuteFetchWithResult:(NSArray*)resultArray andError:(NSError*)error userInfo:(id)userInfo {
     

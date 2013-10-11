@@ -10,6 +10,7 @@
 #import "DataProviderProtocol.h"
 
 @interface CheckListDataProvider : CoreDataProvider <DataProviderProtocol>
-- (id)addCheckListName:(NSString*)sensorTypeName;
++ (CheckListDataProvider*)sharedInstance;
+- (id)addCheckListName:(NSString*)name;
 - (void)performLoadCheckListWithFilter:(NSPredicate*)filter delegate:(id<DataProviderDelegate>)delegate userInfo:(id)userInfo;
 @end

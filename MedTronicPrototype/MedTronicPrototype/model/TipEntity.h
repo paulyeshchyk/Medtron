@@ -1,8 +1,8 @@
 //
-//  CheckListEntity.h
+//  TipEntity.h
 //  MedTronicPrototype
 //
-//  Created by Pavel on 10/11/13.
+//  Created by Pavel on 10/12/13.
 //  Copyright (c) 2013 Pavel Yeshchyk. All rights reserved.
 //
 
@@ -10,9 +10,10 @@
 #import <CoreData/CoreData.h>
 
 
-@interface CheckListEntity : NSManagedObject
+@interface TipEntity : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * checked;
+@property (nonatomic, retain) NSString * explanation;
+@property (nonatomic, retain) NSString * explanationURL;
 
 @end

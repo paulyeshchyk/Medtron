@@ -21,7 +21,9 @@ static NSString* const kPumpSettingEntity = @"PumpSettingEntity";
 static NSString* const kPumpSettingTypeEntity = @"PumpSettingTypeEntity";
 static NSString* const kReminderTypeEntity = @"ReminderTypeEntity";
 static NSString* const kReminderEntity = @"ReminderEntity";
-static NSString* const kCheckListEntity = @"CheckListEntity";
 
 static NSString* const kAlarmEntity = @"AlarmEntity";
 static NSString* const kAlarmTypeEntity = @"AlarmTypeEntity";
+
+static NSString* const kTipEntity = @"TipEntity";
+static NSString* const kCheckListEntity = @"CheckListEntity";

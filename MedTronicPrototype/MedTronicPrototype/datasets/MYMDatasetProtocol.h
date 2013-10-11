@@ -20,5 +20,5 @@
 - (id)sectionAtIndex:(NSInteger)index;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (id)objectAtIndexPath:(NSIndexPath*)indexPath;
-
+- (void)deleteObjectsAtIndexPaths:(NSArray*)indexPaths;
 @end
