@@ -95,6 +95,9 @@
 		1DEB06C218081374007D9C69 /* ApplicationCommandOpenTips.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06C118081374007D9C69 /* ApplicationCommandOpenTips.m */; };
 		1DEB06C518081633007D9C69 /* ApplicationCommandOpenAlertsSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06C418081633007D9C69 /* ApplicationCommandOpenAlertsSettings.m */; };
 		1DEB06C8180818D7007D9C69 /* ApplicationCommandOpenPumpSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06C7180818D7007D9C69 /* ApplicationCommandOpenPumpSettings.m */; };
+		1DEB06CB18085406007D9C69 /* MYMCheckListItemEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06CA18085406007D9C69 /* MYMCheckListItemEditorView.m */; };
+		1DEB06D6180855BC007D9C69 /* MYMCheckListItemEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEB06D4180855BC007D9C69 /* MYMCheckListItemEditorViewController.m */; };
+		1DEB06D7180855BC007D9C69 /* MYMCheckListItemEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DEB06D5180855BC007D9C69 /* MYMCheckListItemEditorViewController.xib */; };
 		E940B3251800551F007645F3 /* BlogDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B3241800551F007645F3 /* BlogDataProvider.m */; };
 		E940B32E18006066007645F3 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B32D18006066007645F3 /* CoreDataManager.m */; };
 		E940B32F18006066007645F3 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E940B32D18006066007645F3 /* CoreDataManager.m */; };
@@ -382,6 +385,11 @@
 		1DEB06C418081633007D9C69 /* ApplicationCommandOpenAlertsSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationCommandOpenAlertsSettings.m; sourceTree = "<group>"; };
 		1DEB06C6180818D7007D9C69 /* ApplicationCommandOpenPumpSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationCommandOpenPumpSettings.h; sourceTree = "<group>"; };
 		1DEB06C7180818D7007D9C69 /* ApplicationCommandOpenPumpSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationCommandOpenPumpSettings.m; sourceTree = "<group>"; };
+		1DEB06C918085406007D9C69 /* MYMCheckListItemEditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMCheckListItemEditorView.h; sourceTree = "<group>"; };
+		1DEB06CA18085406007D9C69 /* MYMCheckListItemEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMCheckListItemEditorView.m; sourceTree = "<group>"; };
+		1DEB06D3180855BC007D9C69 /* MYMCheckListItemEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMCheckListItemEditorViewController.h; sourceTree = "<group>"; };
+		1DEB06D4180855BC007D9C69 /* MYMCheckListItemEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMCheckListItemEditorViewController.m; sourceTree = "<group>"; };
+		1DEB06D5180855BC007D9C69 /* MYMCheckListItemEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYMCheckListItemEditorViewController.xib; sourceTree = "<group>"; };
 		E940B3231800551F007645F3 /* BlogDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogDataProvider.h; sourceTree = "<group>"; };
 		E940B3241800551F007645F3 /* BlogDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogDataProvider.m; sourceTree = "<group>"; };
 		E940B32618005588007645F3 /* coredata_model_definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = coredata_model_definitions.h; sourceTree = "<group>"; };
@@ -1062,6 +1070,11 @@
 				1DEB06AA18080C31007D9C69 /* MYMCheckListViewController.h */,
 				1DEB06AB18080C31007D9C69 /* MYMCheckListViewController.m */,
 				1DEB06AC18080C31007D9C69 /* MYMCheckListViewController.xib */,
+				1DEB06C918085406007D9C69 /* MYMCheckListItemEditorView.h */,
+				1DEB06CA18085406007D9C69 /* MYMCheckListItemEditorView.m */,
+				1DEB06D3180855BC007D9C69 /* MYMCheckListItemEditorViewController.h */,
+				1DEB06D4180855BC007D9C69 /* MYMCheckListItemEditorViewController.m */,
+				1DEB06D5180855BC007D9C69 /* MYMCheckListItemEditorViewController.xib */,
 			);
 			path = CheckListViewController;
 			sourceTree = "<group>";
@@ -1697,6 +1710,7 @@
 				E940B3DE1801EB9B007645F3 /* Download.png in Resources */,
 				1D654199180437F3007F118B /* TabContainerOrderController.xib in Resources */,
 				E940B36718016F8A007645F3 /* stub04.jpg in Resources */,
+				1DEB06D7180855BC007D9C69 /* MYMCheckListItemEditorViewController.xib in Resources */,
 				E9F816B018074ADA00464220 /* MYMVideoTutorialViewController.xib in Resources */,
 				1D65418A180437F3007F118B /* TermsAndConditionsViewController.xib in Resources */,
 				E940B34F18015D53007645F3 /* BarButtonBack.png in Resources */,
@@ -1766,6 +1780,7 @@
 			files = (
 				E940B33318006D4B007645F3 /* CoreDataProvider.m in Sources */,
 				1D654178180437F3007F118B /* ActionsViewController.m in Sources */,
+				1DEB06D6180855BC007D9C69 /* MYMCheckListItemEditorViewController.m in Sources */,
 				E940B37A180195B1007645F3 /* StubdataManager.m in Sources */,
 				1D6DF92B17F1BEBB003174C8 /* AppDelegate.m in Sources */,
 				E9F816791807483000464220 /* SensorEntity.m in Sources */,
@@ -1793,6 +1808,7 @@
 				1DEB06A718080A74007D9C69 /* MYMViewController.m in Sources */,
 				1D654190180437F3007F118B /* TabContainerBlogController.m in Sources */,
 				E9F8169D180748B600464220 /* CheckListEntity.m in Sources */,
+				1DEB06CB18085406007D9C69 /* MYMCheckListItemEditorView.m in Sources */,
 				1D65417C180437F3007F118B /* BlogHeadlineView.m in Sources */,
 				E9F8168E1807483100464220 /* InfusionEntity.m in Sources */,
 				E9F8160218072DF200464220 /* MYMAlertsSettingsViewController.m in Sources */,
